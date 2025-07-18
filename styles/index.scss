@@ -1,0 +1,71 @@
+// --- Importações ---
+@use "_reset.scss";
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@font-face {
+  font-family: "Pixel Twist"; 
+  src: url("../fonts/PixelTwist.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// --- Paleta de Cores ---
+
+
+// --- Corpo da Página ---
+body {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 450;
+    font-style: normal;
+    background-color: #F2F2F2;
+}
+
+// --- Cabeçalho ---
+div.cabecalho-container {
+    position: relative;
+    background: black;
+    height: 100vh;
+    margin: 3rem;
+    padding: 2.5rem;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(13, 13, 13, 0.3);
+
+    header#cabecalho {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 92%;
+        padding: 0.5rem;
+        border-bottom: 2px solid black;
+
+        a {
+            text-decoration: none;
+            margin-left: 2.5rem;
+            color: black;
+        }
+
+        a#logo{
+            font-family: "Pixel Twist";
+            font-size: 2.5rem;
+        }
+
+        nav#menu-navegacao{
+            a {
+                text-decoration: none;
+                margin-left: 2.5rem;
+                color: black;
+
+                &:hover {
+                    text-decoration: underline 2px solid black;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
