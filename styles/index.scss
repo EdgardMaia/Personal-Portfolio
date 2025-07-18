@@ -9,7 +9,11 @@
 }
 
 // --- Paleta de Cores ---
-
+$bg-color: #F2F2F2; // Cor principal
+$session-color: white; // Cor de fundo da sessão
+$border-color: black; // Cor da borda (mesmo que destaque)
+$txt-color: black; // Cor do texto
+$link-hover: black; // Cor do texto ao passar o mouse
 
 // --- Corpo da Página ---
 body {
@@ -17,18 +21,17 @@ body {
     font-optical-sizing: auto;
     font-weight: 450;
     font-style: normal;
-    background-color: #F2F2F2;
+    background-color: $bg-color;
 }
 
 // --- Cabeçalho ---
 div.cabecalho-container {
     position: relative;
-    background: black;
     height: 100vh;
     margin: 3rem;
     padding: 2.5rem;
     border-radius: 20px;
-    background-color: white;
+    background-color: $session-color;
     box-shadow: 0 0 10px rgba(13, 13, 13, 0.3);
 
     header#cabecalho {
@@ -38,12 +41,12 @@ div.cabecalho-container {
         align-items: center;
         width: 92%;
         padding: 0.5rem;
-        border-bottom: 2px solid black;
+        border-bottom: 2px solid $border-color;
 
         a {
             text-decoration: none;
             margin-left: 2.5rem;
-            color: black;
+            color: $txt-color;
         }
 
         a#logo{
@@ -55,11 +58,64 @@ div.cabecalho-container {
             a {
                 text-decoration: none;
                 margin-left: 2.5rem;
-                color: black;
+                color: $txt-color;
+                position: relative;
+                transition: all 0.3s ease;
+                
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -5px;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background-color: $link-hover;
+                    transition: width 0.3s ease-in-out;
+                }
 
                 &:hover {
-                    text-decoration: underline 2px solid black;
+                    color: $link-hover;
+                    
+                    &::after {
+                        width: 100%;
+                    }
                 }
+            }
+        }
+    }
+
+    section.home {
+        display: flex;
+        flex-direction: column;
+
+        div#home-container {
+            margin: 8rem 0 1rem 0;
+            line-height: 1;
+
+            h1 {
+                margin: -3rem 0 1.6rem 0;
+            }
+        }
+        div.redes-sociais {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            margin-top: 1rem;
+
+            a {
+                text-decoration: none;
+                color: $txt-color;
+                font-weight: 500;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: $link-hover;
+                }
+            }
+
+            a#curriculo {
+                font-weight: bold;
+                color: $link-hover;
             }
         }
     }
