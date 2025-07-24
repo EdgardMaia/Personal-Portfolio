@@ -1,15 +1,15 @@
 // --- Importações ---
 @use "_reset.scss";
-@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 @font-face {
-  font-family: "Pixel Twist"; 
-  src: url("../fonts/PixelTwist.ttf") format("truetype");
+  font-family: "Pixel Twist";
+  src: url("../fonts/PIXELTWIST.TTF") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 // --- Paleta de Cores ---
-$bg-color: #F2F2F2; // Cor principal
+$bg-color: #f2f2f2; // Cor principal
 $session-color: white; // Cor de fundo da sessão
 $border-color: black; // Cor da borda (mesmo que destaque)
 $txt-color: black; // Cor do texto
@@ -17,111 +17,150 @@ $link-hover: black; // Cor do texto ao passar o mouse
 
 // --- Corpo da Página ---
 body {
-    font-family: "Raleway", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 450;
-    font-style: normal;
-    background-color: $bg-color;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 450;
+  font-style: normal;
+  background-color: $bg-color;
 }
 
 // --- Cabeçalho ---
 div.cabecalho-container {
-    position: relative;
-    height: 100vh;
-    margin: 3rem;
-    padding: 2.5rem;
-    border-radius: 20px;
-    background-color: $session-color;
-    box-shadow: 0 0 10px rgba(13, 13, 13, 0.3);
+  position: relative;
+  height: 88.93vh;
+  margin: 3rem;
+  padding: 2.5rem;
+  border-radius: 20px;
+  background-color: $session-color;
+  box-shadow: 0 0 10px rgba(13, 13, 13, 0.3);
 
-    header#cabecalho {
-        position: absolute;
+  header#cabecalho {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 92%;
+    padding: 0.5rem;
+    border-bottom: 2px solid $border-color;
+
+    a {
+      text-decoration: none;
+      margin-left: 2.5rem;
+      color: $txt-color;
+      font-size: 1.2rem;
+    }
+
+    a#logo {
+      font-family: "Pixel Twist";
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    nav#menu-navegacao {
+      a {
+        text-decoration: none;
+        margin-left: 2.5rem;
+        color: $txt-color;
+        position: relative;
+        transition: all 0.3s ease;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background-color: $link-hover;
+          transition: width 0.3s ease-in-out;
+        }
+
+        &:hover {
+          color: $link-hover;
+
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  section.home {
+    display: flex;
+    flex-direction: center;
+
+    div#home-container {
+      padding: 5.5rem 0;
+      line-height: 1;
+      font-size: 1.2rem;
+
+      h1, h2 {
+        color: $txt-color;
+        font-weight: 600;
+        font-size: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.1rem;
+      }
+
+      p {
+        padding: 1rem 0 1rem 0;
+      }
+
+    }
+
+    div#links-container {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      margin: 0 -1rem;
+      width: 25%;
+
+      a {
+        text-decoration: none;
+        color: $txt-color;
+      }
+
+      label[for="botao-curriculo"] {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: white;
+        border: solid 2px $border-color;
+        border-radius: 20px;
+        font-weight: 600;
+        margin: 0.5rem 0 1.5rem 0;
+
+        &:hover {
+          background: black;
+          border: solid 2px none;
+          color: white;
+          box-shadow: none;
+          transition: all 0.3s ease;
+        }
+      }
+      div#redes-sociais { 
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 92%;
-        padding: 0.5rem;
-        border-bottom: 2px solid $border-color;
+        flex-direction: row;
+        gap: 1.2rem;
+        margin: 0.5rem 0 1.5rem 0;
+        padding: 0 0 0.5rem 0;
 
         a {
-            text-decoration: none;
-            margin-left: 2.5rem;
-            color: $txt-color;
-        }
+          color: black;
+          font-size: 2rem;
 
-        a#logo{
-            font-family: "Pixel Twist";
-            font-size: 2.5rem;
+          &:hover {
+            color: white;
+            background: black;
+            border:none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+          }
         }
-
-        nav#menu-navegacao{
-            a {
-                text-decoration: none;
-                margin-left: 2.5rem;
-                color: $txt-color;
-                position: relative;
-                transition: all 0.3s ease;
-                
-                &::after {
-                    content: '';
-                    position: absolute;
-                    bottom: -5px;
-                    left: 0;
-                    width: 0;
-                    height: 2px;
-                    background-color: $link-hover;
-                    transition: width 0.3s ease-in-out;
-                }
-
-                &:hover {
-                    color: $link-hover;
-                    
-                    &::after {
-                        width: 100%;
-                    }
-                }
-            }
-        }
+      }
     }
-
-    section.home {
-        display: flex;
-        flex-direction: column;
-
-        div#home-container {
-            margin: 8rem 0 1rem 0;
-            line-height: 1;
-
-            h1 {
-                margin: -3rem 0 1.6rem 0;
-            }
-        }
-        div.redes-sociais {
-            display: flex;
-            flex-direction: row;
-            gap: 1rem;
-            margin-top: 1rem;
-
-            a {
-                text-decoration: none;
-                color: $txt-color;
-                font-weight: 500;
-                transition: color 0.3s ease;
-
-                &:hover {
-                    color: $link-hover;
-                }
-            }
-
-            a#curriculo {
-                font-weight: bold;
-                color: $link-hover;
-            }
-        }
-    }
+  }
 }
-
-
-
-
 
