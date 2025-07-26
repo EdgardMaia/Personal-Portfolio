@@ -7,55 +7,130 @@
     <meta name="author" content="Edgard Maia" />
     <meta name="keywords" content="python, portfolio, infraestrutura, hacking"/>
     <link rel="stylesheet" href="styles/index.css" />
-    <link rel="icon" href="img/hacking-etico.png" type="image/x-icon" />
+    <link rel="icon" href="" type="image/x-icon" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <title>Edgard Maia - Portfólio Pessoal</title>
   </head>
   <body>
-    <div class="cabecalho-container">
-      <header id="cabecalho">
-        <a href="#" id="logo">Portfolio_</a>
+    <!-- Cabeçalho de navegação -->
+    <header class="cabecalho-container">
+        <h1>Portfolio_</h1>
         <nav id="menu-navegacao">
           <a href="#">Home</a>
           <a href="#">Sobre</a>
           <a href="#">Projetos</a>
           <a href="#">Contatos</a>
         </nav>
-      </header>
+    </header>
 
-      <section class="home">
-        <div id="home-container">
+    <!-- Conteudo Principal -->
+    <main class="Conteudo-container">
+      <section class="Sobre-mim-container">
+        <div id="Sobre-mim">
           <h1>Edgard Maia</h1>
           <h2>- Estudante</h2>
           <p>
             Aspirante a profissional de tecnologia, almejo meu primeiro emprego ou estágio para mergulhar nas diversas vertentes da área.<br>Comprometido em aprender, crescer e contribuir efetivamente para o avanço tecnológico da equipe e da organização.
           </p>
 
-          <div id="links-container">
-            <a href="#" id="botao-curriculo"></a>
-            <label for="botao-curriculo">Currículo</label>
-          <div id="redes-sociais">
-            <a href="https://www.linkedin.com/in/edgard-maia/" target="_blank">
-              <i class="ri-linkedin-fill"></i>
-            </a>
-            <a href="https://github.com/edgardmaia/" target="_blank">
-              <i class="ri-github-fill"></i>
-            </a>
-            <a href="https://www.instagram.com/_edgardmaia_/" target="_blank">
-              <i class="ri-instagram-fill"></i>
+          <div id="link-curriculo">
+            <a href="Curriculo.pdf" download="Edgard_Maia_Curriculo.pdf" id="botao-curriculo">
+              <strong>Currículo</strong>
             </a>
           </div>
-        
+      </section>
+
+      <section class="Projetos-container">
+        <div id="Projetos">
+          <h1>Projetos</h1>
+
         </div>
       </section>
-    </div>
 
-    <main>
-      <!-- Conteúdo principal -->
+      <section class="Ferramentas-container">
+        <h1>Ferramentas</h1>
+        <div class="Ferramentas-icons">
+          <div id="ferramenta-python">
+            <img src="img/python.png" alt="Python" id="python"/>
+            <label for="python">Python</label>
+          </div>
+
+          <div id="ferramenta-item">
+            <img src="img/html.png" alt="HTML" id="html"/>
+            <label for="html">HTML</label>
+          </div>
+
+          <div id="ferramenta-item">
+            <img src="img/css.png" alt="CSS" id="css"/>
+            <label for="css">CSS</label>
+          </div>
+
+          <div id="ferramenta-item">
+            <img src="img/sass.png" alt="Sass" id="sass"/>
+            <label for="sass">Sass</label>
+          </div>
+
+          <div id="ferramenta-item">
+            <img src="img/git.png" alt="Git" id="git"/>
+            <label for="git">Git</label>
+          </div>
+
+          <div id="ferramenta-item">
+            <img src="img/linux.png" alt="Linux" id="linux"/>
+            <label for="linux">Linux</label>
+          </div>
+
+          <div id="ferramenta-item">
+            <img src="img/kali.png" alt="Kali Linux" id="kali"/>
+            <label for="kali">Kali Linux</label>
+          </div>
+
+          <div id="ferramenta-item">
+            <img src="img/nmap.png" alt="Nmap" id="nmap"/>
+            <label for="nmap">Nmap</label>
+          </div>
+
+          <div id="ferramenta-item">
+            <img src="img/metasploit.png" alt="Metasploit" id="metasploit"/>
+            <label for="metasploit">Metasploit</label>
+          </div>
+
+          <div id="ferramenta-item">
+            <img src="img/wireshark.png" alt="Wireshark" id="wireshark"/>
+            <label for="wireshark">Wireshark</label>
+          </div>
+
+          <div id="ferramenta-item">
+            <img src="img/virtualbox.png" alt="VirtualBox" id="virtualbox"/>
+            <label for="virtualbox">VirtualBox</label>
+          </div>
+
+        </div>
+      </section>
     </main>
 
-    <footer>
-      <!-- Rodapé -->
+    <!-- Rodapé -->
+    <footer class="rodape-container">
+      <h1>Contatos</h1>
+      
+      <div id="social-labels">
+        <span>LinkedIn</span>
+        <span>GitHub</span>
+        <span>Instagram</span>
+      </div>
+      
+      <div id="social-icones">
+        <a href="https://www.linkedin.com/in/edgard-maia/" target="_blank" aria-label="LinkedIn">
+          <i class="ri-linkedin-fill"></i>
+        </a>
+        <a href="https://github.com/edgardmaia/" target="_blank" aria-label="GitHub">
+          <i class="ri-github-fill"></i>
+        </a>
+        <a href="https://www.instagram.com/_edgardmaia_/" target="_blank" aria-label="Instagram">
+          <i class="ri-instagram-fill"></i>
+        </a>
+
+      </div>
     </footer>
   </body>
 </html>
