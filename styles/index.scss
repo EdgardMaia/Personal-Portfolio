@@ -22,108 +22,110 @@ body {
   font-weight: 450;
   font-style: normal;
   background-color: $bg-color;
+  
+  h1{
+    font-family: "Pixel Twist";
+    font-size: 2.5rem;
+    margin: 0;
+    text-decoration: none;
+    color: $txt-color;
+  }
 }
-
 // --- Cabeçalho ---
-div.cabecalho-container {
-  position: relative;
-  height: 88.93vh;
+header.cabecalho-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: calc(100vw - 6rem);
+  height: auto;
   margin: 3rem;
+  padding: 1.5rem 2.5rem;
+  border-radius: 20px;
+  background-color: $session-color;
+  box-shadow: 0 0 10px rgba(13, 13, 13, 0.3);
+  z-index: 1000; // Garante que fica acima de outros elementos
+
+  // Flexbox para organizar logo e navegação
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    font-family: "Pixel Twist";
+    font-size: 2.5rem;
+    margin: 0;
+    text-decoration: none;
+    color: $txt-color;
+  }
+
+  nav#menu-navegacao {
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      color: $txt-color;
+      font-size: 1.2rem;
+      position: relative;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+}
+// --- Conteúdo Principal ---
+main.Conteudo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2rem;
+  margin: 11rem 3rem 0 3rem;
+  width: calc(100vw - 6rem);
+  padding: 3rem;
   padding: 2.5rem;
   border-radius: 20px;
   background-color: $session-color;
   box-shadow: 0 0 10px rgba(13, 13, 13, 0.3);
 
-  header#cabecalho {
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 92%;
-    padding: 0.5rem;
-    border-bottom: 2px solid $border-color;
-
-    a {
-      text-decoration: none;
-      margin-left: 2.5rem;
-      color: $txt-color;
-      font-size: 1.2rem;
-    }
-
-    a#logo {
-      font-family: "Pixel Twist";
-      font-size: 2.5rem;
-      margin: 0;
-    }
-
-    nav#menu-navegacao {
-      a {
-        text-decoration: none;
-        margin-left: 2.5rem;
-        color: $txt-color;
-        position: relative;
-        transition: all 0.3s ease;
-
-        &::after {
-          content: "";
-          position: absolute;
-          bottom: -5px;
-          left: 0;
-          width: 0;
-          height: 2px;
-          background-color: $link-hover;
-          transition: width 0.3s ease-in-out;
-        }
-
-        &:hover {
-          color: $link-hover;
-
-          &::after {
-            width: 100%;
-          }
-        }
-      }
-    }
+  h1,
+  h2 {
+    color: $txt-color;
+    font-size: 2rem;
   }
 
-  section.home {
-    display: flex;
-    flex-direction: center;
+  section.Sobre-mim-container {
+    div#Sobre-mim {
+      line-height: 1.5;
 
-    div#home-container {
-      padding: 5.5rem 0;
-      line-height: 1;
-      font-size: 1.2rem;
-
-      h1, h2 {
-        color: $txt-color;
-        font-weight: 600;
-        font-size: 1.5rem;
+      h1{
+        font-family: "Pixel Twist";
       }
-
       h2 {
+        font-weight: 600;
         font-size: 1.1rem;
       }
 
       p {
         padding: 1rem 0 1rem 0;
       }
-
     }
 
-    div#links-container {
+    div#link-curriculo {
       display: flex;
       flex-direction: row;
       gap: 1rem;
-      margin: 0 -1rem;
-      width: 25%;
+      margin: 1rem 0 -1rem 0;
 
-      a {
-        text-decoration: none;
-        color: $txt-color;
-      }
-
-      label[for="botao-curriculo"] {
+      a#botao-curriculo {
         display: inline-block;
         padding: 0.5rem 1rem;
         background: white;
@@ -131,36 +133,144 @@ div.cabecalho-container {
         border-radius: 20px;
         font-weight: 600;
         margin: 0.5rem 0 1.5rem 0;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: $txt-color;
+
+        strong {
+          color: inherit;
+          font-size: 1.2rem;
+          font-weight: 600;
+          transition: color 0.3s ease;
+        }
 
         &:hover {
           background: black;
-          border: solid 2px none;
+          border: solid 2px black;
           color: white;
-          box-shadow: none;
-          transition: all 0.3s ease;
+          transform: translateY(-5px);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          cursor: pointer;
+        }
+
+        &:active {
+          transform: translateY(0);
         }
       }
-      div#redes-sociais { 
-        display: flex;
-        flex-direction: row;
-        gap: 1.2rem;
-        margin: 0.5rem 0 1.5rem 0;
-        padding: 0 0 0.5rem 0;
+    }
+  }
 
-        a {
-          color: black;
-          font-size: 2rem;
+  // section.Projetos-container {
+
+  // }
+
+  section.Ferramentas-container {
+    div {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 2rem;
+
+      div[id^="ferramenta"] {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+
+        img {
+          width: 64px;
+          height: 64px;
+          transition: transform 0.3s ease;
 
           &:hover {
-            color: white;
-            background: black;
-            border:none;
-            border-radius: 5px;
-            transition: all 0.3s ease;
+            transform: scale(1.1);
+          }
+        }
+
+        label {
+          font-weight: 600;
+          text-align: center;
+          font-size: 0.9rem;
+          opacity: 0;
+          transform: translateY(-20px);
+          transition: all 0.3s ease;
+        }
+
+        // Quando passar o mouse na div, label desce e aparece
+        &:hover {
+          label {
+            opacity: 1;
+            transform: translateY(0);
           }
         }
       }
     }
   }
 }
+// --- Rodapé ---
+footer.rodape-container {
+  width: calc(100vw - 6rem);
+  margin: 3rem;
+  border-radius: 20px;
+  background-color: $session-color;
+  box-shadow: 0 0 10px rgba(13, 13, 13, 0.3);
 
+  // Layout centralizado usando flexbox
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  min-height: 20vh;
+
+  h1 {
+    margin: 0;
+    text-align: center;
+  }
+
+  // Container dos labels das redes sociais
+  #social-labels {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    span {
+      color: $txt-color;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+  }
+
+  // Container dos ícones das redes sociais
+  #social-icones {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: -1rem 0 0 0;
+
+    a {
+      color: $txt-color;
+      font-size: 2rem;
+      text-decoration: none;
+      padding: 0.5rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+
+      // Melhor área de clique
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        color: white;
+        background-color: $txt-color;
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+}
