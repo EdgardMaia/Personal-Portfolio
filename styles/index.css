@@ -197,27 +197,31 @@ main.Conteudo-container section.Sobre-mim-container div#link-curriculo a#botao-c
 main.Conteudo-container section.Sobre-mim-container div#link-curriculo a#botao-curriculo:active {
   transform: translateY(0);
 }
-main.Conteudo-container section.Ferramentas-container div {
+main.Conteudo-container div.container div {
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 2rem;
 }
-main.Conteudo-container section.Ferramentas-container div div[id^=ferramenta] {
+main.Conteudo-container div.container h1 {
+  text-align: center;
+  margin: 2rem;
+}
+main.Conteudo-container div.container section.Ferramentas-container div[id^=ferramenta] {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
 }
-main.Conteudo-container section.Ferramentas-container div div[id^=ferramenta] img {
-  width: 64px;
-  height: 64px;
+main.Conteudo-container div.container section.Ferramentas-container div[id^=ferramenta] img {
+  max-width: 65px;
+  height: auto;
   transition: transform 0.3s ease;
 }
-main.Conteudo-container section.Ferramentas-container div div[id^=ferramenta] img:hover {
+main.Conteudo-container div.container section.Ferramentas-container div[id^=ferramenta] img:hover {
   transform: scale(1.1);
 }
-main.Conteudo-container section.Ferramentas-container div div[id^=ferramenta] label {
+main.Conteudo-container div.container section.Ferramentas-container div[id^=ferramenta] label {
   font-weight: 600;
   text-align: center;
   font-size: 0.9rem;
@@ -225,9 +229,44 @@ main.Conteudo-container section.Ferramentas-container div div[id^=ferramenta] la
   transform: translateY(-20px);
   transition: all 0.3s ease;
 }
-main.Conteudo-container section.Ferramentas-container div div[id^=ferramenta]:hover label {
+main.Conteudo-container div.container section.Ferramentas-container div[id^=ferramenta]:hover label {
   opacity: 1;
   transform: translateY(0);
+}
+main.Conteudo-container div.container section.Certificados div.Certificados-Container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+}
+main.Conteudo-container div.container section.Certificados div.Certificados-Container div[id^=certificado-] img {
+  max-width: 400px;
+  height: auto;
+  border: solid 2px black;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(13, 13, 13, 0.5);
+  transition: transform 0.3s ease-in-out;
+}
+main.Conteudo-container div.container section.Certificados div.Certificados-Container div[id^=certificado-] img:hover {
+  transform: scale(1.1);
+}
+main.Conteudo-container div.container section.Badges div.badges-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+}
+main.Conteudo-container div.container section.Badges div.badges-container img {
+  max-width: 150px;
+  height: auto;
+  border: solid 2px black;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(13, 13, 13, 0.5);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+main.Conteudo-container div.container section.Badges div.badges-container img:hover {
+  transform: scale(1.1);
 }
 
 footer.rodape-container {
@@ -282,4 +321,15 @@ footer.rodape-container #social-icones a:hover {
 }
 footer.rodape-container #social-icones a:active {
   transform: translateY(0);
+}
+footer.rodape-container #Creditos p {
+  color: black;
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+footer.rodape-container #Creditos p a {
+  color: black;
+  text-decoration: none;
+  font-weight: 700;
 }/*# sourceMappingURL=index.css.map */
