@@ -33,7 +33,7 @@ body {
 }
 // --- Cabeçalho ---
 header.cabecalho-container {
-  position: fixed;
+  position: static;
   top: 0;
   left: 0;
   right: 0;
@@ -46,12 +46,15 @@ header.cabecalho-container {
   box-shadow: 0 0 10px rgba(13, 13, 13, 0.3);
   z-index: 1000; // Garante que fica acima de outros elementos
 
-  // Flexbox para organizar logo e navegação
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  .header-content {
+    // Flexbox para organizar logo e navegação
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-  h1 {
+  // Logo
+  h1.logo {
     font-family: "Pixel Twist";
     font-size: 2.5rem;
     margin: 0;
@@ -59,13 +62,14 @@ header.cabecalho-container {
     color: $txt-color;
   }
 
-  nav#menu-navegacao {
+  // Navegação
+  nav.menu-navegacao {
     display: flex;
     flex-direction: row;
     gap: 2.5rem;
     align-items: center;
 
-    a {
+    .nav-link {
       text-decoration: none;
       color: $txt-color;
       font-size: 1.2rem;
@@ -83,18 +87,20 @@ header.cabecalho-container {
   }
 }
 // --- Conteúdo Principal ---
-main.Conteudo-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 2rem;
-  margin: 11rem 3rem 0 3rem;
-  width: calc(100vw - 6rem);
-  padding: 3rem;
-  padding: 2.5rem;
-  border-radius: 20px;
-  background-color: $session-color;
-  box-shadow: 0 0 10px rgba(13, 13, 13, 0.3);
+main.conteudo-principal {
+  .secoes-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem;
+    margin: 1rem 3rem 0 3rem;
+    width: calc(100vw - 6rem);
+    padding: 3rem;
+    padding: 2.5rem;
+    border-radius: 20px;
+    background-color: $session-color;
+    box-shadow: 0 0 10px rgba(13, 13, 13, 0.3);
+  }
 
   h1,
   h2 {
@@ -102,12 +108,24 @@ main.Conteudo-container {
     font-size: 2rem;
   }
 
-  section.Sobre-mim-container {
-    div#Sobre-mim {
+  section.sobre-mim-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem;
+    margin: 1rem 3rem 0 3rem;
+    width: calc(100vw - 6rem);
+    padding: 2rem;
+    border-radius: 20px;
+    background-color: $session-color;
+    box-shadow: 0 0 10px rgba(13, 13, 13, 0.3);
+    .sobre-mim-content {
       line-height: 1.5;
 
       h1 {
         font-family: "Pixel Twist";
+        text-align: left;
+        margin: 0;
       }
 
       h2 {
@@ -120,13 +138,13 @@ main.Conteudo-container {
       }
     }
 
-    div#link-curriculo {
+    .curriculo-container {
       display: flex;
       flex-direction: row;
       gap: 1rem;
       margin: 1rem 0 -1rem 0;
 
-      a#botao-curriculo {
+      .botao-curriculo {
         display: inline-block;
         padding: 0.5rem 1rem;
         background: white;
@@ -155,73 +173,137 @@ main.Conteudo-container {
         }
 
         &:active {
-          transform: translateY(0);
+          transform: translateY(2px);
+          box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
         }
       }
     }
   }
 
-  div.container {
-    div {
+  // Estilos gerais para seções
+  .habilidades-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  h1 {
+    text-align: center;
+    margin: 2rem;
+  }
+
+  section.projetos-container {
+    .projetos-content {
+      text-align: center;
+
+      .projetos-lista {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        .em-desenvolvimento {
+          color: $txt-color;
+          font-style: italic;
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+
+  section.habilidades-container {
+    .habilidades-grid {
       display: flex;
       flex-direction: row;
       justify-content: center;
       gap: 2rem;
     }
 
-    h1 {
-      text-align: center;
-      margin: 2rem;
-    }
+    .ferramenta-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
 
-    // section.Projetos-container {
-    // }
+      .ferramenta-icon {
+        max-width: 65px;
+        height: auto;
+        transition: transform 0.3s ease;
 
-    section.Ferramentas-container {
-      div[id^="ferramenta"] {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-
-        img {
-          max-width: 65px;
-          height: auto;
-          transition: transform 0.3s ease;
-
-          &:hover {
-            transform: scale(1.1);
-          }
-        }
-
-        label {
-          font-weight: 600;
-          text-align: center;
-          font-size: 0.9rem;
-          opacity: 0;
-          transform: translateY(-20px);
-          transition: all 0.3s ease;
-        }
-
-        // Quando passar o mouse na div, label desce e aparece
         &:hover {
-          label {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          transform: scale(1.1);
+        }
+      }
+
+      .ferramenta-label {
+        font-weight: 600;
+        text-align: center;
+        font-size: 0.9rem;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.3s ease;
+      }
+
+      // Quando passar o mouse na div, label desce e aparece
+      &:hover {
+        .ferramenta-label {
+          opacity: 1;
+          transform: translateY(0);
         }
       }
     }
+  }
 
-    section.Certificados {
-      div.Certificados-Container {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 1rem;
+  section#habilidades {
+    .ferramenta-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
 
-        div[id^="certificado-"] {
-          img {
+      img {
+        max-width: 65px;
+        height: auto;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
+      label {
+        font-weight: 600;
+        text-align: center;
+        font-size: 0.9rem;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.3s ease;
+      }
+
+      // Quando passar o mouse na div, label desce e aparece
+      &:hover {
+        label {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+
+  section.certificados-container {
+    .certificados-grid {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 1rem;
+
+      .certificado-item {
+        .certificado-link {
+          display: block;
+          text-decoration: none;
+
+          .certificado-imagem {
             max-width: 400px;
             height: auto;
             border: solid 2px $border-color;
@@ -236,16 +318,41 @@ main.Conteudo-container {
         }
       }
     }
+  }
 
-    section.Badges {
+  section#certificados {
+    .certificados-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 1rem;
 
-      div.badges-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 1rem;
-
+      .certificado-item {
         img {
+          max-width: 400px;
+          height: auto;
+          border: solid 2px $border-color;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(13, 13, 13, 0.5);
+          transition: transform 0.3s ease-in-out;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+
+  section#badges {
+    .badges-grid {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 1rem;
+
+      .badge-item {
+        .badge-imagem {
           max-width: 150px;
           height: auto;
           border: solid 2px $border-color;
@@ -279,58 +386,190 @@ footer.rodape-container {
   gap: 1.5rem;
   min-height: 20vh;
 
+  span {
+    color: $txt-color;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem;
+  }
+
   h1 {
-    margin: 0;
+    margin: 2rem;
     text-align: center;
   }
 
+  a {
+    text-decoration: none;
+  }
+
+  // Container dos links de email
+  .email-label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .email-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3.5rem;
+    margin: 0.5rem 0 1rem 0;
+
+    .email-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: $txt-color;
+      transition: color 0.3s ease;
+
+      svg {
+        width: 48px;
+        height: 48px;
+        fill: $txt-color;
+        border-radius: 8px;
+        padding: 0.5rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      &#gmail-link {
+        &:hover {
+          svg {
+            fill: white;
+            background-color:  #EA4335;
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          }
+        }
+
+        &:active {
+          svg {
+            fill: white;
+            background-color:  #EA4335;
+            transform: translateY(2px);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+          }
+        }
+      }
+
+      &#outlook-link {
+        &:hover {
+          svg {
+            fill: white;
+            background-color: #0078d4;
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          }
+        }
+
+        &:active {
+          svg {
+            fill: white;
+            background-color: #0078d4;
+            transform: translateY(2px);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+          }
+        }
+      }
+    }
+  }
+
   // Container dos labels das redes sociais
-  #social-labels {
+  .social-labels {
     display: flex;
     align-items: center;
     gap: 1rem;
-
-    span {
-      color: $txt-color;
-      font-size: 1rem;
-      font-weight: 600;
-    }
+    margin-bottom: 0.5rem;
   }
 
   // Container dos ícones das redes sociais
-  #social-icones {
+  .social-icones {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    margin: -1rem 0 0 0;
+    justify-content: center;
+    gap: 4rem;
+    margin: 0;
 
     a {
-      color: $txt-color;
-      font-size: 2rem;
-      text-decoration: none;
-      padding: 0.5rem;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-
-      // Melhor área de clique
       display: flex;
       align-items: center;
       justify-content: center;
+      text-decoration: none;
+      margin-top: -1rem;
+      transition: color 0.3s ease;
+
+      i {
+        color: $txt-color;
+        font-size: 2rem;
+        border-radius: 8px;
+        padding: 0.5rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
 
       &:hover {
-        color: white;
-        background-color: black;
-        transform: translateY(-5px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        i.ri-github-fill {
+          color: white;
+          background-color: black;
+          transform: translateY(-5px);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        i.ri-linkedin-fill {
+          color: white;
+          background-color: #2165bf;
+          transform: translateY(-5px);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        i.ri-instagram-fill {
+          color: white;
+          background: linear-gradient(
+            45deg,
+            rgba(254, 218, 117),
+            rgba(250, 126, 30),
+            rgba(214, 41, 118),
+            rgba(150, 47, 191),
+            rgba(79, 91, 213)
+          );
+          transform: translateY(-5px);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
       }
 
       &:active {
-        transform: translateY(0);
+        i.ri-github-fill {
+          color: white;
+          background-color: black;
+          transform: translateY(2px);
+          box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        i.ri-linkedin-fill {
+          color: white;
+          background-color: #2165bf;
+          transform: translateY(2px);
+          box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        i.ri-instagram-fill {
+          color: white;
+          background: linear-gradient(
+            45deg,
+            rgba(254, 218, 117),
+            rgba(250, 126, 30),
+            rgba(214, 41, 118),
+            rgba(150, 47, 191),
+            rgba(79, 91, 213)
+          );
+          transform: translateY(2px);
+          box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
       }
     }
   }
 
-  #Creditos {
+  .creditos {
     p {
       color: $txt-color;
       font-size: 0.8rem;

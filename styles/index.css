@@ -88,7 +88,7 @@ body h1 {
 }
 
 header.cabecalho-container {
-  position: fixed;
+  position: static;
   top: 0;
   left: 0;
   right: 0;
@@ -100,43 +100,45 @@ header.cabecalho-container {
   background-color: white;
   box-shadow: 0 0 10px rgba(13, 13, 13, 0.3);
   z-index: 1000;
+}
+header.cabecalho-container .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-header.cabecalho-container h1 {
+header.cabecalho-container h1.logo {
   font-family: "Pixel Twist";
   font-size: 2.5rem;
   margin: 0;
   text-decoration: none;
   color: black;
 }
-header.cabecalho-container nav#menu-navegacao {
+header.cabecalho-container nav.menu-navegacao {
   display: flex;
   flex-direction: row;
   gap: 2.5rem;
   align-items: center;
 }
-header.cabecalho-container nav#menu-navegacao a {
+header.cabecalho-container nav.menu-navegacao .nav-link {
   text-decoration: none;
   color: black;
   font-size: 1.2rem;
   position: relative;
   transition: all 0.3s ease;
 }
-header.cabecalho-container nav#menu-navegacao a:hover {
+header.cabecalho-container nav.menu-navegacao .nav-link:hover {
   transform: translateY(-5px);
 }
-header.cabecalho-container nav#menu-navegacao a:active {
+header.cabecalho-container nav.menu-navegacao .nav-link:active {
   transform: translateY(0);
 }
 
-main.Conteudo-container {
+main.conteudo-principal .secoes-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 2rem;
-  margin: 11rem 3rem 0 3rem;
+  margin: 1rem 3rem 0 3rem;
   width: calc(100vw - 6rem);
   padding: 3rem;
   padding: 2.5rem;
@@ -144,31 +146,45 @@ main.Conteudo-container {
   background-color: white;
   box-shadow: 0 0 10px rgba(13, 13, 13, 0.3);
 }
-main.Conteudo-container h1,
-main.Conteudo-container h2 {
+main.conteudo-principal h1,
+main.conteudo-principal h2 {
   color: black;
   font-size: 2rem;
 }
-main.Conteudo-container section.Sobre-mim-container div#Sobre-mim {
+main.conteudo-principal section.sobre-mim-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2rem;
+  margin: 1rem 3rem 0 3rem;
+  width: calc(100vw - 6rem);
+  padding: 2rem;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(13, 13, 13, 0.3);
+}
+main.conteudo-principal section.sobre-mim-container .sobre-mim-content {
   line-height: 1.5;
 }
-main.Conteudo-container section.Sobre-mim-container div#Sobre-mim h1 {
+main.conteudo-principal section.sobre-mim-container .sobre-mim-content h1 {
   font-family: "Pixel Twist";
+  text-align: left;
+  margin: 0;
 }
-main.Conteudo-container section.Sobre-mim-container div#Sobre-mim h2 {
+main.conteudo-principal section.sobre-mim-container .sobre-mim-content h2 {
   font-weight: 600;
   font-size: 1.1rem;
 }
-main.Conteudo-container section.Sobre-mim-container div#Sobre-mim p {
+main.conteudo-principal section.sobre-mim-container .sobre-mim-content p {
   padding: 1rem 0 1rem 0;
 }
-main.Conteudo-container section.Sobre-mim-container div#link-curriculo {
+main.conteudo-principal section.sobre-mim-container .curriculo-container {
   display: flex;
   flex-direction: row;
   gap: 1rem;
   margin: 1rem 0 -1rem 0;
 }
-main.Conteudo-container section.Sobre-mim-container div#link-curriculo a#botao-curriculo {
+main.conteudo-principal section.sobre-mim-container .curriculo-container .botao-curriculo {
   display: inline-block;
   padding: 0.5rem 1rem;
   background: white;
@@ -180,13 +196,13 @@ main.Conteudo-container section.Sobre-mim-container div#link-curriculo a#botao-c
   text-decoration: none;
   color: black;
 }
-main.Conteudo-container section.Sobre-mim-container div#link-curriculo a#botao-curriculo strong {
+main.conteudo-principal section.sobre-mim-container .curriculo-container .botao-curriculo strong {
   color: inherit;
   font-size: 1.2rem;
   font-weight: 600;
   transition: color 0.3s ease;
 }
-main.Conteudo-container section.Sobre-mim-container div#link-curriculo a#botao-curriculo:hover {
+main.conteudo-principal section.sobre-mim-container .curriculo-container .botao-curriculo:hover {
   background: black;
   border: solid 2px black;
   color: white;
@@ -194,34 +210,55 @@ main.Conteudo-container section.Sobre-mim-container div#link-curriculo a#botao-c
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
-main.Conteudo-container section.Sobre-mim-container div#link-curriculo a#botao-curriculo:active {
-  transform: translateY(0);
+main.conteudo-principal section.sobre-mim-container .curriculo-container .botao-curriculo:active {
+  transform: translateY(2px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
 }
-main.Conteudo-container div.container div {
+main.conteudo-principal .habilidades-icons {
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 2rem;
 }
-main.Conteudo-container div.container h1 {
+main.conteudo-principal h1 {
   text-align: center;
   margin: 2rem;
 }
-main.Conteudo-container div.container section.Ferramentas-container div[id^=ferramenta] {
+main.conteudo-principal section.projetos-container .projetos-content {
+  text-align: center;
+}
+main.conteudo-principal section.projetos-container .projetos-content .projetos-lista {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+main.conteudo-principal section.projetos-container .projetos-content .projetos-lista .em-desenvolvimento {
+  color: black;
+  font-style: italic;
+  opacity: 0.7;
+}
+main.conteudo-principal section.habilidades-container .habilidades-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+}
+main.conteudo-principal section.habilidades-container .ferramenta-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
 }
-main.Conteudo-container div.container section.Ferramentas-container div[id^=ferramenta] img {
+main.conteudo-principal section.habilidades-container .ferramenta-item .ferramenta-icon {
   max-width: 65px;
   height: auto;
   transition: transform 0.3s ease;
 }
-main.Conteudo-container div.container section.Ferramentas-container div[id^=ferramenta] img:hover {
+main.conteudo-principal section.habilidades-container .ferramenta-item .ferramenta-icon:hover {
   transform: scale(1.1);
 }
-main.Conteudo-container div.container section.Ferramentas-container div[id^=ferramenta] label {
+main.conteudo-principal section.habilidades-container .ferramenta-item .ferramenta-label {
   font-weight: 600;
   text-align: center;
   font-size: 0.9rem;
@@ -229,17 +266,47 @@ main.Conteudo-container div.container section.Ferramentas-container div[id^=ferr
   transform: translateY(-20px);
   transition: all 0.3s ease;
 }
-main.Conteudo-container div.container section.Ferramentas-container div[id^=ferramenta]:hover label {
+main.conteudo-principal section.habilidades-container .ferramenta-item:hover .ferramenta-label {
   opacity: 1;
   transform: translateY(0);
 }
-main.Conteudo-container div.container section.Certificados div.Certificados-Container {
+main.conteudo-principal section#habilidades .ferramenta-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+main.conteudo-principal section#habilidades .ferramenta-item img {
+  max-width: 65px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+main.conteudo-principal section#habilidades .ferramenta-item img:hover {
+  transform: scale(1.1);
+}
+main.conteudo-principal section#habilidades .ferramenta-item label {
+  font-weight: 600;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+}
+main.conteudo-principal section#habilidades .ferramenta-item:hover label {
+  opacity: 1;
+  transform: translateY(0);
+}
+main.conteudo-principal section.certificados-container .certificados-grid {
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 1rem;
 }
-main.Conteudo-container div.container section.Certificados div.Certificados-Container div[id^=certificado-] img {
+main.conteudo-principal section.certificados-container .certificados-grid .certificado-item .certificado-link {
+  display: block;
+  text-decoration: none;
+}
+main.conteudo-principal section.certificados-container .certificados-grid .certificado-item .certificado-link .certificado-imagem {
   max-width: 400px;
   height: auto;
   border: solid 2px black;
@@ -247,16 +314,33 @@ main.Conteudo-container div.container section.Certificados div.Certificados-Cont
   box-shadow: 0 0 10px rgba(13, 13, 13, 0.5);
   transition: transform 0.3s ease-in-out;
 }
-main.Conteudo-container div.container section.Certificados div.Certificados-Container div[id^=certificado-] img:hover {
+main.conteudo-principal section.certificados-container .certificados-grid .certificado-item .certificado-link .certificado-imagem:hover {
   transform: scale(1.1);
 }
-main.Conteudo-container div.container section.Badges div.badges-container {
+main.conteudo-principal section#certificados .certificados-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 1rem;
 }
-main.Conteudo-container div.container section.Badges div.badges-container img {
+main.conteudo-principal section#certificados .certificados-container .certificado-item img {
+  max-width: 400px;
+  height: auto;
+  border: solid 2px black;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(13, 13, 13, 0.5);
+  transition: transform 0.3s ease-in-out;
+}
+main.conteudo-principal section#certificados .certificados-container .certificado-item img:hover {
+  transform: scale(1.1);
+}
+main.conteudo-principal section#badges .badges-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+}
+main.conteudo-principal section#badges .badges-grid .badge-item .badge-imagem {
   max-width: 150px;
   height: auto;
   border: solid 2px black;
@@ -265,7 +349,7 @@ main.Conteudo-container div.container section.Badges div.badges-container img {
   transition: transform 0.3s ease;
   cursor: pointer;
 }
-main.Conteudo-container div.container section.Badges div.badges-container img:hover {
+main.conteudo-principal section#badges .badges-grid .badge-item .badge-imagem:hover {
   transform: scale(1.1);
 }
 
@@ -282,53 +366,144 @@ footer.rodape-container {
   gap: 1.5rem;
   min-height: 20vh;
 }
-footer.rodape-container h1 {
-  margin: 0;
-  text-align: center;
-}
-footer.rodape-container #social-labels {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-footer.rodape-container #social-labels span {
+footer.rodape-container span {
   color: black;
   font-size: 1rem;
   font-weight: 600;
+  padding: 1rem;
 }
-footer.rodape-container #social-icones {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  margin: -1rem 0 0 0;
+footer.rodape-container h1 {
+  margin: 2rem;
+  text-align: center;
 }
-footer.rodape-container #social-icones a {
-  color: black;
-  font-size: 2rem;
+footer.rodape-container a {
   text-decoration: none;
-  padding: 0.5rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+}
+footer.rodape-container .email-label {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
-footer.rodape-container #social-icones a:hover {
+footer.rodape-container .email-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3.5rem;
+  margin: 0.5rem 0 1rem 0;
+}
+footer.rodape-container .email-links .email-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease;
+}
+footer.rodape-container .email-links .email-link svg {
+  width: 48px;
+  height: 48px;
+  fill: black;
+  border-radius: 8px;
+  padding: 0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+footer.rodape-container .email-links .email-link#gmail-link:hover svg {
+  fill: white;
+  background-color: #EA4335;
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+footer.rodape-container .email-links .email-link#gmail-link:active svg {
+  fill: white;
+  background-color: #EA4335;
+  transform: translateY(2px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+footer.rodape-container .email-links .email-link#outlook-link:hover svg {
+  fill: white;
+  background-color: #0078d4;
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+footer.rodape-container .email-links .email-link#outlook-link:active svg {
+  fill: white;
+  background-color: #0078d4;
+  transform: translateY(2px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+footer.rodape-container .social-labels {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+footer.rodape-container .social-icones {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  margin: 0;
+}
+footer.rodape-container .social-icones a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  margin-top: -1rem;
+  transition: color 0.3s ease;
+}
+footer.rodape-container .social-icones a i {
+  color: black;
+  font-size: 2rem;
+  border-radius: 8px;
+  padding: 0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+footer.rodape-container .social-icones a:hover i.ri-github-fill {
   color: white;
   background-color: black;
   transform: translateY(-5px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-footer.rodape-container #social-icones a:active {
-  transform: translateY(0);
+footer.rodape-container .social-icones a:hover i.ri-linkedin-fill {
+  color: white;
+  background-color: #2165bf;
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-footer.rodape-container #Creditos p {
+footer.rodape-container .social-icones a:hover i.ri-instagram-fill {
+  color: white;
+  background: linear-gradient(45deg, rgb(254, 218, 117), rgb(250, 126, 30), rgb(214, 41, 118), rgb(150, 47, 191), rgb(79, 91, 213));
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+footer.rodape-container .social-icones a:active i.ri-github-fill {
+  color: white;
+  background-color: black;
+  transform: translateY(2px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+footer.rodape-container .social-icones a:active i.ri-linkedin-fill {
+  color: white;
+  background-color: #2165bf;
+  transform: translateY(2px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+footer.rodape-container .social-icones a:active i.ri-instagram-fill {
+  color: white;
+  background: linear-gradient(45deg, rgb(254, 218, 117), rgb(250, 126, 30), rgb(214, 41, 118), rgb(150, 47, 191), rgb(79, 91, 213));
+  transform: translateY(2px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+footer.rodape-container .creditos p {
   color: black;
   font-size: 0.8rem;
   text-align: center;
   margin: 0.5rem 0;
 }
-footer.rodape-container #Creditos p a {
+footer.rodape-container .creditos p a {
   color: black;
   text-decoration: none;
   font-weight: 700;
