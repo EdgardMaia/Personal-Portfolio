@@ -78,6 +78,9 @@ body {
   font-weight: 450;
   font-style: normal;
   background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 body h1 {
   font-family: "Pixel Twist";
@@ -156,12 +159,8 @@ main.conteudo-principal section.sobre-mim-container {
   flex-direction: column;
   justify-content: flex-start;
   gap: 2rem;
-  margin: 1rem 3rem 0 3rem;
+  margin: 2rem;
   width: calc(100vw - 6rem);
-  padding: 2rem;
-  border-radius: 20px;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(13, 13, 13, 0.3);
 }
 main.conteudo-principal section.sobre-mim-container .sobre-mim-content {
   line-height: 1.5;
@@ -355,7 +354,7 @@ main.conteudo-principal section#badges .badges-grid .badge-item .badge-imagem:ho
 
 footer.rodape-container {
   width: calc(100vw - 6rem);
-  margin: 3rem;
+  margin: 3rem 3rem 1.5rem;
   border-radius: 20px;
   background-color: white;
   box-shadow: 0 0 10px rgba(13, 13, 13, 0.3);
@@ -373,127 +372,98 @@ footer.rodape-container span {
   padding: 1rem;
 }
 footer.rodape-container h1 {
-  margin: 2rem;
+  margin: 1rem 0 1.5rem 0;
   text-align: center;
 }
 footer.rodape-container a {
   text-decoration: none;
 }
-footer.rodape-container .email-label {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-footer.rodape-container .email-links {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 3.5rem;
-  margin: 0.5rem 0 1rem 0;
-}
-footer.rodape-container .email-links .email-link {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
-  color: black;
-  transition: color 0.3s ease;
-}
-footer.rodape-container .email-links .email-link svg {
-  width: 48px;
-  height: 48px;
-  fill: black;
-  border-radius: 8px;
-  padding: 0.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-footer.rodape-container .email-links .email-link#gmail-link:hover svg {
-  fill: white;
-  background-color: #EA4335;
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-footer.rodape-container .email-links .email-link#gmail-link:active svg {
-  fill: white;
-  background-color: #EA4335;
-  transform: translateY(2px);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-footer.rodape-container .email-links .email-link#outlook-link:hover svg {
-  fill: white;
-  background-color: #0078d4;
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-footer.rodape-container .email-links .email-link#outlook-link:active svg {
-  fill: white;
-  background-color: #0078d4;
-  transform: translateY(2px);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-footer.rodape-container .social-labels {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 0.5rem;
-}
 footer.rodape-container .social-icones {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4rem;
+  gap: 1rem;
   margin: 0;
 }
-footer.rodape-container .social-icones a {
+footer.rodape-container .social-icones .social-link {
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  margin-top: -1rem;
   transition: color 0.3s ease;
 }
-footer.rodape-container .social-icones a i {
+footer.rodape-container .social-icones .social-link i {
   color: black;
   font-size: 2rem;
   border-radius: 8px;
   padding: 0.5rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-footer.rodape-container .social-icones a:hover i.ri-github-fill {
+footer.rodape-container .social-icones .social-link svg {
+  width: 48px;
+  height: 48px;
+  fill: black;
+  border-radius: 8px;
+  padding: 0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, fill 0.3s ease, background-color 0.3s ease;
+}
+footer.rodape-container .social-icones .social-link:hover i.ri-github-fill {
   color: white;
   background-color: black;
   transform: translateY(-5px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-footer.rodape-container .social-icones a:hover i.ri-linkedin-fill {
+footer.rodape-container .social-icones .social-link:hover i.ri-linkedin-fill {
   color: white;
   background-color: #2165bf;
   transform: translateY(-5px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-footer.rodape-container .social-icones a:hover i.ri-instagram-fill {
+footer.rodape-container .social-icones .social-link:hover i.ri-instagram-fill {
   color: white;
   background: linear-gradient(45deg, rgb(254, 218, 117), rgb(250, 126, 30), rgb(214, 41, 118), rgb(150, 47, 191), rgb(79, 91, 213));
   transform: translateY(-5px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-footer.rodape-container .social-icones a:active i.ri-github-fill {
+footer.rodape-container .social-icones .social-link#gmail-link:hover svg {
+  fill: white;
+  background-color: #ea4335;
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+footer.rodape-container .social-icones .social-link#outlook-link:hover svg {
+  fill: white;
+  background-color: #0078d4;
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+footer.rodape-container .social-icones .social-link:active i.ri-github-fill {
   color: white;
   background-color: black;
   transform: translateY(2px);
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
 }
-footer.rodape-container .social-icones a:active i.ri-linkedin-fill {
+footer.rodape-container .social-icones .social-link:active i.ri-linkedin-fill {
   color: white;
   background-color: #2165bf;
   transform: translateY(2px);
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
 }
-footer.rodape-container .social-icones a:active i.ri-instagram-fill {
+footer.rodape-container .social-icones .social-link:active i.ri-instagram-fill {
   color: white;
   background: linear-gradient(45deg, rgb(254, 218, 117), rgb(250, 126, 30), rgb(214, 41, 118), rgb(150, 47, 191), rgb(79, 91, 213));
+  transform: translateY(2px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+footer.rodape-container .social-icones .social-link#gmail-link:active svg {
+  fill: white;
+  background-color: #ea4335;
+  transform: translateY(2px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+footer.rodape-container .social-icones .social-link#outlook-link:active svg {
+  fill: white;
+  background-color: #0078d4;
   transform: translateY(2px);
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -501,7 +471,8 @@ footer.rodape-container .creditos p {
   color: black;
   font-size: 0.8rem;
   text-align: center;
-  margin: 0.5rem 0;
+  margin: 1rem 0 0.5rem 0;
+  line-height: 16px;
 }
 footer.rodape-container .creditos p a {
   color: black;

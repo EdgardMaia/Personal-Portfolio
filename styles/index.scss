@@ -22,6 +22,9 @@ body {
   font-weight: 450;
   font-style: normal;
   background-color: $bg-color;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 
   h1 {
     font-family: "Pixel Twist";
@@ -113,12 +116,8 @@ main.conteudo-principal {
     flex-direction: column;
     justify-content: flex-start;
     gap: 2rem;
-    margin: 1rem 3rem 0 3rem;
+    margin: 2rem;
     width: calc(100vw - 6rem);
-    padding: 2rem;
-    border-radius: 20px;
-    background-color: $session-color;
-    box-shadow: 0 0 10px rgba(13, 13, 13, 0.3);
     .sobre-mim-content {
       line-height: 1.5;
 
@@ -373,8 +372,8 @@ main.conteudo-principal {
 // --- Rodapé ---
 footer.rodape-container {
   width: calc(100vw - 6rem);
-  margin: 3rem;
-  border-radius: 20px;
+  margin: 3rem 3rem 1.5rem;
+  border-radius: 20px; 
   background-color: $session-color;
   box-shadow: 0 0 10px rgba(13, 13, 13, 0.3);
 
@@ -394,7 +393,7 @@ footer.rodape-container {
   }
 
   h1 {
-    margin: 2rem;
+    margin: 1rem 0 1.5rem 0;
     text-align: center;
   }
 
@@ -402,105 +401,30 @@ footer.rodape-container {
     text-decoration: none;
   }
 
-  // Container dos links de email
-  .email-label {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .email-links {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 3.5rem;
-    margin: 0.5rem 0 1rem 0;
-
-    .email-link {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      text-decoration: none;
-      color: $txt-color;
-      transition: color 0.3s ease;
-
-      svg {
-        width: 48px;
-        height: 48px;
-        fill: $txt-color;
-        border-radius: 8px;
-        padding: 0.5rem;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      &#gmail-link {
-        &:hover {
-          svg {
-            fill: white;
-            background-color:  #EA4335;
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-          }
-        }
-
-        &:active {
-          svg {
-            fill: white;
-            background-color:  #EA4335;
-            transform: translateY(2px);
-            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
-          }
-        }
-      }
-
-      &#outlook-link {
-        &:hover {
-          svg {
-            fill: white;
-            background-color: #0078d4;
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-          }
-        }
-
-        &:active {
-          svg {
-            fill: white;
-            background-color: #0078d4;
-            transform: translateY(2px);
-            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
-          }
-        }
-      }
-    }
-  }
-
   // Container dos labels das redes sociais
-  .social-labels {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 0.5rem;
-  }
+  // .social-labels {
+  //   display: flex;
+  //   align-items: center;
+  //   gap: 1rem;
+  //   margin-bottom: 0.5rem;
+  // }
 
-  // Container dos ícones das redes sociais
+  // Container dos ícones das redes sociais e emails
   .social-icones {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4rem;
+    gap: 1rem;
     margin: 0;
 
-    a {
+    .social-link {
       display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      margin-top: -1rem;
       transition: color 0.3s ease;
 
+      // Ícones das redes sociais (Remix Icon)
       i {
         color: $txt-color;
         font-size: 2rem;
@@ -509,6 +433,18 @@ footer.rodape-container {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
 
+      // Ícones de email (SVG)
+      svg {
+        width: 48px;
+        height: 48px;
+        fill: $txt-color;
+        border-radius: 8px;
+        padding: 0.5rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, fill 0.3s ease,
+          background-color 0.3s ease;
+      }
+
+      // Estados hover para cada rede social
       &:hover {
         i.ri-github-fill {
           color: white;
@@ -516,12 +452,14 @@ footer.rodape-container {
           transform: translateY(-5px);
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
         i.ri-linkedin-fill {
           color: white;
           background-color: #2165bf;
           transform: translateY(-5px);
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
         i.ri-instagram-fill {
           color: white;
           background: linear-gradient(
@@ -537,6 +475,26 @@ footer.rodape-container {
         }
       }
 
+      // Estados hover para emails
+      &#gmail-link:hover {
+        svg {
+          fill: white;
+          background-color: #ea4335;
+          transform: translateY(-5px);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      &#outlook-link:hover {
+        svg {
+          fill: white;
+          background-color: #0078d4;
+          transform: translateY(-5px);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      // Estados active para redes sociais
       &:active {
         i.ri-github-fill {
           color: white;
@@ -566,6 +524,25 @@ footer.rodape-container {
           box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
         }
       }
+
+      // Estados active para emails
+      &#gmail-link:active {
+        svg {
+          fill: white;
+          background-color: #ea4335;
+          transform: translateY(2px);
+          box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+      }
+
+      &#outlook-link:active {
+        svg {
+          fill: white;
+          background-color: #0078d4;
+          transform: translateY(2px);
+          box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+      }
     }
   }
 
@@ -574,7 +551,8 @@ footer.rodape-container {
       color: $txt-color;
       font-size: 0.8rem;
       text-align: center;
-      margin: 0.5rem 0;
+      margin: 1rem 0 0.5rem 0;
+      line-height: 16px;
 
       a {
         color: black;
