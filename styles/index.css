@@ -213,6 +213,20 @@ main.conteudo-principal section.sobre-mim-container .curriculo-container .botao-
   transform: translateY(2px);
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
 }
+main.conteudo-principal section.experiencia-container {
+  margin: 0 0 0 0;
+}
+main.conteudo-principal section.experiencia-container img {
+  width: 100px;
+  height: auto;
+}
+main.conteudo-principal section.experiencia-container p {
+  display: inline-block;
+  line-height: 1.2;
+  font-size: 1rem;
+  color: black;
+  margin-left: 1rem;
+}
 main.conteudo-principal .habilidades-icons {
   display: flex;
   flex-direction: row;
@@ -331,24 +345,6 @@ main.conteudo-principal section#certificados .certificados-container .certificad
   transition: transform 0.3s ease-in-out;
 }
 main.conteudo-principal section#certificados .certificados-container .certificado-item img:hover {
-  transform: scale(1.1);
-}
-main.conteudo-principal section#badges .badges-grid {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 1rem;
-}
-main.conteudo-principal section#badges .badges-grid .badge-item .badge-imagem {
-  max-width: 150px;
-  height: auto;
-  border: solid 2px black;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(13, 13, 13, 0.5);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-main.conteudo-principal section#badges .badges-grid .badge-item .badge-imagem:hover {
   transform: scale(1.1);
 }
 
