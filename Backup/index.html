@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfólio Pessoal - Infraestrutura" />
+    <meta name="author" content="Edgard Maia" />
+    <meta
+      name="keywords"
+      content="python, portfolio, infraestrutura, hacking"
+    />
+    <link rel="icon" href="" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="preload"
+      href="fonts/PIXELTWIST.TTF"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="styles/index.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript><link rel="stylesheet" href="styles/index.css" /></noscript>
+    <title>Edgard Maia - Portfólio Pessoal</title>
+  </head>
+  <body>
+    <!-- Cabeçalho de navegação -->
+    <header class="cabecalho-container">
+      <div class="header-content">
+        <h1 class="logo">Portfolio_</h1>
+        <nav
+          class="menu-navegacao"
+          id="menu-navegacao"
+          role="navigation"
+          aria-label="Menu principal"
+        >
+          <a href="#home" class="nav-link nav-home">Home</a>
+          <a href="#sobre-mim" class="nav-link nav-sobre">Sobre</a>
+          <a href="#projetos" class="nav-link nav-projetos">Projetos</a>
+          <a href="#contatos" class="nav-link nav-contatos">Contatos</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Conteudo Principal -->
+    <main class="conteudo-principal" id="home" role="main">
+      <!-- Container das seções principais -->
+      <div class="secoes-container">
+        <!-- Seção Sobre Mim -->
+        <section
+          class="sobre-mim-container"
+          id="sobre-mim"
+          aria-labelledby="sobre-titulo"
+        >
+          <div class="sobre-mim-content">
+            <h1 id="sobre-titulo">Edgard Maia</h1>
+            <h2 class="sobre-subtitulo">Estudante</h2>
+            <p class="sobre-descricao">
+              Aspirante a profissional de tecnologia, almejo meu primeiro
+              emprego ou estágio para mergulhar nas diversas vertentes da
+              área.<br />Comprometido em aprender, crescer e contribuir
+              efetivamente para o avanço tecnológico da equipe e da organização.
+            </p>
+
+            <div class="curriculo-container" id="link-curriculo">
+              <a
+                href="Curriculo.pdf"
+                download="Edgard_Maia_Curriculo.pdf"
+                class="botao-curriculo"
+                id="botao-curriculo"
+              >
+                <strong>Currículo</strong>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Seção Experiencia -->
+        <section
+          class="experiencia-container"
+          id="experiencia"
+          aria-labelledby="experiencia-titulo"
+        >
+          <div class="experiencia-content">
+            <h1 id="experiencia-titulo">Experiencia</h1>
+            <img src="/img/ati_logo.svg" alt="ATI_Logo" />
+            <p class="experiencia-descricao">
+              09/2024 a 12/2024 – ATI – Agência Estadual de Tecnologia da
+              Informação do Maranhão
+              <br />
+              Setor: Infraestrutura
+              <br />
+              Cargo: Estagiário
+            </p>
+          </div>
+        </section>
+
+        <!-- Seção Projetos -->
+        <section
+          class="projetos-container"
+          id="projetos"
+          aria-labelledby="projetos-titulo"
+        >
+          <div class="projetos-content">
+            <h1 id="projetos-titulo">Projetos</h1>
+            <div class="projetos-lista">
+              <!-- Projetos serão adicionados aqui -->
+              <p class="em-desenvolvimento">Seção em desenvolvimento...</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Seção Habilidades -->
+        <section
+          class="habilidades-container"
+          id="habilidades"
+          aria-labelledby="habilidades-titulo"
+        >
+          <h1 id="habilidades-titulo">Habilidades</h1>
+          <div class="habilidades-grid">
+            <div class="ferramenta-item" id="ferramenta-python">
+              <img
+                src="https://img.icons8.com/?size=100&id=Rc0Xn5AtE8kX&format=png&color=000000"
+                alt="Python"
+                class="ferramenta-icon"
+                id="python"
+              />
+              <label for="python" class="ferramenta-label">Python</label>
+            </div>
+
+            <div class="ferramenta-item" id="ferramenta-html">
+              <img
+                src="https://img.icons8.com/?size=100&id=20909&format=png&color=000000"
+                alt="HTML"
+                class="ferramenta-icon"
+                id="html"
+              />
+              <label for="html" class="ferramenta-label">HTML</label>
+            </div>
+
+            <div class="ferramenta-item" id="ferramenta-css">
+              <img
+                src="https://img.icons8.com/?size=100&id=AY9OsTxmB7MH&format=png&color=000000"
+                alt="CSS"
+                class="ferramenta-icon"
+                id="css"
+              />
+              <label for="css" class="ferramenta-label">CSS</label>
+            </div>
+
+            <div class="ferramenta-item" id="ferramenta-sass">
+              <img
+                src="https://img.icons8.com/?size=100&id=QBqFNfPPB2Kx&format=png&color=000000"
+                alt="Sass"
+                class="ferramenta-icon"
+                id="sass"
+              />
+              <label for="sass" class="ferramenta-label">Sass</label>
+            </div>
+
+            <div class="ferramenta-item" id="ferramenta-git">
+              <img
+                src="https://img.icons8.com/?size=100&id=20906&format=png&color=000000"
+                alt="Git"
+                class="ferramenta-icon"
+                id="git"
+              />
+              <label for="git" class="ferramenta-label">Git</label>
+            </div>
+
+            <div class="ferramenta-item" id="ferramenta-github">
+              <img
+                src="https://img.icons8.com/?size=100&id=fqiiHnc6DMUi&format=png&color=000000"
+                alt="GitHub"
+                class="ferramenta-icon"
+                id="git-hub"
+              />
+              <label for="git-hub" class="ferramenta-label">GitHub</label>
+            </div>
+
+            <div class="ferramenta-item" id="ferramenta-linux">
+              <img
+                src="https://img.icons8.com/?size=100&id=tmEqIUErLJVM&format=png&color=000000"
+                alt="Linux"
+                class="ferramenta-icon"
+                id="linux"
+              />
+              <label for="linux" class="ferramenta-label">Linux</label>
+            </div>
+
+            <div class="ferramenta-item" id="ferramenta-kali">
+              <img
+                src="https://img.icons8.com/?size=100&id=muqMY2QA2VIG&format=png&color=000000"
+                alt="Kali Linux"
+                class="ferramenta-icon"
+                id="kali"
+              />
+              <label for="kali" class="ferramenta-label">Kali Linux</label>
+            </div>
+
+            <div class="ferramenta-item" id="ferramenta-nmap">
+              <img
+                src="https://img.icons8.com/?size=100&id=9b5wowKIlo9d&format=png&color=000000"
+                alt="Nmap"
+                class="ferramenta-icon"
+                id="nmap"
+              />
+              <label for="nmap" class="ferramenta-label">Nmap</label>
+            </div>
+
+            <div class="ferramenta-item" id="ferramenta-metasploit">
+              <img
+                src="https://img.icons8.com/?size=100&id=97AFS4JiW8vx&format=png&color=000000"
+                alt="Metasploit"
+                class="ferramenta-icon"
+                id="metasploit"
+              />
+              <label for="metasploit" class="ferramenta-label"
+                >Metasploit</label
+              >
+            </div>
+
+            <div class="ferramenta-item" id="ferramenta-wireshark">
+              <img
+                src="https://img.icons8.com/?size=100&id=v5aFhu6h1M57&format=png&color=000000"
+                alt="Wireshark"
+                class="ferramenta-icon"
+                id="wireshark"
+              />
+              <label for="wireshark" class="ferramenta-label">Wireshark</label>
+            </div>
+
+            <div class="ferramenta-item" id="ferramenta-virtualbox">
+              <img
+                src="https://img.icons8.com/?size=100&id=38792&format=png&color=000000"
+                alt="VirtualBox"
+                class="ferramenta-icon"
+                id="virtualbox"
+              />
+              <label for="virtualbox" class="ferramenta-label"
+                >VirtualBox</label
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-- Seção Certificados -->
+        <section
+          class="certificados-container"
+          id="certificados"
+          aria-labelledby="certificados-titulo"
+        >
+          <h1 id="certificados-titulo">Certificados</h1>
+
+          <div class="certificados-grid">
+            <div class="certificado-item" id="certificado-python">
+              <a
+                href="https://on.fiap.com.br/local/nanocourses/gerar_certificado.php?chave=f42898dabbc045c1551344c7f30d8674&action=view"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="certificado-link"
+                aria-label="Ver certificado Python FIAP"
+              >
+                <img
+                  src="Certificados/certificado-python.jpg"
+                  alt="Certificado FIAP Python"
+                  class="certificado-imagem"
+                />
+              </a>
+            </div>
+
+            <div class="certificado-item" id="certificado-cybersecurity">
+              <a
+                href="https://on.fiap.com.br/local/nanocourses/gerar_certificado.php?chave=c8bb056c016c580a07d8e322c17c3b80&action=view"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="certificado-link"
+                aria-label="Ver certificado Cybersecurity FIAP"
+              >
+                <img
+                  src="Certificados/certificado-cybersecurity.jpg"
+                  alt="Certificado FIAP Cybersecurity"
+                  class="certificado-imagem"
+                />
+              </a>
+            </div>
+
+            <div class="certificado-item" id="certificado-linux">
+              <a
+                href="https://on.fiap.com.br/local/nanocourses/gerar_certificado.php?chave=c746d23b9a7f1d33af4db95d110fd9c7&action=view"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="certificado-link"
+                aria-label="Ver certificado Linux FIAP"
+              >
+                <img
+                  src="Certificados/certificado-linux.jpg"
+                  alt="Certificado FIAP Linux"
+                  class="certificado-imagem"
+                />
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer
+      class="rodape-container"
+      id="contatos"
+      role="contentinfo"
+      aria-labelledby="contatos-titulo"
+    >
+      <div class="footer-content">
+        <h1 id="contatos-titulo">Contatos</h1>
+
+        <!-- Links para redes sociais e emails -->
+        <!-- <div class="social-labels">
+          <span>LinkedIn</span>
+          <span>GitHub</span>
+          <span>Instagram</span>
+          <span>Gmail</span>
+          <span>Outlook</span>
+        </div> -->
+
+        <div
+          id="social-links"
+          class="social-icones"
+          role="list"
+          aria-label="Links para redes sociais e contatos"
+        >
+          <a
+            href="https://www.linkedin.com/in/edgard-maia/"
+            target="_blank"
+            aria-label="Perfil no LinkedIn"
+            rel="noopener noreferrer"
+            role="listitem"
+            class="social-link"
+          >
+            <i class="ri-linkedin-fill" aria-hidden="true"></i>
+          </a>
+          <a
+            href="https://github.com/edgardmaia/"
+            target="_blank"
+            aria-label="Perfil no GitHub"
+            rel="noopener noreferrer"
+            role="listitem"
+            class="social-link"
+          >
+            <i class="ri-github-fill" aria-hidden="true"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/_edgardmaia_/"
+            target="_blank"
+            aria-label="Perfil no Instagram"
+            rel="noopener noreferrer"
+            role="listitem"
+            class="social-link"
+          >
+            <i class="ri-instagram-fill" aria-hidden="true"></i>
+          </a>
+          <a
+            href="mailto:edgardmaiaa@gmail.com"
+            id="gmail-link"
+            aria-label="Enviar email para Gmail"
+            class="social-link email-link"
+            role="listitem"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              viewBox="0 0 50 50"
+              aria-hidden="true"
+            >
+              <title>Gmail</title>
+              <path
+                d="M12 23.403V23.39 10.389L11.88 10.3h-.01L9.14 8.28C7.47 7.04 5.09 7.1 3.61 8.56 2.62 9.54 2 10.9 2 12.41v3.602L12 23.403zM38 23.39v.013l10-7.391V12.41c0-1.49-.6-2.85-1.58-3.83-1.46-1.457-3.765-1.628-5.424-.403L38.12 10.3 38 10.389V23.39zM14 24.868l10.406 7.692c.353.261.836.261 1.189 0L36 24.868V11.867L25 20l-11-8.133V24.868zM38 25.889V41c0 .552.448 1 1 1h6.5c1.381 0 2.5-1.119 2.5-2.5V18.497L38 25.889zM12 25.889L2 18.497V39.5C2 40.881 3.119 42 4.5 42H11c.552 0 1-.448 1-1V25.889z"
+              />
+            </svg>
+          </a>
+          <a
+            href="mailto:edgard_maia@outlook.com"
+            id="outlook-link"
+            aria-label="Enviar email para Outlook"
+            class="social-link email-link"
+            role="listitem"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              viewBox="0 0 48 48"
+              aria-hidden="true"
+            >
+              <title>Outlook</title>
+              <path
+                d="M 21.541016 4.0957031 C 21.277323 4.0910623 21.009427 4.1178181 20.740234 4.1777344 L 20.740234 4.1757812 L 7.5234375 7.1132812 C 5.4728994 7.5691225 4 9.4069339 4 11.507812 L 4 36.492188 C 4 38.593573 5.4735774 40.431028 7.5234375 40.886719 L 20.740234 43.824219 L 20.740234 43.822266 C 22.893773 44.301643 25 42.611755 25 40.40625 L 25 7.59375 C 25 5.663933 23.386864 4.1281887 21.541016 4.0957031 z M 28 11.050781 L 28 22.189453 L 31.509766 24.669922 L 44.990234 15.369141 C 44.900234 12.969141 42.92 11.050781 40.5 11.050781 L 28 11.050781 z M 14.5 16.5 C 17.584 16.5 20 20.014 20 24.5 C 20 28.986 17.584 32.5 14.5 32.5 C 11.416 32.5 9 28.986 9 24.5 C 9 20.014 11.416 16.5 14.5 16.5 z M 45 19.009766 L 32.349609 27.730469 C 32.099609 27.910469 31.8 28 31.5 28 C 31.2 28 30.890859 27.910703 30.630859 27.720703 L 28 25.859375 L 28 38.050781 L 40.5 38.050781 C 42.98 38.050781 45 36.030781 45 33.550781 L 45 19.009766 z M 14.5 19.5 C 13.32 19.5 12 21.638 12 24.5 C 12 27.362 13.32 29.5 14.5 29.5 C 15.68 29.5 17 27.362 17 24.5 C 17 21.638 15.68 19.5 14.5 19.5 z"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <div class="creditos">
+          <p>
+            &copy; 2025 Desenvolvido por <strong>Edgard Maia</strong><br />
+            Ícones obtidos através de
+            <a
+              href="https://icons8.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Icons8</a
+            >
+            |
+            <a
+              href="https://remixicon.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Remix Icon</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
