@@ -1,0 +1,46 @@
+# Node modules
+node_modules/
+
+# Diretórios de build (Vite, Webpack, etc)
+dist/
+build/
+out/
+
+# Arquivos temporários e caches
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+
+# Cache do Tailwind CSS (se estiver usando JIT)
+.tailwindcss/
+
+# Cache do PostCSS
+.postcss-cache/
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos do editor
+.vscode/
+.idea/
+*.code-workspace
+
+# SASS cache
+.sass-cache/
+
+# Ambiente local
+.env
+.env.*.local
+.env.local
+
+# Arquivos Js
+
+.config.js
+*.config.js
+
+# Prettierrc
+.prettierrc
