@@ -1,0 +1,28 @@
+{
+  "name": "personal-portfolio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EdgardMaia/Personal-Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EdgardMaia/Personal-Portfolio/issues"
+  },
+  "homepage": "https://github.com/EdgardMaia/Personal-Portfolio#readme",
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.11"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.14",
+    "tailwindcss": "^4.1.11"
+  }
+}
