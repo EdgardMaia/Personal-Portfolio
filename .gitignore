@@ -1,46 +1,49 @@
-# Node modules
+# -----------------------
+# 📦 Node / Dependências
+# -----------------------
 node_modules/
 
-# Diretórios de build (Vite, Webpack, etc)
+# -----------------------
+# ⚙️ Diretórios de Build
+# -----------------------
 dist/
 build/
 out/
 
-# Arquivos temporários e caches
+# -----------------------
+# 🧹 Arquivos Temporários
+# -----------------------
 *.log
 *.tmp
 *.temp
 *.swp
 *.swo
 *.bak
+*.git/
 
-# Cache do Tailwind CSS (se estiver usando JIT)
+# -----------------------
+# 🎨 Caches de CSS
+# -----------------------
 .tailwindcss/
-
-# Cache do PostCSS
 .postcss-cache/
+.sass-cache/
 
-# Arquivos de sistema
+# -----------------------
+# 🖥️ Sistema Operacional
+# -----------------------
 .DS_Store
 Thumbs.db
 
-# Arquivos do editor
+# -----------------------
+# 💻 IDE / Editor
+# -----------------------
 .vscode/
 .idea/
 *.code-workspace
 
-# SASS cache
-.sass-cache/
-
-# Ambiente local
+# -----------------------
+# 🔐 Variáveis de Ambiente
+# -----------------------
 .env
 .env.*.local
 .env.local
-
-# Arquivos Js
-
-.config.js
-*.config.js
-
-# Prettierrc
-.prettierrc
