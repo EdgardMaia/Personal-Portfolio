@@ -1,0 +1,48 @@
+// --- Importações ---
+@use "_reset.scss";
+@import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@font-face {
+  font-family: "Pixel Twist";
+  src: url("../fonts/PIXELTWIST.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// --- Paleta de Cores ---
+
+$bg-color: #f2f2f2; // Cor principal de fundo
+$session-color: white; // Cor de fundo da sessão
+$text-color: black; // Cor principal do texto
+
+// --- Corpo da página ---
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 450;
+  font-style: normal;
+  background-color: $bg-color;
+  margin: 0;
+  padding: 0;
+
+  h1 {
+    font-family: "Pixel Twist";
+    font-size: 2.5rem;
+    margin: 0;
+    color: $text-color;
+  }
+}
+
+header.cabecalho-container {
+  position: static;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: calc(100vw - 6rem);
+  height: auto;
+  margin: 3rem;
+  padding: 1.5rem 2.5rem;
+  border-radius: 20px;
+  background-color: $session-color;
+  box-shadow: 0 0 10px rgba(13, 13, 13, 0.3);
+}
