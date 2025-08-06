@@ -18,7 +18,8 @@
   "homepage": "https://github.com/EdgardMaia/Personal-Portfolio#readme",
   "description": "",
   "dependencies": {
-    "@tailwindcss/cli": "^4.1.11"
+    "@tailwindcss/cli": "^4.1.11",
+    "animejs": "^4.1.2"
   },
   "devDependencies": {
     "prettier": "^3.6.2",
