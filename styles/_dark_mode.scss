@@ -1,0 +1,209 @@
+// ==============================================
+// 🌙 DARK MODE SYSTEM - SCSS VERSION
+// ==============================================
+
+// --- Variáveis CSS para temas ---
+:root {
+  // Cores base do sistema
+  --background-color-light: hsla(230, 80%, 98%, 1);
+  --toggle-light: hsla(230, 25%, 10%, 1);
+  --background-color-dark: hsla(230, 55%, 4%, 1);
+  --toggle-dark: hsla(230, 25%, 75%, 1);
+  --icons: #000000;
+
+  
+  // Paleta neumórfica - Light Mode
+  --bg-color: #f0f3f8;
+  --session-color: #f0f3f8;
+  --text-color: #000000;
+  --shadow-dark: #c8d0e7;
+  --shadow-light: #ffffff;
+
+  // Configurações globais
+  color-scheme: light;
+  --x: 50%;
+  --y: 50%;
+}
+
+// --- Configuração base do HTML ---
+html {
+  --background-color: var(--background-color-light);
+  --toggle-color: var(--toggle-light);
+
+  // Dark mode ativo
+  &.dark {
+    color-scheme: dark;
+    --background-color: var(--background-color-dark);
+    --toggle-color: var(--toggle-dark);
+    
+    // Paleta neumórfica - Dark Mode
+    --bg-color: #2d3748;
+    --session-color: #2d3748;
+    --text-color: #ffffff;
+    --shadow-dark: #1a202c;
+    --shadow-light: #4a5568;
+  }
+}
+
+// --- Estilos base do body ---
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+// ==============================================
+// 🎨 DARK MODE APLICAÇÕES
+// ==============================================
+
+html.dark {
+  
+  // --- Containers neumórficos ---
+  .cabecalho-container,
+  .rodape-container {
+    background-color: var(--session-color);
+    box-shadow: 
+      9px 9px 16px var(--shadow-dark), 
+      -9px -9px 16px var(--shadow-light),
+      inset -1px -1px 2px var(--shadow-dark),
+      inset 1px 1px 2px var(--shadow-light);
+  }
+
+  // --- Tipografia ---
+  h1, h2, h3, h4, h5, h6,
+  .logo,
+  a {
+    color: var(--text-color);
+  }
+
+  // --- SVGs e ícones ---
+  svg {
+    fill: var(--text-color);
+    color: var(--text-color);
+
+    path {
+      fill: var(--text-color);
+    }
+  }
+}
+
+// ==============================================
+// ✨ ANIMAÇÕES DE TRANSIÇÃO
+// ==============================================
+
+@keyframes reveal-in {
+  from {
+    clip-path: circle(0% at var(--x) var(--y));
+  }
+  to {
+    clip-path: circle(150% at var(--x) var(--y));
+  }
+}
+
+@keyframes reveal-out {
+  from {
+    clip-path: circle(150% at var(--x) var(--y));
+  }
+  to {
+    clip-path: circle(0% at var(--x) var(--y));
+  }
+}
+
+// --- View Transition API ---
+::view-transition-new(root) {
+  animation: reveal-in 0.5s ease-in-out forwards;
+  z-index: 1;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  animation: reveal-out 0.5s ease-in-out forwards;
+  animation-delay: 0.5s;
+  z-index: 0;
+  mix-blend-mode: normal;
+}
+
+::view-transition-image-pair(root) {
+  isolation: isolate;
+}
+
+// ==============================================
+// 🔘 TOGGLE SWITCH COMPONENT
+// ==============================================
+
+.toggle {
+  position: static;
+  transform: scale(0.8);
+  cursor: pointer;
+  z-index: 10;
+  margin: 0;
+
+  // --- Input oculto ---
+  input {
+    display: none;
+
+    // --- Círculo principal ---
+    + div {
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      position: relative;
+      box-shadow: inset 16px -16px 0 0 var(--toggle-color);
+      transform: scale(1) rotate(-2deg);
+      transition: box-shadow 0.5s ease 0s, transform 0.4s ease 0.1s;
+
+      // --- Fundo do toggle ---
+      &::before {
+        content: "";
+        width: inherit;
+        height: inherit;
+        border-radius: inherit;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: light-dark(transparent, var(--toggle-color));
+        transition: background 0.3s ease;
+      }
+
+      // --- Estrelas/raios do sol ---
+      &::after {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        margin: -4px 0 0 -4px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        box-shadow: 
+          0 -23px 0 var(--toggle-color), 
+          0 23px 0 var(--toggle-color),
+          23px 0 0 var(--toggle-color), 
+          -23px 0 0 var(--toggle-color),
+          15px 15px 0 var(--toggle-color), 
+          -15px 15px 0 var(--toggle-color),
+          15px -15px 0 var(--toggle-color), 
+          -15px -15px 0 var(--toggle-color);
+        transform: scale(0);
+        transition: all 0.3s ease;
+      }
+    }
+
+    // --- Estado ativo (checked) ---
+    &:checked + div {
+      box-shadow: inset 32px -32px 0 0 var(--background-color);
+      transform: scale(0.5) rotate(0deg);
+      transition: transform 0.3s ease 0.1s, box-shadow 0.2s ease 0s;
+
+      &::before {
+        background: var(--toggle-color);
+        transition: background 0.3s ease 0.1s;
+      }
+
+      &::after {
+        transform: scale(1.5);
+        transition: transform 0.5s ease 0.15s;
+      }
+    }
+  }
+}
