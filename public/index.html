@@ -1,45 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal Portfolio">
-    <meta name="author" content="Edgard Maia">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Personal Portfolio" />
+    <meta name="author" content="Edgard Maia" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
-    <link
-      rel="preload"
-      href="assets/fonts/PIXELTWIST.TTF"
-      as="font"
-      type="font/ttf"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="styles/index.css"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript><link rel="stylesheet" href="styles/index.css" /></noscript>
+    <link rel="preload" href="assets/fonts/PIXELTWIST.TTF" as="font" type="font/ttf" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="../styles/_dark_mode.css" />
+    <link rel="stylesheet" href="../styles/index.css" media="print" onload="this.media='all'"/>
+    <noscript><link rel="stylesheet" href="../styles/index.css" /></noscript>
+    <link rel="preload" href="../js/dark_mode.js" as="script" />
+    <link rel="preload" href="../js/logo_animate.js" as="script" />
     <title>Edgard Maia - Portfólio Pessoal</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Cabeçalho Navegação -->
     <header class="cabecalho-container">
-        <div class="header-container">
-            <h1 class="logo">Edgard Maia</h1>
-            <nav 
-                class="menu-navegacao" 
-                id="menu-navegacao" 
-                role="navigation" 
-                aria-label="menu-principal"
-            >
-                <a href="#home" class="nav-link nav-home">Home</a>
-                <a href="#sobre-mim" class="nav-link nav-sobre">Sobre</a>
-                <a href="#projetos" class="nav-link nav-projetos">Projetos</a>
-                <a href="#contatos" class="nav-link nav-contatos">Contatos</a>
-                <a href="#home" class="nav-link nav-home">Home</a>
-            </nav>
-        </div>
+      <!-- Logo e itens de navegação -->
+      <div class="header-container">
+        <h1 class="logo">Edgard Maia</h1>
+        <nav
+          class="menu-navegacao"
+          id="menu-navegacao"
+          role="navigation"
+          aria-label="menu-principal"
+        >
+          <a href="#home" class="nav-link nav-home">home</a>
+          <a href="#sobre-mim" class="nav-link nav-sobre">sobre</a>
+          <a href="#projetos" class="nav-link nav-projetos">projetos</a>
+          <a href="#contatos" class="nav-link nav-contatos">contatos</a>
+        </nav>
+
+        <!-- Modo Claro/Escuro -->
+        <label class="toggle">
+          <input type="checkbox" />
+          <div></div>
+        </label>
+      </div>
     </header>
 
     <!-- Conteúdo Principal -->
@@ -47,6 +45,9 @@
 
     <!-- Rodapé -->
     <footer></footer>
-    
-</body>
+
+    <!-- Scripts -->
+    <script src="../js/dark_mode.js" defer></script>
+    <script src="../js/logo_animate.js" defer></script>
+  </body>
 </html>
