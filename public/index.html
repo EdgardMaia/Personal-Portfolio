@@ -41,13 +41,167 @@
     </header>
 
     <!-- Conteúdo Principal -->
-    <main></main>
+    <main class="conteudo-principal" id="home" role="conteudo-principal">
+      <!-- Conteiner Sessões -->
+      <div class="secoes-principais">
+        <!-- Seção Sobre Mim -->
+        <section
+          class="sobre-mim-container"
+          id="sobre-mim"
+          aria-labelledby="sobre-titulo"
+        >
+          <div class="sobre-mim-content">
+            <h1 id="sobre-titulo">Sobre Mim</h1>
+            <h2 class="sobre-subtitulo">Estudante</h2>
+            <p class="sobre-descricao">
+              Aspirante a profissional de tecnologia, almejo meu primeiro
+              emprego ou estágio para mergulhar nas diversas vertentes da
+              área.<br/>Comprometido em aprender, crescer e contribuir
+              efetivamente para o avanço tecnológico da equipe e da organização.
+            </p>
+
+            <div class="curriculo-container" id="link-curriculo">
+              <a
+                href="Curriculo.pdf"
+                download="Edgard_Maia_Curriculo.pdf"
+                class="botao-curriculo"
+                id="botao-curriculo"
+              >
+                <strong>Curriculo</strong>
+              </a>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
 
     <!-- Rodapé -->
-    <footer></footer>
+    <footer
+      class="rodape-container"
+      id="contatos"
+      role="contentinfo"
+      aria-labelledby="contatos-titulo"
+    >
+      <div class="footer-content">
+        <h1 id="contatos-titulo">Contatos</h1>
+
+        <!-- Links de Redes Sociais -->
+        <div
+          class="social-container"
+          role="list"
+          aria-label="Links para redes sociais e contatos"
+        >
+          <!-- Linkedin -->
+          <a
+            href="https://www.linkedin.com/in/edgard-maia/"
+            target="_blank"
+            aria-label="Perfil no LinkedIn"
+            rel="noopener noreferrer"
+            role="listitem"
+            class="social-link"
+            id="linkendin"
+          >
+            <i class="ri-linkedin-fill" aria-hidden="true"></i>
+          </a>
+
+          <!-- GitHub -->
+          <a
+            href="https://github.com/edgardmaia/"
+            target="_blank"
+            aria-label="Perfil no GitHub"
+            rel="noopener noreferrer"
+            role="listitem"
+            class="social-link"
+            id="github"
+          >
+            <i class="ri-github-fill" aria-hidden="true"></i>
+          </a>
+
+          <!-- Instagram -->
+          <a
+            href="https://www.instagram.com/_edgardmaia_/"
+            target="_blank"
+            aria-label="Perfil no Instagram"
+            rel="noopener noreferrer"
+            role="listitem"
+            class="social-link"
+            id="instagram"
+          >
+            <i class="ri-instagram-fill" aria-hidden="true"></i>
+          </a>
+
+          <!-- Gmail -->
+          <a
+            href="mailto:edgardmaiaa@gmail.com"
+            id="gmail"
+            class="social-link"
+            aria-label="Enviar email para Gmail"
+            class="social-link email-link"
+            role="listitem"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              viewBox="0 0 50 50"
+              aria-hidden="true"
+            >
+              <title>Gmail</title>
+              <path
+                d="M12 23.403V23.39 10.389L11.88 10.3h-.01L9.14 8.28C7.47 7.04 5.09 7.1 3.61 8.56 2.62 9.54 2 10.9 2 12.41v3.602L12 23.403zM38 23.39v.013l10-7.391V12.41c0-1.49-.6-2.85-1.58-3.83-1.46-1.457-3.765-1.628-5.424-.403L38.12 10.3 38 10.389V23.39zM14 24.868l10.406 7.692c.353.261.836.261 1.189 0L36 24.868V11.867L25 20l-11-8.133V24.868zM38 25.889V41c0 .552.448 1 1 1h6.5c1.381 0 2.5-1.119 2.5-2.5V18.497L38 25.889zM12 25.889L2 18.497V39.5C2 40.881 3.119 42 4.5 42H11c.552 0 1-.448 1-1V25.889z"
+              />
+            </svg>
+          </a>
+
+          <!-- Outlook -->
+          <a
+            href="mailto:edgard_maia@outlook.com"
+            id="outlook"
+            class="social-link"
+            aria-label="Enviar email para Outlook"
+            class="social-link email-link"
+            role="listitem"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              viewBox="0 0 48 48"
+              aria-hidden="true"
+            >
+              <title>Outlook</title>
+              <path
+                d="M 21.541016 4.0957031 C 21.277323 4.0910623 21.009427 4.1178181 20.740234 4.1777344 L 20.740234 4.1757812 L 7.5234375 7.1132812 C 5.4728994 7.5691225 4 9.4069339 4 11.507812 L 4 36.492188 C 4 38.593573 5.4735774 40.431028 7.5234375 40.886719 L 20.740234 43.824219 L 20.740234 43.822266 C 22.893773 44.301643 25 42.611755 25 40.40625 L 25 7.59375 C 25 5.663933 23.386864 4.1281887 21.541016 4.0957031 z M 28 11.050781 L 28 22.189453 L 31.509766 24.669922 L 44.990234 15.369141 C 44.900234 12.969141 42.92 11.050781 40.5 11.050781 L 28 11.050781 z M 14.5 16.5 C 17.584 16.5 20 20.014 20 24.5 C 20 28.986 17.584 32.5 14.5 32.5 C 11.416 32.5 9 28.986 9 24.5 C 9 20.014 11.416 16.5 14.5 16.5 z M 45 19.009766 L 32.349609 27.730469 C 32.099609 27.910469 31.8 28 31.5 28 C 31.2 28 30.890859 27.910703 30.630859 27.720703 L 28 25.859375 L 28 38.050781 L 40.5 38.050781 C 42.98 38.050781 45 36.030781 45 33.550781 L 45 19.009766 z M 14.5 19.5 C 13.32 19.5 12 21.638 12 24.5 C 12 27.362 13.32 29.5 14.5 29.5 C 15.68 29.5 17 27.362 17 24.5 C 17 21.638 15.68 19.5 14.5 19.5 z"
+              />
+            </svg>
+          </a>
+
+        </div>
+
+        <!-- Creditos -->
+         <div class="creditos">
+          <p>
+            &copy; 2025 Desenvolvido por <strong>Edgard Maia</strong><br />
+            Ícones obtidos através de
+            <a
+              href="https://icons8.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Icons8</a
+            >
+            |
+            <a
+              href="https://remixicon.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Remix Icon</a
+            >
+          </p>
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="../js/dark_mode.js" defer></script>
-    <script src="../js/logo_animate.js" defer></script>
   </body>
 </html>
