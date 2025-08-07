@@ -1,0 +1,177 @@
+// ==============================================
+// 🔄 CSS RESET - SCSS VERSION
+// ==============================================
+// Baseado no Eric Meyer's CSS Reset v2.0
+// Modernizado para SCSS com melhorias
+
+// --- Reset Universal ---
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+// ==============================================
+// 📋 MEYER'S CSS RESET v2.0
+// ==============================================
+// http://meyerweb.com/eric/tools/css/reset/
+// v2.0 | 20110126
+// License: none (public domain)
+
+// --- Elementos de estrutura e tipografia ---
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+// --- Listas e definições ---
+dl, dt, dd, ol, ul, li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+// --- Formulários ---
+fieldset, form, label, legend {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+// --- Tabelas ---
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+// --- Elementos HTML5 semânticos ---
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+// ==============================================
+// 🎨 CONFIGURAÇÕES ESPECÍFICAS
+// ==============================================
+
+// --- Display para elementos HTML5 (browsers antigos) ---
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+// --- Configurações do body ---
+body {
+  line-height: 1;
+}
+
+// --- Listas sem marcadores ---
+ol, ul {
+  list-style: none;
+}
+
+// --- Citações sem aspas automáticas ---
+blockquote, q {
+  quotes: none;
+
+  &::before,
+  &::after {
+    content: '';
+    content: none;
+  }
+}
+
+// --- Tabelas normalizadas ---
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+// ==============================================
+// ✨ MELHORIAS MODERNAS (SCSS)
+// ==============================================
+
+// --- Melhor renderização de fontes ---
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+// --- Imagens responsivas por padrão ---
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// --- Elementos de formulário herdando fonte ---
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+// --- Remover decoração padrão de botões ---
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+// --- Links sem decoração por padrão ---
+a {
+  text-decoration: none;
+  color: inherit;
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+// --- Melhor comportamento de scroll ---
+html {
+  scroll-behavior: smooth;
+  
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+}
+
+// --- Altura mínima para body ---
+body {
+  min-height: 100vh;
+  min-height: 100dvh; // Viewport dinâmico para mobile
+}
