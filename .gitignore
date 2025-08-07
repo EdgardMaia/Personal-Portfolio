@@ -47,3 +47,9 @@ Thumbs.db
 .env
 .env.*.local
 .env.local
+
+# -----------------------
+# 📁 Outros
+# -----------------------
+1-Backup/
+*.txt
