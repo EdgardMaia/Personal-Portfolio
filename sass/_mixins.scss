@@ -4,19 +4,21 @@
   top: 0;
   left: 0;
   right: 0;
-  width: calc(100vw - 6rem);
+  width: 100vw;
   height: auto;
-  margin: 3rem;
+  margin: 0;
   padding: 1.5rem 2.5rem;
-  border-radius: 20px;
-  background-color: var(--session-color);
-
-  // Box-shadow neumórfico
-  box-shadow: 
-  9px 9px 16px var(--shadow-dark),
-  -9px -9px 16px var(--shadow-light), inset -1px -1px 2px var(--shadow-dark),
-  inset 1px 1px 2px var(--shadow-light);
+  // border-radius: 20px;
+  // background-color: var(--session-color);
 }
+
+//   Box-shadow neumórfico
+//   box-shadow: 
+//   9px 9px 16px var(--shadow-dark),
+//   -9px -9px 16px var(--shadow-light), 
+//   inset -1px -1px 2px var(--shadow-dark),
+//   inset 1px 1px 2px var(--shadow-light);
+// }
 
 .cabecalho-container,
 .rodape-container {
@@ -30,7 +32,7 @@
   left: 15%;
   right: 15%;
   width: calc(100vw - 30%);
-  height: 40vw;
+  height: 33.4vw;
   margin: 0;
   padding: 1.5rem 2.5rem;
   border-radius: 20px;
@@ -39,7 +41,8 @@
   // Box-shadow neumórfico
   box-shadow: 
   9px 9px 16px var(--shadow-dark),
-  -9px -9px 16px var(--shadow-light), inset -1px -1px 2px var(--shadow-dark),
+  -9px -9px 16px var(--shadow-light), 
+  inset -1px -1px 2px var(--shadow-dark),
   inset 1px 1px 2px var(--shadow-light);
 }
 
