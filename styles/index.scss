@@ -14,6 +14,7 @@
 // --- Prevenção de scroll horizontal ---
 html {
   overflow-x: hidden;
+  overflow-y: hidden;
   width: 100%;
 }
 
@@ -28,8 +29,12 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden; // Prevenir scroll horizontal
+  overflow-y: hidden; // Prevenir scroll vertical
   width: 100%;
   transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 
   h1 {
     font-family: "Pixel Twist";
@@ -56,7 +61,7 @@ header.cabecalho-container {
 
   a {
     position: relative;
-    right: -70%;
+    right: -65vh;
     display: inline-block;
     margin: 0 1rem;
     transition: all 0.3s ease;
@@ -78,10 +83,11 @@ footer.rodape-container {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 2rem 0 3rem 0;
+  margin-top: 1rem;
 
   h1 {
-    margin: 1rem 0 1.5rem 0;
+    margin: 0 0 1rem 0;
     text-align: center;
   }
 
