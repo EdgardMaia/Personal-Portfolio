@@ -19,27 +19,17 @@
     <noscript><link rel="stylesheet" href="../styles/index.css" /></noscript>
     <!-- Pré-carregamento dos scripts JavaScript -->
     <link rel="preload" href="../js/dark_mode.js" as="script" />
-    <link rel="preload" href="../js/logo_animate.js" as="script" />
+    <!-- <link rel="preload" href="../js/joystick.js" as="script" /> -->
     <!-- Título da página -->
     <title>Edgard Maia - Portfólio Pessoal</title>
   </head>
   <body>
+
     <!-- Cabeçalho Navegação -->
     <header class="cabecalho-container">
       <!-- Logo e itens de navegação -->
       <div class="header-container">
         <h1 class="logo">Edgard Maia</h1>
-        <nav
-          class="menu-navegacao"
-          id="menu-navegacao"
-          role="navigation"
-          aria-label="menu-principal"
-        >
-          <a href="#" class="nav-link nav-home">home</a>
-          <a href="#" class="nav-link nav-sobre">sobre</a>
-          <a href="#" class="nav-link nav-projetos">projetos</a>
-          <!-- <a href="#contatos" class="nav-link nav-contatos">contatos</a> -->
-        </nav>
 
         <!-- Modo Claro/Escuro -->
         <label class="toggle">
@@ -51,38 +41,25 @@
 
     <!-- Conteúdo Principal -->
     <main class="conteudo-principal" id="home" role="conteudo-principal">
-      <!-- Conteiner Sessões -->
-      <div class="secoes-principais">
-        <!-- Seção Sobre Mim -->
-        <section
-          class="sobre-mim-container"
-          id="sobre-mim"
-          aria-labelledby="sobre-titulo"
-        >
-          <div class="sobre-mim-content">
-            <h1 id="sobre-titulo">Sobre Mim</h1>
-            <h2 class="sobre-subtitulo">Estudante</h2>
-            <p class="sobre-descricao">
-              Aspirante a profissional de tecnologia, almejo meu primeiro
-              emprego ou estágio para mergulhar nas diversas vertentes da
-              área.<br/>Comprometido em aprender, crescer e contribuir
-              efetivamente para o avanço tecnológico da equipe e da organização.
-            </p>
 
-            <div class="curriculo-container" id="link-curriculo">
-              <a
-                href="Curriculo.pdf"
-                download="Edgard_Maia_Curriculo.pdf"
-                class="botao-curriculo"
-                id="botao-curriculo"
-              >
-                <strong>Curriculo</strong>
-              </a>
-            </div>
-          </div>
-        </section>
+      <scroll-container class="apresentacao">
+        <scroll-page id="Introducao">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quibusdam, asperiores error saepe culpa eos dolor qui molestias explicabo debitis perferendis nisi repellendus accusamus architecto aperiam, reiciendis quos ipsa a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nostrum similique, ipsam cum dolore officiis maxime omnis saepe! Quia eum similique fugit molestiae odio, possimus quae quod blanditiis illo pariatur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quibusdam, asperiores error saepe culpa eos dolor qui molestias explicabo debitis perferendis nisi repellendus accusamus architecto aperiam, reiciendis quos ipsa a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nostrum similique, ipsam cum dolore officiis maxime omnis saepe! Quia eum similique fugit molestiae odio, possimus quae quod blanditiis illo pariatur!</scroll-page>
+        <scroll-page id="Formacao">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quibusdam, asperiores error saepe culpa eos dolor qui molestias explicabo debitis perferendis nisi repellendus accusamus architecto aperiam, reiciendis quos ipsa a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nostrum similique, ipsam cum dolore officiis maxime omnis saepe! Quia eum similique fugit molestiae odio, possimus quae quod blanditiis illo pariatur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quibusdam, asperiores error saepe culpa eos dolor qui molestias explicabo debitis perferendis nisi repellendus accusamus architecto aperiam, reiciendis quos ipsa a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nostrum similique, ipsam cum dolore officiis maxime omnis saepe! Quia eum similique fugit molestiae odio, possimus quae quod blanditiis illo pariatur!</scroll-page>
+        <scroll-page id="Habilidades">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quibusdam, asperiores error saepe culpa eos dolor qui molestias explicabo debitis perferendis nisi repellendus accusamus architecto aperiam, reiciendis quos ipsa a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nostrum similique, ipsam cum dolore officiis maxime omnis saepe! Quia eum similique fugit molestiae odio, possimus quae quod blanditiis illo pariatur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quibusdam, asperiores error saepe culpa eos dolor qui molestias explicabo debitis perferendis nisi repellendus accusamus architecto aperiam, reiciendis quos ipsa a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nostrum similique, ipsam cum dolore officiis maxime omnis saepe! Quia eum similique fugit molestiae odio, possimus quae quod blanditiis illo pariatur!</scroll-page>
+        <scroll-page id="Projetos">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quibusdam, asperiores error saepe culpa eos dolor qui molestias explicabo debitis perferendis nisi repellendus accusamus architecto aperiam, reiciendis quos ipsa a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nostrum similique, ipsam cum dolore officiis maxime omnis saepe! Quia eum similique fugit molestiae odio, possimus quae quod blanditiis illo pariatur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quibusdam, asperiores error saepe culpa eos dolor qui molestias explicabo debitis perferendis nisi repellendus accusamus architecto aperiam, reiciendis quos ipsa a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nostrum similique, ipsam cum dolore officiis maxime omnis saepe! Quia eum similique fugit molestiae odio, possimus quae quod blanditiis illo pariatur!</scroll-page>
+        <scroll-page id="Curiosidades">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quibusdam, asperiores error saepe culpa eos dolor qui molestias explicabo debitis perferendis nisi repellendus accusamus architecto aperiam, reiciendis quos ipsa a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nostrum similique, ipsam cum dolore officiis maxime omnis saepe! Quia eum similique fugit molestiae odio, possimus quae quod blanditiis illo pariatur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quibusdam, asperiores error saepe culpa eos dolor qui molestias explicabo debitis perferendis nisi repellendus accusamus architecto aperiam, reiciendis quos ipsa a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nostrum similique, ipsam cum dolore officiis maxime omnis saepe! Quia eum similique fugit molestiae odio, possimus quae quod blanditiis illo pariatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quibusdam, asperiores error saepe culpa eos dolor qui molestias explicabo debitis perferendis nisi repellendus accusamus architecto aperiam, reiciendis quos ipsa a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nostrum similique, ipsam cum dolore officiis maxime omnis saepe! Quia eum similique fugit molestiae odio, possimus quae quod blanditiis illo pariatur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quibusdam, asperiores error saepe culpa eos dolor qui molestias explicabo debitis perferendis nisi repellendus accusamus architecto aperiam, reiciendis quos ipsa a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nostrum similique, ipsam cum dolore officiis maxime omnis saepe! Quia eum similique fugit molestiae odio, possimus quae quod blanditiis illo pariatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quibusdam, asperiores error saepe culpa eos dolor qui molestias explicabo debitis perferendis nisi repellendus accusamus architecto aperiam, reiciendis quos ipsa a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nostrum similique, ipsam cum dolore officiis maxime omnis saepe! Quia eum similique fugit molestiae odio, possimus quae quod blanditiis illo pariatur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quibusdam, asperiores error saepe culpa eos dolor qui molestias explicabo debitis perferendis nisi repellendus accusamus architecto aperiam, reiciendis quos ipsa a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nostrum similique, ipsam cum dolore officiis maxime omnis saepe! Quia eum similique fugit molestiae odio, possimus quae quod blanditiis illo pariatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quibusdam, asperiores error saepe culpa eos dolor qui molestias explicabo debitis perferendis nisi repellendus accusamus architecto aperiam, reiciendis quos ipsa a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nostrum similique, ipsam cum dolore officiis maxime omnis saepe! Quia eum similique fugit molestiae odio, possimus quae quod blanditiis illo pariatur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quibusdam, asperiores error saepe culpa eos dolor qui molestias explicabo debitis perferendis nisi repellendus accusamus architecto aperiam, reiciendis quos ipsa a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nostrum similique, ipsam cum dolore officiis maxime omnis saepe! Quia eum similique fugit molestiae odio, possimus quae quod blanditiis illo pariatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quibusdam, asperiores error saepe culpa eos dolor qui molestias explicabo debitis perferendis nisi repellendus accusamus architecto aperiam, reiciendis quos ipsa a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nostrum similique, ipsam cum dolore officiis maxime omnis saepe! Quia eum similique fugit molestiae odio, possimus quae quod blanditiis illo pariatur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quibusdam, asperiores error saepe culpa eos dolor qui molestias explicabo debitis perferendis nisi repellendus accusamus architecto aperiam, reiciendis quos ipsa a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nostrum similique, ipsam cum dolore officiis maxime omnis saepe! Quia eum similique fugit molestiae odio, possimus quae quod blanditiis illo pariatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quibusdam, asperiores error saepe culpa eos dolor qui molestias explicabo debitis perferendis nisi repellendus accusamus architecto aperiam, reiciendis quos ipsa a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nostrum similique, ipsam cum dolore officiis maxime omnis saepe! Quia eum similique fugit molestiae odio, possimus quae quod blanditiis illo pariatur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quibusdam, asperiores error saepe culpa eos dolor qui molestias explicabo debitis perferendis nisi repellendus accusamus architecto aperiam, reiciendis quos ipsa a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nostrum similique, ipsam cum dolore officiis maxime omnis saepe! Quia eum similique fugit molestiae odio, possimus quae quod blanditiis illo pariatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quibusdam, asperiores error saepe culpa eos dolor qui molestias explicabo debitis perferendis nisi repellendus accusamus architecto aperiam, reiciendis quos ipsa a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nostrum similique, ipsam cum dolore officiis maxime omnis saepe! Quia eum similique fugit molestiae odio, possimus quae quod blanditiis illo pariatur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quibusdam, asperiores error saepe culpa eos dolor qui molestias explicabo debitis perferendis nisi repellendus accusamus architecto aperiam, reiciendis quos ipsa a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nostrum similique, ipsam cum dolore officiis maxime omnis saepe! Quia eum similique fugit molestiae odio, possimus quae quod blanditiis illo pariatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quibusdam, asperiores error saepe culpa eos dolor qui molestias explicabo debitis perferendis nisi repellendus accusamus architecto aperiam, reiciendis quos ipsa a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nostrum similique, ipsam cum dolore officiis maxime omnis saepe! Quia eum similique fugit molestiae odio, possimus quae quod blanditiis illo pariatur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quibusdam, asperiores error saepe culpa eos dolor qui molestias explicabo debitis perferendis nisi repellendus accusamus architecto aperiam, reiciendis quos ipsa a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nostrum similique, ipsam cum dolore officiis maxime omnis saepe! Quia eum similique fugit molestiae odio, possimus quae quod blanditiis illo pariatur!</scroll-page>
+      </scroll-container>
 
-      </div>
+      <nav class="navegacao-secao">
+        <ul class="menu">
+          <li><a href="#Introducao"><span>Introducao .1</span></a></li>
+          <li><a href="#Formacao"><span>Formacao .2</span></a></li>
+          <li><a href="#Habilidades"><span>Habilidades .3</span></a></li>
+          <li><a href="#Projetos"><span>Projetos .4</span></a></li>
+          <li><a href="#Curiosidades"><span>Curiosidades .5</span></a></li>
+        </ul>
+      </nav>
+
     </main>
 
     <!-- Rodapé -->
@@ -211,6 +188,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="../js/dark_mode.js" defer></script>
+    <script type="module" src="../js/dark_mode.js" defer></script>
   </body>
 </html>
