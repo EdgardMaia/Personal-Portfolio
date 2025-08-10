@@ -264,7 +264,7 @@ html.dark svg path {
 .toggle input:checked + div {
   box-shadow: inset 32px -32px 0 0 var(--background-color);
   transform: scale(0.5) rotate(0deg);
-  transition: transform 0.3s ease 0.1s, box-shadow 0.2s ease 0s;
+  transition: transform 0.3s ease 0.1s, box-shadow 0.2s ease z0s;
 }
 .toggle input:checked + div::before {
   background: var(--toggle-color);
@@ -346,7 +346,7 @@ main.conteudo-principal {
   display: flex;
   align-items: center;
 }
-main.conteudo-principal scroll-container.apresentacao {
+main.conteudo-principal .apresentacao {
   flex: 1;
   display: block;
   margin: 0 auto;
@@ -357,35 +357,71 @@ main.conteudo-principal scroll-container.apresentacao {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-main.conteudo-principal scroll-container.apresentacao::-webkit-scrollbar {
+main.conteudo-principal .apresentacao::-webkit-scrollbar {
   display: none;
 }
-main.conteudo-principal scroll-container.apresentacao scroll-page {
+main.conteudo-principal .apresentacao scroll-page {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 5rem;
 }
-main.conteudo-principal nav {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  margin-left: 2rem;
+main.conteudo-principal .navegacao-secao {
+  position: fixed;
+  right: 15%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 50;
+  text-align: right;
 }
-main.conteudo-principal li {
+main.conteudo-principal .navegacao-secao .menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+main.conteudo-principal .navegacao-secao .menu li {
+  margin: 0.6rem 0;
   transition: all 0.3s ease;
 }
-main.conteudo-principal li:hover {
-  transform: translateY(-5px);
+main.conteudo-principal .navegacao-secao .menu li a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  transition: transform 0.28s cubic-bezier(0.2, 0.9, 0.3, 1), box-shadow 0.28s, color 0.2s;
+  transform: translateY(0);
+  color: var(--text-color);
+}
+main.conteudo-principal .navegacao-secao .menu li a::after {
+  content: "";
+  display: block;
+  height: 2.5px;
+  width: 0;
+  margin-top: 5px;
+  background: currentColor;
+  transition: width 0.28s;
+}
+main.conteudo-principal .navegacao-secao .menu li a:hover {
+  transform: translateY(-8px);
   font-weight: 700;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
 }
-main.conteudo-principal li:active {
-  transform: translateY(5px);
-  font-weight: 500;
+main.conteudo-principal .navegacao-secao .menu li a:hover::after {
+  width: 100%;
 }
-main.conteudo-principal span, main.conteudo-principal p {
-  line-height: 1.5;
+main.conteudo-principal .navegacao-secao .menu li a:active {
+  transform: translateY(3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+main.conteudo-principal .navegacao-secao .menu li a.active {
+  font-weight: 700;
+  color: var(--text-color);
+  background-color: rgba(var(--text-color), 0.1);
+}
+main.conteudo-principal .navegacao-secao .menu li a.active::after {
+  width: 100%;
+}
+main.conteudo-principal .navegacao-secao .menu li a span {
   font-family: "Raleway", sans-serif;
   font-size: 16px;
 }

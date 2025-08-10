@@ -26,7 +26,7 @@
 }
 
 // --- Sections ---
-@mixin layout-section {
+@mixin layout-main {
   position: relative;
   top: 0;
   left: 15%;
@@ -47,5 +47,9 @@
 }
 
 .conteudo-principal {
-  @include layout-section;
+  @include layout-main;
+}
+
+@mixin responsividade {
+  
 }

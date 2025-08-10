@@ -193,7 +193,7 @@ html.dark {
     &:checked + div {
       box-shadow: inset 32px -32px 0 0 var(--background-color);
       transform: scale(0.5) rotate(0deg);
-      transition: transform 0.3s ease 0.1s, box-shadow 0.2s ease 0s;
+      transition: transform 0.3s ease 0.1s, box-shadow 0.2s ease z0s;
 
       &::before {
         background: var(--toggle-color);
