@@ -1,0 +1,30 @@
+@mixin scroll-layout {
+    // --- Paleta scrollbar ---
+    $sb-track-color: #ffffff;
+    $sb-thumb-color: #000000;
+    $sb-size: 10px;
+
+    // Estilo do scrollbar aplicado corretamente
+    &::-webkit-scrollbar {
+      width: $sb-size;
+    }
+
+    // &::-webkit-scrollbar-track {
+    //   background: $sb-track-color;
+    //   border-radius: 3px;
+    // }
+
+    &::-webkit-scrollbar-thumb {
+      background: $sb-thumb-color;
+      border-radius: 3px;
+    }
+
+    @supports not selector(::-webkit-scrollbar) {
+      scrollbar-color: $sb-thumb-color, $sb-track-color;
+      scrollbar-width: thin;
+    }
+}
+
+.apresentacao {
+  @include scroll-layout();
+}

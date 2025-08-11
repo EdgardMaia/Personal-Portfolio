@@ -284,7 +284,7 @@ html.dark svg path {
   width: 100vw;
   height: auto;
   margin: 0;
-  padding: 1.5rem 2.5rem;
+  padding: 1.5rem 5% 2rem 5%;
 }
 
 .conteudo-principal {
@@ -301,9 +301,23 @@ html.dark svg path {
   box-shadow: 9px 9px 16px var(--shadow-dark), -9px -9px 16px var(--shadow-light), inset -1px -1px 2px var(--shadow-dark), inset 1px 1px 2px var(--shadow-light);
 }
 
+.apresentacao::-webkit-scrollbar {
+  width: 10px;
+}
+.apresentacao::-webkit-scrollbar-thumb {
+  background: #000000;
+  border-radius: 3px;
+}
+@supports not selector(::-webkit-scrollbar) {
+  .apresentacao {
+    scrollbar-color: #000000, #ffffff;
+    scrollbar-width: thin;
+  }
+}
+
 @font-face {
   font-family: "Pixel Twist";
-  src: url("../fonts/PIXELTWIST.TTF") format("truetype");
+  src: url("../assets/fonts/PIXELTWIST.TTF") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -340,11 +354,16 @@ header.cabecalho-container .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 main.conteudo-principal {
   display: flex;
   align-items: center;
+  min-height: 0;
+  overflow: hidden;
 }
 main.conteudo-principal .apresentacao {
   flex: 1;
@@ -352,35 +371,59 @@ main.conteudo-principal .apresentacao {
   margin: 0 auto;
   text-align: center;
   height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
   scroll-behavior: smooth;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-main.conteudo-principal .apresentacao::-webkit-scrollbar {
-  display: none;
 }
 main.conteudo-principal .apresentacao scroll-page {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5rem;
+  display: block;
+  position: relative;
+  min-height: 300px;
+  width: 85%;
+  left: 15%;
+  margin-bottom: 5rem;
+  border: 2px solid #ff6b6b;
+}
+main.conteudo-principal .apresentacao scroll-page div {
+  background-color: #ff9999;
+  padding: 2rem;
+  margin: 1rem;
+  min-height: 550px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: white;
+  font-size: 5rem;
+}
+main.conteudo-principal .apresentacao scroll-page#Introducao div {
+  background-color: #042326 !important;
+}
+main.conteudo-principal .apresentacao scroll-page#Formacao div {
+  background-color: #0A3A40 !important;
+}
+main.conteudo-principal .apresentacao scroll-page#Habilidades div {
+  background-color: #0F5959 !important;
+}
+main.conteudo-principal .apresentacao scroll-page#Projetos div {
+  background-color: #1D7373 !important;
+}
+main.conteudo-principal .apresentacao scroll-page#Curiosidades div {
+  background-color: #107361 !important;
 }
 main.conteudo-principal .navegacao-secao {
   position: fixed;
-  right: 15%;
-  top: 50%;
-  transform: translateY(-50%);
+  left: 17vw;
+  top: 30%;
   z-index: 50;
-  text-align: right;
+  text-align: left;
 }
 main.conteudo-principal .navegacao-secao .menu {
-  list-style: none;
+  list-style: decimal;
   padding: 0;
   margin: 0;
 }
 main.conteudo-principal .navegacao-secao .menu li {
-  margin: 0.6rem 0;
+  margin: 0.5rem 0;
   transition: all 0.3s ease;
 }
 main.conteudo-principal .navegacao-secao .menu li a {
@@ -395,11 +438,11 @@ main.conteudo-principal .navegacao-secao .menu li a {
 main.conteudo-principal .navegacao-secao .menu li a::after {
   content: "";
   display: block;
-  height: 2.5px;
   width: 0;
+  height: 3px;
   margin-top: 5px;
   background: currentColor;
-  transition: width 0.28s;
+  transition: width 0.3s ease-out;
 }
 main.conteudo-principal .navegacao-secao .menu li a:hover {
   transform: translateY(-8px);
@@ -433,6 +476,11 @@ footer.rodape-container {
   justify-content: center;
   padding: 2rem 0 3rem 0;
   margin-top: 1rem;
+  position: absolute;
+  top: 80vh;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 footer.rodape-container h1 {
   margin: 0 0 1rem 0;
@@ -530,7 +578,8 @@ footer.rodape-container .social-container .social-link#outlook:active svg {
   transform: translateY(2px);
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
 }
-footer.rodape-container .creditos p, footer.rodape-container .creditos a {
+footer.rodape-container .creditos p,
+footer.rodape-container .creditos a {
   color: var(--text-color);
   font-size: 1rem;
   text-align: center;
@@ -541,4 +590,4 @@ footer.rodape-container .creditos p, footer.rodape-container .creditos a {
 }
 footer.rodape-container .creditos a {
   font-weight: 700;
-}/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=main.css.map */

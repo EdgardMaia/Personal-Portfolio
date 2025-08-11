@@ -7,18 +7,16 @@
   width: 100vw;
   height: auto;
   margin: 0;
-  padding: 1.5rem 2.5rem;
+  padding: 1.5rem 5% 2rem 5%;
+
   // border-radius: 20px;
   // background-color: var(--session-color);
+  // box-shadow: 
+  // 9px 9px 16px var(--shadow-dark),
+  // -9px -9px 16px var(--shadow-light), 
+  // inset -1px -1px 2px var(--shadow-dark),
+  // inset 1px 1px 2px var(--shadow-light);
 }
-
-//   Box-shadow neumórfico
-//   box-shadow: 
-//   9px 9px 16px var(--shadow-dark),
-//   -9px -9px 16px var(--shadow-light), 
-//   inset -1px -1px 2px var(--shadow-dark),
-//   inset 1px 1px 2px var(--shadow-light);
-// }
 
 .cabecalho-container,
 .rodape-container {
@@ -48,8 +46,4 @@
 
 .conteudo-principal {
   @include layout-main;
-}
-
-@mixin responsividade {
-  
 }
