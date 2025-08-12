@@ -3,7 +3,6 @@
 @use "./utils/dark_mode";
 @use "./utils/layout";
 @use "./utils/scroll_design";
-@use "./utils/responsividade";
 @import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 @font-face {
   font-family: "Pixel Twist";
@@ -27,18 +26,15 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
   display: flex;
   flex-direction: column;
-  @include resp.responsive-padding(2rem, 1.2rem, 0.5rem);
 
   h1 {
     font-family: "Pixel Twist";
-    @include resp.responsive-font(2.2rem, 1.7rem, 1.3rem);
     margin: 0;
     color: var(--text-color);
   }
 
   a {
     font-family: "Pixel Twist";
-    @include resp.responsive-font(1.5rem, 1.1rem, 1rem);
     text-decoration: none;
     color: var(--text-color);
   }
@@ -47,14 +43,9 @@ body {
 // --- Cabeçalho da página ---
 header.cabecalho-container {
   .header-container {
-    @include resp.flex-responsive(row, wrap, space-between, center);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    @include resp.responsive-padding(2rem 5%, 1.2rem 2%, 0.7rem 1%);
-  }
-  @include resp.media-max(md) {
-    padding: 0.7rem 1%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
   }
 }
 
@@ -63,11 +54,6 @@ main.conteudo-principal {
   align-items: center;
   min-height: 0;
   overflow: hidden;
-  @include resp.responsive-padding(2.5rem, 1.2rem, 0.5rem);
-  @include resp.media-max(md) {
-    flex-direction: column;
-    align-items: stretch;
-  }
 
   .apresentacao {
     flex: 1;
@@ -79,10 +65,6 @@ main.conteudo-principal {
     overflow-x: hidden;
     overscroll-behavior: contain;
     scroll-behavior: smooth;
-    @include resp.responsive-padding(2rem, 1rem, 0.5rem);
-    @include resp.media-max(sm) {
-      font-size: 0.95rem;
-    }
 
     scroll-page {
       display: block;
@@ -129,14 +111,6 @@ main.conteudo-principal {
     top: 30%;
     z-index: 50;
     text-align: left;
-    @include resp.media-max(md) {
-      left: 2vw;
-      top: 10%;
-      font-size: 0.95rem;
-    }
-    @include resp.media-max(sm) {
-      display: none;
-    }
 
     .menu {
       list-style: decimal;
@@ -194,7 +168,6 @@ main.conteudo-principal {
 
           span {
             font-family: "Raleway", sans-serif;
-            @include resp.responsive-font(16px, 15px, 13px);
           }
         }
       }
@@ -204,20 +177,14 @@ main.conteudo-principal {
 
 // --- Rodapé da página ---
 footer.rodape-container {
-  // Layout centralizado usando flexbox
-  @include resp.flex-responsive(column, nowrap, center, center);
-  @include resp.responsive-padding(
-    2rem 0 3rem 0,
-    1.2rem 0 2rem 0,
-    0.7rem 0 1rem 0
-  );
-  margin-top: 1rem;
 
   position: absolute;
-  top: 80vh;
+  top: auto;
   bottom: 0;
   left: 0;
   right: 0;
+  padding-bottom: 0;
+  padding-top: 0;
 
   h1 {
     margin: 0 0 1rem 0;
@@ -228,18 +195,15 @@ footer.rodape-container {
     text-decoration: none;
   }
 
-  svg {
-    width: 48px;
-    height: auto;
+  svg, i {
+    width: 3rem;
+    height: 3rem;
   }
 
   .social-container {
-    @include resp.flex-responsive(row, wrap, center, center);
+   
     gap: 1rem;
     margin: 0;
-    @include resp.media-max(sm) {
-      gap: 0.5rem;
-    }
 
     .social-link {
       display: flex;
@@ -370,17 +334,10 @@ footer.rodape-container {
     p,
     a {
       color: var(--text-color);
-      @include resp.responsive-font(1rem, 0.95rem, 0.85rem);
       text-align: center;
       margin: 1rem 0 0 0;
       font-family: "Raleway", sans-serif;
       line-height: 1.5;
-      @include resp.media-max(md) {
-        margin: 0.7rem 0 0 0;
-      }
-      @include resp.media-max(sm) {
-        margin: 0.4rem 0 0 0;
-      }
     }
 
     a {
@@ -388,3 +345,4 @@ footer.rodape-container {
     }
   }
 }
+@use "./utils/responsive";
