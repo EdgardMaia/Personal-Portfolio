@@ -286,6 +286,18 @@ html.dark svg path {
   margin: 0;
   padding: 1.5rem 5% 2rem 5%;
 }
+@media (max-width: 768px) {
+  .cabecalho-container,
+  .rodape-container {
+    padding: 1rem 2% 1.5rem 2%;
+  }
+}
+@media (max-width: 480px) {
+  .cabecalho-container,
+  .rodape-container {
+    padding: 0.7rem 1% 1rem 1%;
+  }
+}
 
 .conteudo-principal {
   position: relative;
@@ -299,6 +311,32 @@ html.dark svg path {
   border-radius: 20px;
   background-color: var(--session-color);
   box-shadow: 9px 9px 16px var(--shadow-dark), -9px -9px 16px var(--shadow-light), inset -1px -1px 2px var(--shadow-dark), inset 1px 1px 2px var(--shadow-light);
+}
+@media (max-width: 768px) {
+  .conteudo-principal {
+    padding: 1rem 1.2rem;
+  }
+}
+@media (max-width: 480px) {
+  .conteudo-principal {
+    padding: 0.7rem 0.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .conteudo-principal {
+    left: 2%;
+    right: 2%;
+    width: 96vw;
+    height: auto;
+  }
+}
+@media (max-width: 480px) {
+  .conteudo-principal {
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: auto;
+  }
 }
 
 .apresentacao::-webkit-scrollbar {
@@ -335,7 +373,17 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  padding: 2rem;
+}
+@media (max-width: 768px) {
+  body {
+    padding: 1.2rem;
+  }
+}
+@media (max-width: 480px) {
+  body {
+    padding: 0.5rem;
+  }
 }
 body h1 {
   font-family: "Pixel Twist";
@@ -343,20 +391,58 @@ body h1 {
   margin: 0;
   color: var(--text-color);
 }
+@media (max-width: 768px) {
+  body h1 {
+    font-size: 1.7rem;
+  }
+}
+@media (max-width: 480px) {
+  body h1 {
+    font-size: 1.3rem;
+  }
+}
 body a {
   font-family: "Pixel Twist";
   font-size: 1.5rem;
   text-decoration: none;
   color: var(--text-color);
 }
+@media (max-width: 768px) {
+  body a {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 480px) {
+  body a {
+    font-size: 1rem;
+  }
+}
 
 header.cabecalho-container .header-container {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   position: sticky;
   top: 0;
   z-index: 100;
+  padding: 2rem 5%;
+}
+@media (max-width: 768px) {
+  header.cabecalho-container .header-container {
+    padding: 1.2rem 2%;
+  }
+}
+@media (max-width: 480px) {
+  header.cabecalho-container .header-container {
+    padding: 0.7rem 1%;
+  }
+}
+@media (max-width: 768px) {
+  header.cabecalho-container {
+    padding: 0.7rem 1%;
+  }
 }
 
 main.conteudo-principal {
@@ -364,6 +450,23 @@ main.conteudo-principal {
   align-items: center;
   min-height: 0;
   overflow: hidden;
+  padding: 2.5rem;
+}
+@media (max-width: 768px) {
+  main.conteudo-principal {
+    padding: 1.2rem;
+  }
+}
+@media (max-width: 480px) {
+  main.conteudo-principal {
+    padding: 0.5rem;
+  }
+}
+@media (max-width: 768px) {
+  main.conteudo-principal {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
 main.conteudo-principal .apresentacao {
   flex: 1;
@@ -375,6 +478,22 @@ main.conteudo-principal .apresentacao {
   overflow-x: hidden;
   overscroll-behavior: contain;
   scroll-behavior: smooth;
+  padding: 2rem;
+}
+@media (max-width: 768px) {
+  main.conteudo-principal .apresentacao {
+    padding: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  main.conteudo-principal .apresentacao {
+    padding: 0.5rem;
+  }
+}
+@media (max-width: 480px) {
+  main.conteudo-principal .apresentacao {
+    font-size: 0.95rem;
+  }
 }
 main.conteudo-principal .apresentacao scroll-page {
   display: block;
@@ -399,13 +518,13 @@ main.conteudo-principal .apresentacao scroll-page#Introducao div {
   background-color: #042326 !important;
 }
 main.conteudo-principal .apresentacao scroll-page#Formacao div {
-  background-color: #0A3A40 !important;
+  background-color: #0a3a40 !important;
 }
 main.conteudo-principal .apresentacao scroll-page#Habilidades div {
-  background-color: #0F5959 !important;
+  background-color: #0f5959 !important;
 }
 main.conteudo-principal .apresentacao scroll-page#Projetos div {
-  background-color: #1D7373 !important;
+  background-color: #1d7373 !important;
 }
 main.conteudo-principal .apresentacao scroll-page#Curiosidades div {
   background-color: #107361 !important;
@@ -416,6 +535,18 @@ main.conteudo-principal .navegacao-secao {
   top: 30%;
   z-index: 50;
   text-align: left;
+}
+@media (max-width: 768px) {
+  main.conteudo-principal .navegacao-secao {
+    left: 2vw;
+    top: 10%;
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 480px) {
+  main.conteudo-principal .navegacao-secao {
+    display: none;
+  }
 }
 main.conteudo-principal .navegacao-secao .menu {
   list-style: decimal;
@@ -468,12 +599,23 @@ main.conteudo-principal .navegacao-secao .menu li a span {
   font-family: "Raleway", sans-serif;
   font-size: 16px;
 }
+@media (max-width: 768px) {
+  main.conteudo-principal .navegacao-secao .menu li a span {
+    font-size: 15px;
+  }
+}
+@media (max-width: 480px) {
+  main.conteudo-principal .navegacao-secao .menu li a span {
+    font-size: 13px;
+  }
+}
 
 footer.rodape-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  flex-wrap: nowrap;
   justify-content: center;
+  align-items: center;
   padding: 2rem 0 3rem 0;
   margin-top: 1rem;
   position: absolute;
@@ -481,6 +623,16 @@ footer.rodape-container {
   bottom: 0;
   left: 0;
   right: 0;
+}
+@media (max-width: 768px) {
+  footer.rodape-container {
+    padding: 1.2rem 0 2rem 0;
+  }
+}
+@media (max-width: 480px) {
+  footer.rodape-container {
+    padding: 0.7rem 0 1rem 0;
+  }
 }
 footer.rodape-container h1 {
   margin: 0 0 1rem 0;
@@ -495,10 +647,17 @@ footer.rodape-container svg {
 }
 footer.rodape-container .social-container {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 1rem;
   margin: 0;
+}
+@media (max-width: 480px) {
+  footer.rodape-container .social-container {
+    gap: 0.5rem;
+  }
 }
 footer.rodape-container .social-container .social-link {
   display: flex;
@@ -585,8 +744,31 @@ footer.rodape-container .creditos a {
   text-align: center;
   margin: 1rem 0 0 0;
   font-family: "Raleway", sans-serif;
-  font-size: 16px;
   line-height: 1.5;
+}
+@media (max-width: 768px) {
+  footer.rodape-container .creditos p,
+  footer.rodape-container .creditos a {
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 480px) {
+  footer.rodape-container .creditos p,
+  footer.rodape-container .creditos a {
+    font-size: 0.85rem;
+  }
+}
+@media (max-width: 768px) {
+  footer.rodape-container .creditos p,
+  footer.rodape-container .creditos a {
+    margin: 0.7rem 0 0 0;
+  }
+}
+@media (max-width: 480px) {
+  footer.rodape-container .creditos p,
+  footer.rodape-container .creditos a {
+    margin: 0.4rem 0 0 0;
+  }
 }
 footer.rodape-container .creditos a {
   font-weight: 700;
