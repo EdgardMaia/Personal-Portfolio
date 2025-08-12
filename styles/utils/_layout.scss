@@ -1,4 +1,4 @@
-@use "../utils/responsividade" as responsividade;
+@use "../utils/responsive";
 
 // --- Mixins ---
 @mixin layout-header-footer {
@@ -9,19 +9,7 @@
   width: 100vw;
   height: auto;
   margin: 0;
-  @include responsividade.responsive-padding(
-    1.5rem 5% 2rem 5%,
-    1rem 2% 1.5rem 2%,
-    0.7rem 1% 1rem 1%
-);
-
-  // border-radius: 20px;
-  // background-color: var(--session-color);
-  // box-shadow:
-  // 9px 9px 16px var(--shadow-dark),
-  // -9px -9px 16px var(--shadow-light),
-  // inset -1px -1px 2px var(--shadow-dark),
-  // inset 1px 1px 2px var(--shadow-light);
+  padding: 0;
 }
 
 .cabecalho-container,
@@ -38,33 +26,78 @@
   width: calc(100vw - 30%);
   height: 33.4vw;
   margin: 0;
-  @include responsividade.responsive-padding(
-    1.5rem 2.5rem,
-    1rem 1.2rem,
-    0.7rem 0.5rem
-  );
+  padding: 1.5rem 2.5rem;
   border-radius: 20px;
   background-color: var(--session-color);
-
   // Box-shadow neumórfico
   box-shadow: 9px 9px 16px var(--shadow-dark),
     -9px -9px 16px var(--shadow-light), inset -1px -1px 2px var(--shadow-dark),
     inset 1px 1px 2px var(--shadow-light);
-
-  @include responsividade.media-max(md) {
-    left: 2%;
-    right: 2%;
-    width: 96vw;
-    height: auto;
-  }
-  @include responsividade.media-max(sm) {
-    left: 0;
-    right: 0;
-    width: 100vw;
-    height: auto;
-  }
 }
 
 .conteudo-principal {
   @include layout-main;
+}
+
+// --- Navegação ---
+@mixin layout-nav {
+  position: fixed;
+  top: 30%;
+  left: 17vw;
+  z-index: 50;
+  text-align: left;
+}
+
+.navegacao-secao {
+  @include layout-nav;
+}
+
+// --- Apresentação ---
+@mixin layout-apresentacao {
+  flex: 1;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+}
+
+.apresentacao {
+  @include layout-apresentacao;
+}
+
+// --- Social ---
+@mixin layout-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
+}
+
+.social-container {
+  @include layout-social;
+}
+
+// --- Créditos ---
+@mixin layout-creditos {
+  p,
+  a {
+    color: var(--text-color);
+    text-align: center;
+    margin: 1rem 0 0 0;
+    font-family: "Raleway", sans-serif;
+    line-height: 1.5;
+  }
+
+  a {
+    font-weight: 700;
+  }
+}
+
+.creditos {
+  @include layout-creditos;
 }
