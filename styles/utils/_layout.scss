@@ -1,3 +1,5 @@
+@use "../utils/responsividade" as responsividade;
+
 // --- Mixins ---
 @mixin layout-header-footer {
   position: static;
@@ -7,13 +9,17 @@
   width: 100vw;
   height: auto;
   margin: 0;
-  padding: 1.5rem 5% 2rem 5%;
+  @include responsividade.responsive-padding(
+    1.5rem 5% 2rem 5%,
+    1rem 2% 1.5rem 2%,
+    0.7rem 1% 1rem 1%
+);
 
   // border-radius: 20px;
   // background-color: var(--session-color);
-  // box-shadow: 
+  // box-shadow:
   // 9px 9px 16px var(--shadow-dark),
-  // -9px -9px 16px var(--shadow-light), 
+  // -9px -9px 16px var(--shadow-light),
   // inset -1px -1px 2px var(--shadow-dark),
   // inset 1px 1px 2px var(--shadow-light);
 }
@@ -32,16 +38,31 @@
   width: calc(100vw - 30%);
   height: 33.4vw;
   margin: 0;
-  padding: 1.5rem 2.5rem;
+  @include responsividade.responsive-padding(
+    1.5rem 2.5rem,
+    1rem 1.2rem,
+    0.7rem 0.5rem
+  );
   border-radius: 20px;
   background-color: var(--session-color);
 
   // Box-shadow neumórfico
-  box-shadow: 
-  9px 9px 16px var(--shadow-dark),
-  -9px -9px 16px var(--shadow-light), 
-  inset -1px -1px 2px var(--shadow-dark),
-  inset 1px 1px 2px var(--shadow-light);
+  box-shadow: 9px 9px 16px var(--shadow-dark),
+    -9px -9px 16px var(--shadow-light), inset -1px -1px 2px var(--shadow-dark),
+    inset 1px 1px 2px var(--shadow-light);
+
+  @include responsividade.media-max(md) {
+    left: 2%;
+    right: 2%;
+    width: 96vw;
+    height: auto;
+  }
+  @include responsividade.media-max(sm) {
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: auto;
+  }
 }
 
 .conteudo-principal {
