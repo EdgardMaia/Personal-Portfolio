@@ -3,6 +3,7 @@
 @use "./utils/dark_mode";
 @use "./utils/layout";
 @use "./utils/scroll_design";
+@use "./utils/responsive" as *;
 @import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 @font-face {
   font-family: "Pixel Twist";
@@ -14,7 +15,6 @@
 
 // --- Corpo da página ---
 body {
-  font-family: "Raleway", sans-serif;
   font-optical-sizing: auto;
   font-weight: 450;
   font-style: normal;
@@ -26,17 +26,21 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
   display: flex;
   flex-direction: column;
-
+  
   h1 {
     font-family: "Pixel Twist";
     margin: 0;
     color: var(--text-color);
+    font-size: 2rem;
   }
 
-  a {
-    font-family: "Pixel Twist";
-    text-decoration: none;
-    color: var(--text-color);
+  h2, span, a, p {
+    font-family: "Raleway", sans-serif;
+    margin: 0;
+  }
+
+  h2, p  {
+    font-size: 1rem;
   }
 }
 
@@ -49,6 +53,7 @@ header.cabecalho-container {
   }
 }
 
+// --- Conteúdo principal ---
 main.conteudo-principal {
   display: flex;
   align-items: center;
@@ -76,19 +81,19 @@ main.conteudo-principal {
       border: 2px solid #ff6b6b; // Borda vermelha para visualizar
 
       div {
-        background-color: #ff9999; // Fundo rosa claro para ver o tamanho
+        // background-color: #ff9999; // Fundo rosa claro para ver o tamanho
         padding: 2rem;
         margin: 1rem;
         min-height: 550px;
-        border: 1px solid #333;
-        border-radius: 8px;
+        // border: 1px solid #333;
+        // border-radius: 8px;
         color: white;
         font-size: 5rem;
       }
 
       // Cores específicas para cada seção (para debug)
       &#Introducao div {
-        background-color: #042326 !important; // Amarelo
+        background-color: #7d9a9d !important; // Amarelo
       }
       &#Formacao div {
         background-color: #0a3a40 !important; // Verde
@@ -101,6 +106,26 @@ main.conteudo-principal {
       }
       &#Curiosidades div {
         background-color: #107361 !important; // Roxo
+      }
+
+      .introducao-info {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        color: var(--text-color);
+
+        h2 {
+          padding: .5rem 0 1rem 0;
+          font-size: 20px;
+          font-weight: 700;
+        }
+
+        p {
+          max-width: 50%;
+          text-align: left;
+          font-size: 15px;
+          font-weight: 500;
+        }
       }
     }
   }
@@ -165,10 +190,6 @@ main.conteudo-principal {
               width: 100%;
             }
           }
-
-          span {
-            font-family: "Raleway", sans-serif;
-          }
         }
       }
     }
@@ -177,7 +198,6 @@ main.conteudo-principal {
 
 // --- Rodapé da página ---
 footer.rodape-container {
-
   position: absolute;
   top: auto;
   bottom: 0;
@@ -195,13 +215,13 @@ footer.rodape-container {
     text-decoration: none;
   }
 
-  svg, i {
+  svg,
+  i {
     width: 3rem;
     height: 3rem;
   }
 
   .social-container {
-   
     gap: 1rem;
     margin: 0;
 
@@ -336,13 +356,12 @@ footer.rodape-container {
       color: var(--text-color);
       text-align: center;
       margin: 1rem 0 0 0;
-      font-family: "Raleway", sans-serif;
       line-height: 1.5;
     }
 
     a {
       font-weight: 700;
+      color: var(--text-color);
     }
   }
 }
-@use "./utils/responsive";

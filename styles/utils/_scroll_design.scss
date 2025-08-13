@@ -1,7 +1,9 @@
+@use "../utils/dark_mode";
+
 @mixin scroll-layout {
     // --- Paleta scrollbar ---
-    $sb-track-color: #ffffff;
-    $sb-thumb-color: #000000;
+    // $sb-track-color: #ffffff;
+    $sb-thumb-color: var(--text-color);
     $sb-size: 10px;
 
     // Estilo do scrollbar aplicado corretamente
@@ -20,7 +22,7 @@
     }
 
     @supports not selector(::-webkit-scrollbar) {
-      scrollbar-color: $sb-thumb-color, $sb-track-color;
+      scrollbar-color: $sb-thumb-color /*$sb-track-color*/;
       scrollbar-width: thin;
     }
 }
