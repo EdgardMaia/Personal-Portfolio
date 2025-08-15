@@ -843,37 +843,25 @@ main.conteudo-principal .apresentacao scroll-page div {
   margin: 0.5rem;
   min-height: 550px;
   border-radius: 8px;
-  color: white;
+  color: black;
   font-size: 5rem;
 }
-main.conteudo-principal .apresentacao scroll-page#Formacao div {
-  background-color: #0a3a40 !important;
-}
-main.conteudo-principal .apresentacao scroll-page#Habilidades div {
-  background-color: #0f5959 !important;
-}
-main.conteudo-principal .apresentacao scroll-page#Projetos div {
-  background-color: #1d7373 !important;
-}
-main.conteudo-principal .apresentacao scroll-page#Curiosidades div {
-  background-color: #107361 !important;
-}
-main.conteudo-principal .apresentacao scroll-page .introducao-info {
+main.conteudo-principal .apresentacao scroll-page#introducao .introducao-info {
   display: flex;
   flex-direction: column;
   align-items: baseline;
   color: var(--text-color);
 }
-main.conteudo-principal .apresentacao scroll-page .introducao-info h1,
-main.conteudo-principal .apresentacao scroll-page .introducao-info h2 {
+main.conteudo-principal .apresentacao scroll-page#introducao .introducao-info h1,
+main.conteudo-principal .apresentacao scroll-page#introducao .introducao-info h2 {
   z-index: 1;
 }
-main.conteudo-principal .apresentacao scroll-page .introducao-info h2 {
+main.conteudo-principal .apresentacao scroll-page#introducao .introducao-info h2 {
   padding: 0.5rem 0 1rem 0;
   font-size: 20px;
   font-weight: 700;
 }
-main.conteudo-principal .apresentacao scroll-page .introducao-info h2 span {
+main.conteudo-principal .apresentacao scroll-page#introducao .introducao-info h2 span {
   position: relative;
   display: inline-block;
   color: transparent;
@@ -881,7 +869,7 @@ main.conteudo-principal .apresentacao scroll-page .introducao-info h2 span {
   animation: display-text 16s linear infinite;
   animation-delay: calc(-4s * var(--i));
 }
-main.conteudo-principal .apresentacao scroll-page .introducao-info h2 span::before {
+main.conteudo-principal .apresentacao scroll-page#introducao .introducao-info h2 span::before {
   content: attr(data-text);
   position: absolute;
   width: 0;
@@ -905,7 +893,7 @@ main.conteudo-principal .apresentacao scroll-page .introducao-info h2 span::befo
     width: 100%;
   }
 }
-main.conteudo-principal .apresentacao scroll-page .introducao-info p {
+main.conteudo-principal .apresentacao scroll-page#introducao .introducao-info p {
   max-width: 50%;
   text-align: left;
   font-size: 15px;
@@ -916,7 +904,7 @@ main.conteudo-principal .apresentacao scroll-page .introducao-info p {
   text-align: justify;
   padding: 0 0 0.5rem 0;
 }
-main.conteudo-principal .apresentacao scroll-page .introducao-info .foto-perfil-container {
+main.conteudo-principal .apresentacao scroll-page#introducao .introducao-info .foto-perfil-container {
   position: relative;
   width: 28vw;
   height: 28vw;
@@ -926,7 +914,7 @@ main.conteudo-principal .apresentacao scroll-page .introducao-info .foto-perfil-
   border: 0;
   border-radius: 100%;
 }
-main.conteudo-principal .apresentacao scroll-page .introducao-info .foto-perfil-container .foto-bg {
+main.conteudo-principal .apresentacao scroll-page#introducao .introducao-info .foto-perfil-container .foto-bg {
   background: var(--bg-color);
   width: 100%;
   height: 100%;
@@ -936,13 +924,49 @@ main.conteudo-principal .apresentacao scroll-page .introducao-info .foto-perfil-
   left: 0;
   z-index: 0;
 }
-main.conteudo-principal .apresentacao scroll-page .introducao-info .foto-perfil-container .foto-bg img {
+main.conteudo-principal .apresentacao scroll-page#introducao .introducao-info .foto-perfil-container .foto-bg img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 100%;
   position: relative;
+}
+main.conteudo-principal .apresentacao scroll-page#habilidades h1 {
+  position: relative;
+  left: 42vw;
+  z-index: 1;
+}
+main.conteudo-principal .apresentacao scroll-page#habilidades .slider {
+  margin-top: 3rem;
+}
+main.conteudo-principal .apresentacao scroll-page#habilidades .slider img {
+  width: 150px;
+  height: 75px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+main.conteudo-principal .apresentacao scroll-page#habilidades .slider .list {
+  display: flex;
+  width: 100%;
+  min-width: 1200px;
+  position: relative;
+}
+main.conteudo-principal .apresentacao scroll-page#habilidades .slider .item {
+  width: 150px;
+  height: 75px;
+  position: absolute;
+  left: 100%;
+  animation: autoRun 10s linear infinite;
+  animation-delay: calc(1.25s * (var(--position) - 1));
+}
+@keyframes autoRun {
+  from {
+    left: 100%;
+  }
+  to {
+    left: -150px;
+  }
 }
 
 footer.rodape-container {
