@@ -31,10 +31,10 @@
         <h1 class="logo">Portifolio_</h1>
         <nav class="navegacao-secao">
           <ul class="menu">
-            <li><a href="#Introducao"><span>Introdução</span></a></li>
-            <li><a href="#Habilidades"><span>Habilidades</span></a></li>
-            <li><a href="#Projetos"><span>Projetos</span></a></li>
-            <li><a href="#Curiosidades"><span>Curiosidades</span></a></li>
+            <li><a href="#introducao"><span>Introdução</span></a></li>
+            <li><a href="#habilidades"><span>Habilidades</span></a></li>
+            <li><a href="#projetos"><span>Projetos</span></a></li>
+            <li><a href="#curiosidades"><span>Curiosidades</span></a></li>
             <li><a href="#contatos"><span>Contatos</span></a></li>
           </ul>
         </nav>
@@ -49,7 +49,7 @@
   <main class="conteudo-principal" id="home" role="conteudo-principal">
       <scroll-container class="apresentacao">
 
-        <scroll-page id="Introducao">
+        <scroll-page id="introducao">
           <div class="introducao-info">
             <h1>Edgard Maia</h1>
             <h2>Focado em
@@ -64,14 +64,30 @@
 
             <div class="foto-perfil-container">
               <div class="foto-bg">
-                <img src="../assets/img/profile.png" alt="imagem-perfil">
+                <img src="../assets/img/png/profile.png" alt="imagem-perfil">
               </div>
             </div>
           </div>
         </scroll-page>
-        <scroll-page id="Habilidades"><div>teste</div></scroll-page>
-        <scroll-page id="Projetos"><div>teste</div></scroll-page>
-        <scroll-page id="Curiosidades"><div>teste</div></scroll-page>
+
+        <scroll-page id="habilidades">
+          <div><h1>Habilidades</h1></div>
+          <div class="slider">
+            <div class="list">
+              <div class="item" style="--position: 1"><img src="../assets/img/svg/html-logo.svg" alt="html-logo"></div>
+              <div class="item" style="--position: 2"><img src="../assets/img/svg/css-logo.svg" alt="css-logo"></div>
+              <div class="item" style="--position: 3"><img src="../assets/img/svg/sass-logo.svg" alt="sass-logo"></div>
+              <div class="item" style="--position: 4"><img src="../assets/img/svg/python-logo.svg" alt="python-logo"></div>
+              <div class="item" style="--position: 5"><img src="../assets/img/svg/kalilinux-logo.svg" alt="kalilinux-logo"></div>
+              <div class="item" style="--position: 6"><img src="../assets/img/svg/nmap-logo.svg" alt="nmap-logo"></div>
+              <div class="item" style="--position: 7"><img src="../assets/img/svg/metasploit-logo.svg" alt="metasploit-logo"></div>
+              <div class="item" style="--position: 8"><img src="../assets/img/svg/burpsuite-logo.svg" alt="burpsuit-logo"></div>
+            </div>
+          </div>
+        </scroll-page>
+        
+        <scroll-page id="projetos"><div>Projetos</div></scroll-page>
+        <scroll-page id="curiosidades"><div>Curiosidades</div></scroll-page>
 
       </scroll-container>
     </main>
