@@ -172,4 +172,6 @@ html {
 body {
   min-height: 100vh;
   min-height: 100dvh; // Viewport dinâmico para mobile
+  display: flex;
+  flex-direction: column;
 }
