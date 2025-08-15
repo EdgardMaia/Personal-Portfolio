@@ -1,0 +1,57 @@
+// --- Breakpoints do Portfolio ---
+@use "sass:map";
+
+// Definição dos breakpoints
+$breakpoints: (
+  small: 320px,
+  // Smartphones pequenos
+  medium: 375px,
+  // Smartphones médios
+  large: 425px,
+  // Smartphones grandes
+  tablet: 768px,
+  // Tablets
+  laptop: 1024px,
+  // Laptops pequenos
+  desktop: 1366px,
+  // Desktop padrão
+  large-desktop: 1920px,
+  // Desktop grande
+  4k: 2560px // 4K,
+);
+
+// Mixins para media queries
+@mixin media-up($size) {
+  @media (min-width: map.get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+@mixin media-down($size) {
+  $breakpoint: map.get($breakpoints, $size);
+  @media (max-width: #{$breakpoint - 1px}) {
+    @content;
+  }
+}
+
+@mixin media-between($size1, $size2) {
+  $min: map.get($breakpoints, $size1);
+  $max: map.get($breakpoints, $size2);
+  @media (min-width: #{$min}) and (max-width: #{$max - 1px}) {
+    @content;
+  }
+}
+
+// Mixin específico para layout de desktop grande
+@mixin large-desktop-layout {
+  @include media-up(large-desktop) {
+    @content;
+  }
+}
+
+// Mixin para telas pequenas (mobile-first)
+@mixin mobile-layout {
+  @include media-down(large-desktop) {
+    @content;
+  }
+}
