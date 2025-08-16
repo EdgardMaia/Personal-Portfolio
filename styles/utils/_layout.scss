@@ -27,72 +27,6 @@
 
 // --- Layout para telas grandes (≥1920px) ---
 @mixin layout-main-large {
-  position: relative;
-  top: 0;
-  left: 50%; // Centraliza horizontalmente
-  transform: translateX(-50%); // Ajuste fino da centralização
-  width: 70vw; // Largura mais responsiva
-  max-width: 1400px; // Largura máxima
-  height: 70vh;
-  margin: 2rem auto;
-  padding: 1.5rem 2.5rem;
-  border-radius: 20px;
-  background-color: var(--session-color);
-  // Box-shadow neumórfico
-  box-shadow: 9px 9px 16px var(--shadow-dark),
-    -9px -9px 16px var(--shadow-light), inset -1px -1px 2px var(--shadow-dark),
-    inset 1px 1px 2px var(--shadow-light);
-  overflow: hidden;
-}
-
-// --- Layout para telas pequenas (<1920px) ---
-@mixin layout-main-small {
-  position: relative;
-  width: 100%;
-  max-width: 1200px; // Largura máxima para melhor leitura
-  height: auto;
-  min-height: calc(100vh - 240px); // Ajusta para header e footer
-  margin: 0 auto; // Centraliza horizontalmente
-  padding: 2rem 1rem;
-  background: transparent;
-  box-shadow: none;
-  overflow: visible;
-}
-
-.conteudo-principal {
-  flex: 1;
-  // Por padrão, layout para telas pequenas
-  @include layout-main-small;
-}
-
-// Layout especial para telas grandes
-@media (min-width: 1920px) {
-  // Body com layout fixo
-  body {
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  // Header fixo no topo com efeito neumórfico mantido
-  .cabecalho-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: calc(100vw - 6rem);
-    margin: 3rem 3rem 0 3rem;
-    z-index: 100;
-    // Mantém o efeito neumórfico do mixin
-  }
-
-  // Main com layout card
-  .conteudo-principal {
-    @include layout-main-large;
-    margin-top: 120px; // Espaço aumentado para o header fixo com margem
-  }
-
-  // Footer fixo embaixo com efeito neumórfico mantido
-  .rodape-container {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -100,10 +34,8 @@
     width: calc(100vw - 6rem);
     margin: 0 3rem 3rem 3rem;
     z-index: 100;
-    // Mantém o efeito neumórfico do mixin
-  }
 
-  // Nav lateral fixa
+    // Nav lateral fixa
   .navegacao-secao {
     position: fixed;
     top: 50%;
