@@ -727,7 +727,7 @@ main.conteudo-principal {
   overflow: hidden;
   z-index: 0;
 }
-main.conteudo-principal .apresentacao {
+main.conteudo-principal .principal-container {
   flex: 1;
   display: block;
   margin: 0 auto;
@@ -739,39 +739,28 @@ main.conteudo-principal .apresentacao {
   scroll-behavior: smooth;
   padding: 3rem 0 0 0;
 }
-main.conteudo-principal .apresentacao scroll-page {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  margin-bottom: 5rem;
-  border: 2px solid #ff6b6b;
-}
-main.conteudo-principal .apresentacao scroll-page > div {
+main.conteudo-principal .principal-container > div {
   padding: 1.5rem;
-  margin: 0.5rem;
-  min-height: 550px;
-  border-radius: 8px;
-  color: black;
-  font-size: 5rem;
+  margin: 0 auto 5rem auto;
+  max-width: 1200px;
+  width: 90%;
 }
-main.conteudo-principal .apresentacao scroll-page#introducao .introducao-info {
+main.conteudo-principal .principal-container > div#introducao .introducao-info {
   display: flex;
   flex-direction: column;
   align-items: baseline;
   color: var(--text-color);
 }
-main.conteudo-principal .apresentacao scroll-page#introducao .introducao-info h1,
-main.conteudo-principal .apresentacao scroll-page#introducao .introducao-info h2 {
+main.conteudo-principal .principal-container > div#introducao .introducao-info h1,
+main.conteudo-principal .principal-container > div#introducao .introducao-info h2 {
   z-index: 1;
 }
-main.conteudo-principal .apresentacao scroll-page#introducao .introducao-info h2 {
+main.conteudo-principal .principal-container > div#introducao .introducao-info h2 {
   padding: 0.5rem 0 1rem 0;
   font-size: 20px;
   font-weight: 700;
 }
-main.conteudo-principal .apresentacao scroll-page#introducao .introducao-info h2 span {
+main.conteudo-principal .principal-container > div#introducao .introducao-info h2 span {
   position: relative;
   display: inline-block;
   color: transparent;
@@ -779,7 +768,7 @@ main.conteudo-principal .apresentacao scroll-page#introducao .introducao-info h2
   animation: display-text 16s linear infinite;
   animation-delay: calc(-4s * var(--i));
 }
-main.conteudo-principal .apresentacao scroll-page#introducao .introducao-info h2 span::before {
+main.conteudo-principal .principal-container > div#introducao .introducao-info h2 span::before {
   content: attr(data-text);
   position: absolute;
   width: 0;
@@ -788,6 +777,95 @@ main.conteudo-principal .apresentacao scroll-page#introducao .introducao-info h2
   white-space: nowrap;
   overflow: hidden;
   animation: fill-text 4s linear infinite;
+}
+main.conteudo-principal .principal-container > div#introducao .introducao-info p {
+  max-width: 50%;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+  z-index: 1;
+  line-height: 1.5;
+  text-align: justify;
+  padding: 0 0 0.5rem 0;
+}
+main.conteudo-principal .principal-container > div#introducao .introducao-info .foto-perfil-container {
+  position: relative;
+  width: 28vw;
+  height: 28vw;
+  left: 50%;
+  top: -20.5rem;
+  margin: 0;
+  border: 0;
+  border-radius: 100%;
+}
+main.conteudo-principal .principal-container > div#introducao .introducao-info .foto-perfil-container .foto-bg {
+  background: var(--bg-color);
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+main.conteudo-principal .principal-container > div#introducao .introducao-info .foto-perfil-container .foto-bg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 100%;
+  position: relative;
+}
+main.conteudo-principal .principal-container > div#habilidades h1 {
+  padding: 3rem;
+}
+main.conteudo-principal .principal-container > div#habilidades .habilidades-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+main.conteudo-principal .principal-container > div#habilidades .slider {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  overflow: visible !important;
+  z-index: 1;
+  width: 100%;
+  height: var(--height);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
+          mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
+}
+main.conteudo-principal .principal-container > div#habilidades .slider .list {
+  overflow: visible;
+  display: flex;
+  width: 100%;
+  min-width: calc(var(--width) * var(--quantity));
+  position: relative;
+}
+main.conteudo-principal .principal-container > div#habilidades .slider .item {
+  position: relative;
+  z-index: 2;
+  width: var(--width);
+  height: var(--height);
+  position: absolute;
+  left: 100%;
+  animation: autoRun 10s linear infinite;
+  transition: filter 0.5s;
+  animation-delay: calc(10s / var(--quantity) * (var(--position) - 1) - 10s) !important;
+}
+main.conteudo-principal .principal-container > div#habilidades .slider .item img {
+  width: 100%;
+}
+main.conteudo-principal .principal-container > div#habilidades .slider:hover .item {
+  animation-play-state: paused !important;
+  filter: grayscale(1);
+}
+main.conteudo-principal .principal-container > div#habilidades .slider .item:hover {
+  filter: grayscale(0);
+}
+main.conteudo-principal .principal-container > div#habilidades .slider[reverse=true] .item {
+  animation: reversePlay 10s linear infinite;
 }
 @keyframes display-text {
   25%, 100% {
@@ -802,92 +880,6 @@ main.conteudo-principal .apresentacao scroll-page#introducao .introducao-info h2
   50%, 90% {
     width: 100%;
   }
-}
-main.conteudo-principal .apresentacao scroll-page#introducao .introducao-info p {
-  max-width: 50%;
-  text-align: left;
-  font-size: 15px;
-  font-weight: 500;
-  margin: 0;
-  z-index: 1;
-  line-height: 1.5;
-  text-align: justify;
-  padding: 0 0 0.5rem 0;
-}
-main.conteudo-principal .apresentacao scroll-page#introducao .introducao-info .foto-perfil-container {
-  position: relative;
-  width: 28vw;
-  height: 28vw;
-  left: 50%;
-  top: -20.5rem;
-  margin: 0;
-  border: 0;
-  border-radius: 100%;
-}
-main.conteudo-principal .apresentacao scroll-page#introducao .introducao-info .foto-perfil-container .foto-bg {
-  background: var(--bg-color);
-  width: 100%;
-  height: 100%;
-  border-radius: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-}
-main.conteudo-principal .apresentacao scroll-page#introducao .introducao-info .foto-perfil-container .foto-bg img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 100%;
-  position: relative;
-}
-main.conteudo-principal .apresentacao scroll-page#habilidades .habilidades-container {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-}
-main.conteudo-principal .apresentacao scroll-page#habilidades .slider {
-  position: relative;
-  margin: 0 auto;
-  padding: 0;
-  overflow: visible !important;
-  z-index: 1;
-  width: 100%;
-  height: var(--height);
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
-          mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
-}
-main.conteudo-principal .apresentacao scroll-page#habilidades .slider .list {
-  overflow: visible;
-  display: flex;
-  width: 100%;
-  min-width: calc(var(--width) * var(--quantity));
-  position: relative;
-}
-main.conteudo-principal .apresentacao scroll-page#habilidades .slider .item {
-  position: relative;
-  z-index: 2;
-  width: var(--width);
-  height: var(--height);
-  position: absolute;
-  left: 100%;
-  animation: autoRun 10s linear infinite;
-  transition: filter 0.5s;
-  animation-delay: calc(10s / var(--quantity) * (var(--position) - 1) - 10s) !important;
-}
-main.conteudo-principal .apresentacao scroll-page#habilidades .slider .item img {
-  width: 100%;
-}
-main.conteudo-principal .apresentacao scroll-page#habilidades .slider:hover .item {
-  animation-play-state: paused !important;
-  filter: grayscale(1);
-}
-main.conteudo-principal .apresentacao scroll-page#habilidades .slider .item:hover {
-  filter: grayscale(0);
-}
-main.conteudo-principal .apresentacao scroll-page#habilidades .slider[reverse=true] .item {
-  animation: reversePlay 10s linear infinite;
 }
 @keyframes autoRun {
   from {
