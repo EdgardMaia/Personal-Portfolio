@@ -87,9 +87,6 @@ footer.rodape-container {
     width: calc(100vw - 20%);
     height: auto;
   }
-  .navegacao-secao {
-    left: 12vw;
-  }
   .apresentacao {
     width: 80%;
   }
@@ -118,8 +115,6 @@ footer.rodape-container {
       padding: 0.8rem; /* calc(1rem * 0.8) */
     }
     .navegacao-secao {
-      left: 2vw;
-      top: 10%;
       font-size: 0.95rem;
       .menu span {
         font-size: 14.25px; /* calc(15px * 0.95) */
@@ -129,7 +124,8 @@ footer.rodape-container {
   footer.rodape-container {
     padding: 0.96rem 0 1.6rem 0; /* calc(1.2rem * 0.8) 0 calc(2rem * 0.8) 0 */
     .social-container .social-link {
-      i, svg {
+      i,
+      svg {
         font-size: 2.375rem; /* calc(38px / 1rem) */
         padding: 0.4rem;
       }
@@ -193,7 +189,8 @@ footer.rodape-container {
     .social-container {
       gap: 0.5rem;
       .social-link {
-        i, svg {
+        i,
+        svg {
           font-size: 2.375rem;
           padding: 0.35rem;
         }
@@ -253,7 +250,8 @@ footer.rodape-container {
     .social-container {
       gap: 0.3rem;
       .social-link {
-        i, svg {
+        i,
+        svg {
           font-size: 1.5rem;
           padding: 0.3rem;
         }
@@ -287,3 +285,5 @@ footer.rodape-container {
     font-size: 10.4px; /* calc(13px * 0.8) */
   }
 }
+
+// ... existing code ...
