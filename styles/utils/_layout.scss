@@ -27,35 +27,13 @@
 
 // --- Layout para telas grandes (≥1920px) ---
 @mixin layout-main-large {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: calc(100vw - 6rem);
-    margin: 0 3rem 3rem 3rem;
-    z-index: 100;
-
-    // Nav lateral fixa
-  .navegacao-secao {
-    position: fixed;
-    top: 50%;
-    left: 2vw;
-    transform: translateY(-50%);
-    z-index: 150;
-  }
-}
-
-// --- Navegação ---
-@mixin layout-nav {
   position: fixed;
-  top: 30%;
-  left: 17vw;
-  z-index: 50;
-  text-align: left;
-}
-
-.navegacao-secao {
-  @include layout-nav;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: calc(100vw - 6rem);
+  margin: 0 3rem 3rem 3rem;
+  z-index: 100;
 }
 
 // --- Apresentação ---
@@ -85,34 +63,7 @@
   }
 }
 
-// Para telas pequenas, scroll da página toda
-@media (max-width: 1919px) {
-  body {
-    overflow: auto;
-  }
-
-  .apresentacao {
-    height: auto;
-    overflow: visible;
-  }
-
-  .navegacao-secao {
-    position: relative;
-    top: auto;
-    left: auto;
-    margin: 2rem 0;
-    text-align: center;
-
-    .menu {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-  }
-}
-
-// --- Social ---
+// --- Social --
 @mixin layout-social {
   display: flex;
   justify-content: center;
