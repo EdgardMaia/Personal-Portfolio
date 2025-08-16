@@ -61,14 +61,18 @@ header.cabecalho-container {
   .header-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-direction: row;
 
     .navegacao-secao {
       margin: 0;
+      
 
       .menu {
         list-style: none;
-
+        display: flex;
+        flex-direction: row;
+        
         li {
           transition: all 0.3s ease;
 
