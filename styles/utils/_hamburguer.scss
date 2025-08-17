@@ -1,0 +1,71 @@
+// Estilos para o ícone do menu hambúrguer
+#hamburguer-icon {
+  display: none; // Oculto por padrão em telas maiores
+  cursor: pointer;
+  padding: 15px;
+  position: relative;
+  z-index: 1001; // Garante que o ícone fique sobre outros elementos
+
+  span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: var(--text-color); // Cor das linhas do ícone
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+}
+
+// Animação do ícone para "X" quando o menu está ativo
+#hamburguer-icon.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+#hamburguer-icon.active span:nth-child(2) {
+  opacity: 0;
+}
+
+#hamburguer-icon.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+// Estilos para o menu de navegação móvel
+#mobile-menu {
+  display: none; // Oculto por padrão
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95); // Fundo escuro semitransparente
+  z-index: 1000; // Abaixo do ícone do hambúrguer, mas acima do resto
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+  }
+
+  li {
+    margin: 20px 0;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 2rem; // Tamanho da fonte dos links
+    transition: color 0.3s;
+
+    &:hover {
+      color: #00e0ff; // Cor do link ao passar o mouse
+    }
+  }
+}
+
+// Exibe o menu móvel quando a classe "active" é adicionada
+#mobile-menu.active {
+  display: flex;
+}
