@@ -13,16 +13,41 @@
   border-radius: 20px;
   background-color: var(--session-color);
   z-index: 1;
+}
 
+@mixin box-shadow-neumórfico {
   // Box-shadow neumórfico
   box-shadow: 9px 9px 16px var(--shadow-dark),
     -9px -9px 16px var(--shadow-light), inset -1px -1px 2px var(--shadow-dark),
     inset 1px 1px 2px var(--shadow-light);
 }
 
-.cabecalho-container,
-.rodape-container {
+.conteudo-principal{
+  #projetos{
+    img{
+      @include box-shadow-neumórfico;
+    }
+  }
+}
+
+.cabecalho-container {
   @include layout-header-footer;
+  @include box-shadow-neumórfico;
+  z-index: 2; // Garante que o cabeçalho fique sempre à frente
+}
+
+.conteudo-principal,
+.rodape-container {
+  width: calc(100vw - 6rem);
+  margin: 3rem;
+  padding: 1.5rem; // Adicionado um padding para o conteúdo não colar nas bordas
+  border-radius: 20px;
+  background-color: var(--session-color);
+  @include box-shadow-neumórfico;
+}
+
+.conteudo-principal {
+  margin-top: 0; // Remove a margem superior para alinhar com o cabeçalho
 }
 
 // --- Layout para telas grandes (≥1920px) ---

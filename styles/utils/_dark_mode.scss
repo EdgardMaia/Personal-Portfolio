@@ -1,23 +1,51 @@
 // ==============================================
-//               🌙 DARK MODE 
+//               🌙 DARK MODE
 // ==============================================
 
-// --- Variáveis CSS para temas ---
+// --- Paletas de Cores ---
 :root {
-  // Cores base do sistema
-  --background-color-light: hsla(230, 80%, 98%, 1);
-  --toggle-light: hsla(230, 25%, 10%, 1);
-  --background-color-dark: hsla(230, 55%, 4%, 1);
-  --toggle-dark: hsla(230, 25%, 75%, 1);
-  --icons: #000000;
+  // Paleta - Modo Claro
+  --bg-light: #f0f3f8;
+  --text-light: #000000;
+  --session-bg-light: #f0f3f8;
+  --shadow-dark-light: #c8d0e7;
+  --shadow-light-light: #ffffff;
+  --toggle-bg-light: #000000;
+  --slider-bg-light: #ffffff;
+  --track-bg-light: #ffffff;
+  --thumb-bg-light: #000000;
 
-  
-  // Paleta neumórfica - Light Mode
-  --bg-color: #f0f3f8;
-  --session-color: #f0f3f8;
-  --text-color: #000000;
-  --shadow-dark: #c8d0e7;
-  --shadow-light: #ffffff;
+  // Paleta - Modo Escuro
+  --bg-dark: #2d3748;
+  --text-dark: #ffffff;
+  --session-bg-dark: #2d3748;
+  --shadow-dark-dark: #1a202c;
+  --shadow-light-dark: #4a5568;
+  --toggle-bg-dark: #ffffff;
+  --slider-bg-dark: #000000;
+  --track-bg-dark: #000000;
+  --thumb-bg-dark: #ffffff;
+
+  // --- Variáveis de transição img claro ---
+  --serenatto-img-light: url("../assets/img/serenatto-cafe.png");
+  --text-serenatto-light: #462E09;
+
+  // --- Variáveis de transição img escuro ---
+  --serenatto-img-dark: url("../assets/img/serenatto-cafe-escuro.png");
+  --text-serenatto-dark: #B29463;
+
+  // --- Variáveis Semânticas (Padrão Modo Claro) ---
+  --bg-color: var(--bg-light);
+  --text-color: var(--text-light);
+  --session-color: var(--session-bg-light);
+  --shadow-dark: var(--shadow-dark-light);
+  --shadow-light: var(--shadow-light-light);
+  --toggle-color: var(--toggle-bg-light);
+  --slider-bg-color: var(--slider-bg-light);
+  --track-bg-color: var(--track-bg-light);
+  --thumb-bg-color: var(--thumb-bg-light);
+  --serenatto-img: var(--serenatto-img-light);
+  --text-serenatto: var(--text-serenatto-light);
 
   // Configurações globais
   color-scheme: light;
@@ -25,27 +53,25 @@
   --y: 50%;
 }
 
-// --- Configuração base do HTML ---
-html {
-  --background-color: var(--background-color-light);
-  --toggle-color: var(--toggle-light);
+// --- Ativação do Modo Escuro ---
+html.dark {
+  color-scheme: dark;
 
-  // Dark mode ativo
-  &.dark {
-    color-scheme: dark;
-    --background-color: var(--background-color-dark);
-    --toggle-color: var(--toggle-dark);
-    
-    // Paleta neumórfica - Dark Mode
-    --bg-color: #2d3748;
-    --session-color: #2d3748;
-    --text-color: #ffffff;
-    --shadow-dark: #1a202c;
-    --shadow-light: #4a5568;
-  }
+  // Atribui a paleta escura às variáveis semânticas
+  --bg-color: var(--bg-dark);
+  --text-color: var(--text-dark);
+  --session-color: var(--session-bg-dark);
+  --shadow-dark: var(--shadow-dark-dark);
+  --shadow-light: var(--shadow-light-dark);
+  --toggle-color: var(--toggle-bg-dark);
+  --slider-bg-color: var(--slider-bg-dark);
+  --track-bg-color: var(--track-bg-dark);
+  --thumb-bg-color: var(--thumb-bg-dark);
+  --serenatto-img: var(--serenatto-img-dark);
+  --text-serenatto: var(--text-serenatto-dark);
 }
 
-// --- Estilos base do body ---
+// --- Estilos Globais Baseados no Tema ---
 body {
   transition: background-color 0.3s ease, color 0.3s ease;
   background-color: var(--bg-color);
@@ -57,21 +83,8 @@ body {
 // ==============================================
 
 html.dark {
-  
-  // --- Containers neumórficos ---
-  // .cabecalho-container,
-  // .rodape-container {
-  //   background-color: var(--session-color);
-  //   box-shadow: 
-  //     9px 9px 16px var(--shadow-dark), 
-  //     -9px -9px 16px var(--shadow-light),
-  //     inset -1px -1px 2px var(--shadow-dark),
-  //     inset 1px 1px 2px var(--shadow-light);
-  // }
-
   // --- Tipografia ---
-  h1, h2, h3, h4, h5, h6,
-  .logo, a {
+  h1, h2, h3, h4, h5, h6, .logo, a {
     color: var(--text-color);
   }
 
@@ -174,15 +187,10 @@ html.dark {
         position: absolute;
         top: 50%;
         left: 50%;
-        box-shadow: 
-          0 -23px 0 var(--toggle-color), 
-          0 23px 0 var(--toggle-color),
-          23px 0 0 var(--toggle-color), 
-          -23px 0 0 var(--toggle-color),
-          15px 15px 0 var(--toggle-color), 
-          -15px 15px 0 var(--toggle-color),
-          15px -15px 0 var(--toggle-color), 
-          -15px -15px 0 var(--toggle-color);
+        box-shadow: 0 -23px 0 var(--toggle-color), 0 23px 0 var(--toggle-color),
+          23px 0 0 var(--toggle-color), -23px 0 0 var(--toggle-color),
+          15px 15px 0 var(--toggle-color), -15px 15px 0 var(--toggle-color),
+          15px -15px 0 var(--toggle-color), -15px -15px 0 var(--toggle-color);
         transform: scale(0);
         transition: all 0.3s ease;
       }
@@ -190,9 +198,9 @@ html.dark {
 
     // --- Estado ativo (checked) ---
     &:checked + div {
-      box-shadow: inset 32px -32px 0 0 var(--background-color);
+      box-shadow: inset 32px -32px 0 0 var(--bg-color);
       transform: scale(0.5) rotate(0deg);
-      transition: transform 0.3s ease 0.1s, box-shadow 0.2s ease z0s;
+      transition: transform 0.3s ease 0.1s, box-shadow 0.2s ease 0s;
 
       &::before {
         background: var(--toggle-color);

@@ -1,32 +1,32 @@
 @use "../utils/dark_mode";
 
 @mixin scroll-layout {
-    // --- Paleta scrollbar ---
-    // $sb-track-color: #ffffff;
-    $sb-thumb-color: var(--text-color);
-    $sb-size: 10px;
+  // --- Paleta scrollbar ---
+  // $sb-track-color: var(--track-bg-color);
+  $sb-thumb-color: var(--thumb-bg-color);
+  $sb-size: 15px; 
 
-    // Estilo do scrollbar aplicado corretamente
-    &::-webkit-scrollbar {
-      width: $sb-size;
-    }
+  // Estilo do scrollbar aplicado corretamente
+  &::-webkit-scrollbar {
+    width: $sb-size;
+  }
 
-    // &::-webkit-scrollbar-track {
-    //   background: $sb-track-color;
-    //   border-radius: 3px;
-    // }
+  // &::-webkit-scrollbar-track {
+  //   background: $sb-track-color;
+  //   border-radius: 10px;
+  // }
 
-    &::-webkit-scrollbar-thumb {
-      background: $sb-thumb-color;
-      border-radius: 3px;
-    }
+  &::-webkit-scrollbar-thumb {
+    background: $sb-thumb-color;
+    border-radius: 10px;
+  }
 
-    @supports not selector(::-webkit-scrollbar) {
-      scrollbar-color: $sb-thumb-color /*$sb-track-color*/;
-      scrollbar-width: thin;
-    }
+  @supports not selector(::-webkit-scrollbar) {
+    scrollbar-color: $sb-thumb-color transparent;
+    scrollbar-width: thin;
+  }
 }
 
-.apresentacao {
+body {
   @include scroll-layout();
 }
