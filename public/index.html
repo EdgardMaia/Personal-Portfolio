@@ -10,11 +10,25 @@
     <!-- Autor do site -->
     <meta name="author" content="Edgard Maia" />
     <!-- Ícones Remix Icon -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <!-- Pré-carregamento da fonte personalizada -->
-    <link rel="preload" href="assets/fonts/PIXELTWIST.TTF" as="font" type="font/ttf" crossorigin="anonymous"/>
+    <link
+      rel="preload"
+      href="assets/fonts/PIXELTWIST.TTF"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
     <!-- Folha de estilos principal (carregamento assíncrono) -->
-    <link rel="stylesheet" href="../styles/main.css" media="print" onload="this.media='all'"/>
+    <link
+      rel="stylesheet"
+      href="../styles/main.css"
+      media="print"
+      onload="this.media='all'"
+    />
     <!-- Fallback para caso o JavaScript esteja desabilitado -->
     <noscript><link rel="stylesheet" href="../styles/main.css" /></noscript>
     <!-- Pré-carregamento dos scripts JavaScript -->
@@ -31,11 +45,21 @@
         <h1 class="logo">Portifolio_</h1>
         <nav class="navegacao-secao">
           <ul class="menu">
-            <li><a href="#introducao"><span>Introdução</span></a></li>
-            <li><a href="#habilidades"><span>Habilidades</span></a></li>
-            <li><a href="#projetos"><span>Projetos</span></a></li>
-            <li><a href="#curiosidades"><span>Curiosidades</span></a></li>
-            <li><a href="#contatos"><span>Contatos</span></a></li>
+            <li>
+              <a href="#introducao"><span>Introdução</span></a>
+            </li>
+            <li>
+              <a href="#habilidades"><span>Habilidades</span></a>
+            </li>
+            <li>
+              <a href="#projetos"><span>Projetos</span></a>
+            </li>
+            <!-- <li>
+              <a href="#curiosidades"><span>Curiosidades</span></a>
+            </li> -->
+            <li>
+              <a href="#contatos"><span>Contatos</span></a>
+            </li>
           </ul>
         </nav>
         <!-- Modo Claro/Escuro -->
@@ -49,23 +73,44 @@
     <!-- Conteúdo Principal -->
     <main class="conteudo-principal" id="home" role="conteudo-principal">
       <div class="principal-container">
-
+        
         <div id="introducao">
           <div class="introducao-info">
             <h1>Edgard Maia</h1>
-            <h2>Focado em
-              <span style="--i:3;" data-text="print&#40;&#34;Programação&#34;&#41;">print&#40;&#34;Programação&#34;&#41;</span>
-              <span style="--i:2;" data-text="&lt;Front End&#47;&gt;">&lt;Front End&#47;&gt;</span>
-              <span style="--i:1;" data-text="Segurança &#9888;">Segurança &#9888;</span>
+            <h2>
+              Focado em
+              <span
+                style="--i: 3"
+                data-text="print&#40;&#34;Programação&#34;&#41;"
+                >print&#40;&#34;Programação&#34;&#41;</span
+              >
+              <span style="--i: 2" data-text="&lt;Front End&#47;&gt;"
+                >&lt;Front End&#47;&gt;</span
+              >
+              <span style="--i: 1" data-text="Segurança &#9888;"
+                >Segurança &#9888;</span
+              >
             </h2>
-            
-            <p>Aspirante a profissional de tecnologia, almejo meu primeiro emprego ou estágio para mergulhar nas diversas vertentes da área. Comprometido em aprender, crescer e contribuir efetivamente para o avanço tecnológico da equipe e da organização, Sou entusiasta de Python e segurança da informação. Tenho interesse em áreas como redes e infraestrutura.</p>
 
-            <p>Gosto de experimentar diferentes tecnologias e ferramentas — de ambientes Linux a ferramentas de pentests — sempre com foco em aprender, praticar e aprimorar minhas habilidades na área de cibersegurança.</p>
+            <p>
+              Aspirante a profissional de tecnologia, almejo meu primeiro
+              emprego ou estágio para mergulhar nas diversas vertentes da área.
+              Comprometido em aprender, crescer e contribuir efetivamente para o
+              avanço tecnológico da equipe e da organização, Sou entusiasta de
+              Python e segurança da informação. Tenho interesse em áreas como
+              redes e infraestrutura.
+            </p>
+
+            <p>
+              Gosto de experimentar diferentes tecnologias e ferramentas — de
+              ambientes Linux a ferramentas de pentests — sempre com foco em
+              aprender, praticar e aprimorar minhas habilidades na área de
+              cibersegurança.
+            </p>
 
             <div class="foto-perfil-container">
               <div class="foto-bg">
-                <img src="../assets/img/png/profile.png" alt="imagem-perfil">
+                <img src="../assets/img/profile.png" alt="imagem-perfil" />
               </div>
             </div>
           </div>
@@ -73,13 +118,12 @@
 
         <div id="habilidades">
           <h1>Habilidades</h1>
-          <div class="habilidades-container">
-            <div class="slider" style="
-              --width: 100px; 
-              --height: 50px; 
-              --quantity: 8"
+          <div class="nomes-container">
+            <div
+              class="nomes-slider"
+              style="--width: 100px; --height: 50px; --quantity: 8"
             >
-            <div class="list">
+              <div class="list">
                 <div class="item" style="--position: 1"><p>HTML</p></div>
                 <div class="item" style="--position: 2"><p>CSS</p></div>
                 <div class="item" style="--position: 3"><p>SASS</p></div>
@@ -88,35 +132,71 @@
                 <div class="item" style="--position: 6"><p>NMAP</p></div>
                 <div class="item" style="--position: 7"><p>METASPLOIT</p></div>
                 <div class="item" style="--position: 8"><p>BURPSUITE</p></div>
+              </div>
+            </div>
+
+            <div class="logos-container">
+              <div
+                class="logos-slider"
+                reverse="true"
+                style="--width: 70px; --height: 70px; --quantity: 8"
+              >
+                <div class="list">
+                  <div class="item" style="--position: 1">
+                    <img src="../assets/img/html-logo.svg" alt="" />
+                  </div>
+                  <div class="item" style="--position: 2">
+                    <img src="../assets/img/css-logo.svg" alt="" />
+                  </div>
+                  <div class="item" style="--position: 3">
+                    <img src="../assets/img/sass-logo.svg" alt="" />
+                  </div>
+                  <div class="item" style="--position: 4">
+                    <img src="../assets/img/python-logo.svg" alt="" />
+                  </div>
+                  <div class="item" style="--position: 5">
+                    <img src="../assets/img/kali-linux-logo.svg" alt="" />
+                  </div>
+                  <div class="item" style="--position: 6">
+                    <img src="../assets/img/nmap-logo.svg" alt="" />
+                  </div>
+                  <div class="item" style="--position: 7">
+                    <img src="../assets/img/metasploit-logo.svg" alt="" />
+                  </div>
+                  <div class="item" style="--position: 8">
+                    <img src="../assets/img/burpsuite-logo.svg" alt="" />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div class="slider" reverse="true" style="
-            --width: 70px; 
-            --height: 70px; 
-            --quantity: 8"
-          >
-          <div class="list">
-            <div class="item" style="--position: 1"><img src="../assets/img/html-logo.svg" alt="" /></div>
-            <div class="item" style="--position: 2"><img src="../assets/img/css-logo.svg" alt="" /></div>
-            <div class="item" style="--position: 3"><img src="../assets/img/sass-logo.svg" alt="" /></div>
-            <div class="item" style="--position: 4"><img src="../assets/img/python-logo.svg" alt="" /></div>
-            <div class="item" style="--position: 5"><img src="../assets/img/kali-linux-logo.svg" alt="" /></div>
-            <div class="item" style="--position: 6"><img src="../assets/img/nmap-logo.svg" alt="" /></div>
-            <div class="item" style="--position: 7"><img src="../assets/img/metasploit-logo.svg" alt="" /></div>
-            <div class="item" style="--position: 8"><img src="../assets/img/burpsuite-logo.svg" alt="" /></div>
-          </div>
-        </div>
-        </div>
-        </div>
-        
         <div id="projetos">
           <h1>Projetos</h1>
+          <div class="serenatto-container">
+            <ul class="descricao">
+              <li>
+                <p> Projeto alura <strong>SASS com Vite: otimizando e modularizando seu CSS</strong>.</p>
+              </li>
+              <li>
+                <p> O Serenatto é uma landing page para um café, projetada para apresentar produtos de forma atraente e interativa, proporcionando uma experiência de uso agradável.</p>
+              </li>
+              <li>
+                <p> Principais skills adquiridas: <strong>SASS, Vite, CSS</strong>.</p>
+              </li>
+              <li>
+                <p> Repositório do projeto no GitHub:
+                  <strong><a href="https://github.com/EdgardMaia/Serenatto-Cafe"  rel="noopener noreferrer" target="_blank">Serenatto Café</a></strong>.
+                </p>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div id="curiosidades">
+        <!-- <div id="curiosidades">
           <h1>Curiosidades</h1>
-        </div>
+        </div> -->
       </div>
     </main>
 
@@ -220,11 +300,10 @@
               />
             </svg>
           </a>
-
         </div>
 
         <!-- Creditos -->
-         <div class="creditos">
+        <div class="creditos">
           <p>
             &copy; 2025 Desenvolvido por <strong>Edgard Maia</strong><br />
             Ícones obtidos através de
@@ -243,6 +322,7 @@
             >
           </p>
         </div>
+      </div>
     </footer>
 
     <!-- Scripts -->
