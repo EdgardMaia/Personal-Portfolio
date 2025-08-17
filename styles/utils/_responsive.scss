@@ -43,6 +43,11 @@ footer.rodape-container {
   padding: 1.5rem 2.5rem;
 }
 
+// Oculta o ícone do hambúrguer em telas maiores por padrão
+#hamburguer-icon {
+  display: none;
+}
+
 // --- Media Queries ---
 
 @media (max-width: 1024px) {
@@ -94,6 +99,14 @@ footer.rodape-container {
 
 @media (max-width: 768px) {
   /* tablet */
+  .navegacao-secao {
+    display: none; // Oculta a navegação principal
+  }
+
+  #hamburguer-icon {
+    display: flex; // Exibe o ícone do hambúrguer
+  }
+
   body {
     padding: 1.6rem;
   }
@@ -286,4 +299,85 @@ footer.rodape-container {
   }
 }
 
-// ... existing code ...
+// Estilos para telas grandes (Desktop)
+.navegacao-secao {
+  display: block;
+}
+
+#hamburguer-icon {
+  display: none;
+}
+
+// Media query para tablets e telas menores
+@media (max-width: 768px) {
+  .navegacao-secao {
+    display: none;
+  }
+
+  #hamburguer-icon {
+    display: flex;
+  }
+
+  main.conteudo-principal {
+    .principal-container {
+      > div {
+        &#introducao {
+          .introducao-info {
+            flex-direction: column;
+            gap: 2rem;
+
+            .texto-introducao,
+            .foto-perfil-container {
+              max-width: 100%;
+              text-align: center;
+            }
+
+            p {
+              text-align: justify;
+            }
+          }
+        }
+
+        &#projetos {
+          .serenatto-container {
+            flex-direction: column;
+
+            .imagem-projeto {
+              max-width: 100%;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Media query para dispositivos móveis
+@media (max-width: 425px) {
+  main.conteudo-principal {
+    .principal-container {
+      > div {
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        &#introducao {
+          h2 {
+            font-size: 1rem;
+          }
+          p {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+
+  footer.rodape-container {
+    .social-container {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}
