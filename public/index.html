@@ -62,51 +62,67 @@
             </li>
           </ul>
         </nav>
+        <!-- Ícone do Menu Hambúrguer -->
+        <div id="hamburguer-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         <!-- Modo Claro/Escuro -->
         <label class="toggle">
           <input type="checkbox" />
           <div></div>
         </label>
       </div>
+      <!-- Menu de Navegação Móvel -->
+      <div id="mobile-menu">
+        <nav>
+          <ul>
+            <li><a href="#introducao">Introdução</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contatos">Contatos</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <!-- Conteúdo Principal -->
     <main class="conteudo-principal" id="home" role="conteudo-principal">
       <div class="principal-container">
-        
         <div id="introducao">
           <div class="introducao-info">
-            <h1>Edgard Maia</h1>
-            <h2>
-              Focado em
-              <span
-                style="--i: 3"
-                data-text="print&#40;&#34;Programação&#34;&#41;"
-                >print&#40;&#34;Programação&#34;&#41;</span
-              >
-              <span style="--i: 2" data-text="&lt;Front End&#47;&gt;"
-                >&lt;Front End&#47;&gt;</span
-              >
-              <span style="--i: 1" data-text="Segurança &#9888;"
-                >Segurança &#9888;</span
-              >
-            </h2>
+            <div class="texto-introducao">
+              <h1>Edgard Maia</h1>
+              <h2>
+                Focado em
+                <span style="--i: 3" data-text='print&#40;"Programação"&#41;'
+                  >print&#40;&quot;Programação&quot;&#41;</span
+                >
+                <span style="--i: 2" data-text="&lt;Front End&#47;&gt;"
+                  >&lt;Front End&#47;&gt;</span
+                >
+                <span style="--i: 1" data-text="Segurança &#9888;"
+                  >Segurança &#9888;</span
+                >
+              </h2>
 
-            <p>
-              Aspirante a profissional de tecnologia, almejo meu primeiro
-              emprego ou estágio para mergulhar nas diversas vertentes da área.
-              Comprometido em aprender, crescer e contribuir efetivamente para o
-              avanço tecnológico da equipe e da organização, Sou entusiasta de
-              Python e segurança da informação. Tenho interesse em áreas como
-              redes e infraestrutura.
-            </p>
+              <p>
+                Aspirante a profissional de tecnologia, almejo meu primeiro
+                emprego ou estágio para mergulhar nas diversas vertentes da
+                área. Comprometido em aprender, crescer e contribuir
+                efetivamente para o avanço tecnológico da equipe e da
+                organização, Sou entusiasta de Python e segurança da informação.
+                Tenho interesse em áreas como redes e infraestrutura.
+              </p>
 
-            <p>
-              Gosto de experimentar diferentes tecnologias e ferramentas — de
-              ambientes Linux a ferramentas de pentests — sempre com foco em
-              aprender, praticar e aprimorar minhas habilidades na área de
-              cibersegurança.
-            </p>
+              <p>
+                Gosto de experimentar diferentes tecnologias e ferramentas — de
+                ambientes Linux a ferramentas de pentests — sempre com foco em
+                aprender, praticar e aprimorar minhas habilidades na área de
+                cibersegurança.
+              </p>
+            </div>
 
             <div class="foto-perfil-container">
               <div class="foto-bg">
@@ -175,19 +191,40 @@
         <div id="projetos">
           <h1>Projetos</h1>
           <div class="serenatto-container">
+            <div class="imagem-projeto"></div>
             <ul class="descricao">
               <li>
-                <p> Projeto alura <strong>SASS com Vite: otimizando e modularizando seu CSS</strong>.</p>
+                <p>
+                  Projeto alura
+                  <strong
+                    >SASS com Vite: otimizando e modularizando seu CSS</strong
+                  >.
+                </p>
               </li>
               <li>
-                <p> O Serenatto é uma landing page para um café, projetada para apresentar produtos de forma atraente e interativa, proporcionando uma experiência de uso agradável.</p>
+                <p>
+                  O Serenatto é uma landing page para um café, projetada para
+                  apresentar produtos de forma atraente e interativa,
+                  proporcionando uma experiência de uso agradável.
+                </p>
               </li>
               <li>
-                <p> Principais skills adquiridas: <strong>SASS, Vite, CSS</strong>.</p>
+                <p>
+                  Principais skills adquiridas:
+                  <strong>SASS, Vite, CSS</strong>.
+                </p>
               </li>
               <li>
-                <p> Repositório do projeto no GitHub:
-                  <strong><a href="https://github.com/EdgardMaia/Serenatto-Cafe"  rel="noopener noreferrer" target="_blank">Serenatto Café</a></strong>.
+                <p>
+                  Repositório do projeto no GitHub:
+                  <strong
+                    ><a
+                      href="https://github.com/EdgardMaia/Serenatto-Cafe"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      >Serenatto Café</a
+                    ></strong
+                  >.
                 </p>
               </li>
             </ul>
@@ -328,5 +365,6 @@
     <!-- Scripts -->
     <script type="module" src="../js/dark_mode.js" defer></script>
     <script type="module" src="../js/scroll-nav.js" defer></script>
+    <script type="module" src="../js/hamburguer.js" defer></script>
   </body>
 </html>
