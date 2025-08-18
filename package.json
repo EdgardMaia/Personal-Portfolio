@@ -1,0 +1,26 @@
+{
+  "name": "personal-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EdgardMaia/Personal-Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/EdgardMaia/Personal-Portfolio/issues"
+  },
+  "homepage": "https://github.com/EdgardMaia/Personal-Portfolio#readme",
+  "devDependencies": {
+    "sass": "^1.90.0",
+    "vite": "^7.1.2"
+  }
+}
