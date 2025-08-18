@@ -1,5 +1,5 @@
 // ==============================================
-// 🔄 CSS RESET 
+// 🔄 CSS RESET
 // ==============================================
 
 // --- Reset Universal ---
@@ -20,12 +20,49 @@
 // License: none (public domain)
 
 // --- Elementos de estrutura e tipografia ---
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center {
   margin: 0;
   padding: 0;
   border: 0;
@@ -35,7 +72,12 @@ b, u, i, center {
 }
 
 // --- Listas e definições ---
-dl, dt, dd, ol, ul, li {
+dl,
+dt,
+dd,
+ol,
+ul,
+li {
   margin: 0;
   padding: 0;
   border: 0;
@@ -45,7 +87,10 @@ dl, dt, dd, ol, ul, li {
 }
 
 // --- Formulários ---
-fieldset, form, label, legend {
+fieldset,
+form,
+label,
+legend {
   margin: 0;
   padding: 0;
   border: 0;
@@ -55,7 +100,14 @@ fieldset, form, label, legend {
 }
 
 // --- Tabelas ---
-table, caption, tbody, tfoot, thead, tr, th, td {
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
   margin: 0;
   padding: 0;
   border: 0;
@@ -65,10 +117,26 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 
 // --- Elementos HTML5 semânticos ---
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -82,8 +150,17 @@ time, mark, audio, video {
 // ==============================================
 
 // --- Display para elementos HTML5 (browsers antigos) ---
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
@@ -93,17 +170,19 @@ body {
 }
 
 // --- Listas sem marcadores ---
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
 // --- Citações sem aspas automáticas ---
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 
   &::before,
   &::after {
-    content: '';
+    content: "";
     content: none;
   }
 }
@@ -126,14 +205,21 @@ html {
 }
 
 // --- Imagens responsivas por padrão ---
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
 // --- Elementos de formulário herdando fonte ---
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
   color: inherit;
 }
@@ -143,7 +229,7 @@ button {
   background: none;
   border: none;
   cursor: pointer;
-  
+
   &:focus {
     outline: none;
   }
@@ -153,7 +239,7 @@ button {
 a {
   text-decoration: none;
   color: inherit;
-  
+
   &:focus {
     outline: none;
   }
@@ -162,7 +248,7 @@ a {
 // --- Melhor comportamento de scroll ---
 html {
   scroll-behavior: smooth;
-  
+
   @media (prefers-reduced-motion: reduce) {
     scroll-behavior: auto;
   }

@@ -2,19 +2,13 @@
 
 @mixin scroll-layout {
   // --- Paleta scrollbar ---
-  // $sb-track-color: var(--track-bg-color);
   $sb-thumb-color: var(--thumb-bg-color);
-  $sb-size: 15px; 
+  $sb-size: 15px;
 
   // Estilo do scrollbar aplicado corretamente
   &::-webkit-scrollbar {
     width: $sb-size;
   }
-
-  // &::-webkit-scrollbar-track {
-  //   background: $sb-track-color;
-  //   border-radius: 10px;
-  // }
 
   &::-webkit-scrollbar-thumb {
     background: $sb-thumb-color;
@@ -27,6 +21,8 @@
   }
 }
 
-body {
-  @include scroll-layout();
+@media (min-width: 1024px) {
+  body {
+    @include scroll-layout();
+  }
 }

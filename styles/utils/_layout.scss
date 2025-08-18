@@ -1,4 +1,4 @@
-// --- Mixins ---
+// Define a base para contêineres principais como header e footer.
 @mixin layout-header-footer {
   position: sticky;
   top: 0;
@@ -13,53 +13,14 @@
   z-index: 1;
 }
 
-@mixin box-shadow-neumórfico {
-  // Box-shadow neumórfico
+// Aplica um efeito de sombra no estilo neumórfico.
+@mixin box-shadow-neumorfico {
   box-shadow: 9px 9px 16px var(--shadow-dark),
     -9px -9px 16px var(--shadow-light), inset -1px -1px 2px var(--shadow-dark),
     inset 1px 1px 2px var(--shadow-light);
 }
 
-.conteudo-principal{
-  #projetos{
-    img{
-      @include box-shadow-neumórfico;
-    }
-  }
-}
-
-.cabecalho-container {
-  @include layout-header-footer;
-  @include box-shadow-neumórfico;
-  z-index: 2; // Garante que o cabeçalho fique sempre à frente
-}
-
-.conteudo-principal,
-.rodape-container {
-  width: calc(100vw - 6rem);
-  margin: 3rem;
-  padding: 1.5rem; // Adicionado um padding para o conteúdo não colar nas bordas
-  border-radius: 20px;
-  background-color: var(--session-color);
-  @include box-shadow-neumórfico;
-}
-
-.conteudo-principal {
-  margin-top: 0; // Remove a margem superior para alinhar com o cabeçalho
-}
-
-// --- Layout para telas grandes (≥1920px) ---
-@mixin layout-main-large {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: calc(100vw - 6rem);
-  margin: 0 3rem 3rem 3rem;
-  z-index: 100;
-}
-
-// --- Apresentação ---
+// Define o comportamento de scroll e display para a seção de apresentação.
 @mixin layout-apresentacao {
   flex: 1;
   display: block;
@@ -72,21 +33,7 @@
   scroll-behavior: smooth;
 }
 
-// Apresentação responsiva
-.apresentacao {
-  @include layout-apresentacao;
-}
-
-// Para telas grandes, scroll interno da apresentação
-@media (min-width: 1920px) {
-  .apresentacao {
-    height: 100%;
-    overflow-y: auto;
-    padding-right: 10px; // Espaço para scrollbar
-  }
-}
-
-// --- Social --
+// Padroniza o layout para o contêiner de ícones sociais.
 @mixin layout-social {
   display: flex;
   justify-content: center;
@@ -95,11 +42,7 @@
   margin: 0;
 }
 
-.social-container {
-  @include layout-social;
-}
-
-// --- Créditos ---
+// Estiliza a seção de créditos no rodapé.
 @mixin layout-creditos {
   p,
   a {
@@ -115,6 +58,121 @@
   }
 }
 
+// Mixin para o layout do conteúdo principal em telas muito grandes.
+@mixin layout-main-large {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: calc(100vw - 6rem);
+  margin: 0 3rem 3rem 3rem;
+  z-index: 100;
+}
+
+// >> ESTRUTURA GERAL DO CORPO (BODY)
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  // Adicione aqui outras estilizações do body se necessário
+}
+
+
+// >> ESTILOS DE LAYOUT PRINCIPAL
+.cabecalho-container,
+.conteudo-principal,
+.rodape-container {
+  margin: 3rem;
+  border-radius: 20px;
+  background-color: var(--session-color);
+  @include box-shadow-neumorfico;
+}
+
+// Cabeçalho
+.cabecalho-container {
+  @include layout-header-footer; // Mantém o comportamento sticky
+  z-index: 2;
+  // Removemos a margem daqui, pois já está na regra compartilhada
+}
+
+// Conteúdo Principal
+.conteudo-principal {
+  flex: 1; // Faz o conteúdo crescer e empurrar o rodapé para baixo
+  padding: 1.5rem;
+  // Removemos a margem daqui
+}
+
+// Rodapé
+.rodape-container {
+  padding: 1.5rem;
+  // Removemos a margem daqui
+}
+
+// >> ESTILOS DE COMPONENTES
+// Seção de Apresentação
+.apresentacao {
+  @include layout-apresentacao;
+}
+
+// Imagens na seção de projetos
+.conteudo-principal {
+  #projetos {
+    img {
+      @include box-shadow-neumorfico;
+    }
+  }
+}
+
+// Contêiner de Ícones Sociais
+.social-container {
+  @include layout-social;
+}
+
+// Seção de Créditos
 .creditos {
   @include layout-creditos;
+}
+
+// >> ESTILOS RESPONSIVOS
+// Para telas grandes (largura mínima de 1920px)
+@media (min-width: 1920px) {
+  // Ajusta o scroll da apresentação para ocupar a altura total
+  .apresentacao {
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 10px; // Espaço para a barra de rolagem
+  }
+}
+
+// Para telas menores, aumenta a largura dos contêineres
+@media (max-width: 1024px) {
+  .cabecalho-container,
+  .conteudo-principal,
+  .rodape-container {
+    // Ocupa 90% da largura da tela e centraliza
+    width: 90vw;
+    // Zera a margem lateral e usa auto para centralizar
+    margin-left: auto;
+    margin-right: auto;
+    // Ajusta as margens verticais
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  // Remove a margem superior do conteúdo e do rodapé para um espaçamento consistente
+  .conteudo-principal,
+  .rodape-container {
+    margin-top: 0;
+  }
+
+  /* Toggle desce abaixo do header em telas pequenas */
+  .cabecalho-container .toggle {
+    position: absolute;
+    top: 1vh;
+    left: 37.5vh;
+    transform: translateX(-50%);
+    margin-top: 1.5rem;
+    z-index: 10;
+    /* Centraliza o toggle abaixo do header */
+  }
 }
