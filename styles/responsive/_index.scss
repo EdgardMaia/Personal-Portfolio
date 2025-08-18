@@ -1,5 +1,6 @@
 // Importa todos os módulos de responsividade
-@use "responsive-layout";
-@use "responsive-menu";
-@use "responsive-dark-mode";
-@use "responsive-scroll";
+@use "./reponsividade_header/responsive-layout";
+@use "./reponsividade_header/responsive-menu";
+@use "./reponsividade_header/responsive-dark-mode";
+@use "./reponsividade_header/responsive-scroll";
+@use "./responsividade_footer/responsive-footer";

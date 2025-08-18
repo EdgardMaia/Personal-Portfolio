@@ -1,7 +1,0 @@
-@use "breakpoints" as *;
-
-@include mobile {
-  .toggle {
-    transform: scale(0.7);
-  }
-}

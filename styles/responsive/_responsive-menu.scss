@@ -1,21 +1,5 @@
 @use "breakpoints" as *;
 
-// Oculta o input do menu hambúrguer globalmente
-.menu-btn {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  position: absolute !important;
-  left: -9999px !important;
-}
-
-// Oculta o ícone do menu em desktop
-@include desktop {
-  .menu-icon {
-    display: none !important;
-  }
-}
-
 @include mobile {
   // Mostra o ícone do menu
   .menu-icon {

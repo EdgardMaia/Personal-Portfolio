@@ -1,8 +1,0 @@
-@use "../utils/scroll_design" as scroll;
-@use "breakpoints" as *;
-
-@include desktop {
-  body {
-    @include scroll.scroll-layout();
-  }
-}
