@@ -1,56 +1,87 @@
 // js/scroll-nav.js
-document.addEventListener('DOMContentLoaded', () => {
-  const sections = Array.from(document.querySelectorAll('scroll-page[id]')); // seus elementos customizados
-  const navLinks = Array.from(document.querySelectorAll('.menu a'));
 
-  if (!sections.length || !navLinks.length) return;
-
-  // Observador com vários thresholds para nos dar intersectionRatio
-  const observer = new IntersectionObserver((entries) => {
-    // pegamos as entradas que estão intersectando
-    const visible = entries.filter(e => e.isIntersecting);
-
-    if (visible.length) {
-      // escolhe a seção com maior intersectionRatio (mais visível)
-      const top = visible.reduce((max, cur) => (cur.intersectionRatio > max.intersectionRatio ? cur : max), visible[0]);
-      setActive(top.target.id);
-      return;
+/**
+ * Limita a frequência com que uma função pode ser chamada.
+ * @param {Function} func A função a ser limitada.
+ * @param {number} limit O intervalo de tempo em milissegundos.
+ * @returns {Function} A nova função com throttle.
+ */
+function throttle(func, limit) {
+  let inThrottle;
+  return function (...args) {
+    const context = this;
+    if (!inThrottle) {
+      func.apply(context, args);
+      inThrottle = true;
+      setTimeout(() => (inThrottle = false), limit);
     }
+  };
+}
 
-    // fallback: quando nenhuma está "isIntersecting", escolhemos a mais próxima do centro da viewport
-    let nearest = null;
-    let minDist = Infinity;
-    sections.forEach(sec => {
-      const rect = sec.getBoundingClientRect();
-      const center = rect.top + rect.height / 2;
-      const dist = Math.abs(center - window.innerHeight / 2);
-      if (dist < minDist) { minDist = dist; nearest = sec; }
-    });
-    if (nearest) setActive(nearest.id);
-  }, {
-    threshold: [0.25, 0.5, 0.75, 1.0], // ajusta sensibilidade
-    rootMargin: '0px 0px -10% 0px' // você pode deslocar o "gatilho" para cima/baixo
-  });
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. Seletores de DOM cacheados para melhor performance.
+  const sections = Array.from(document.querySelectorAll("scroll-page[id]"));
+  const navLinks = Array.from(document.querySelectorAll(".menu a"));
+  const header = document.querySelector(".header-container");
+  const headerHeight = header ? header.offsetHeight : 0;
 
-  sections.forEach(s => observer.observe(s));
+  if (!sections.length || !navLinks.length) {
+    return;
+  }
 
+  /**
+   * Ativa o link de navegação correspondente à seção visível.
+   * @param {string | null} id O ID da seção ativa, ou null para desativar todos.
+   */
   function setActive(id) {
-    navLinks.forEach(a => {
-      const href = a.getAttribute('href');
-      if (!href) return;
-      if (href === `#${id}`) a.classList.add('active');
-      else a.classList.remove('active');
+    navLinks.forEach((link) => {
+      const href = link.getAttribute("href");
+      if (href === `#${id}`) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
     });
   }
 
-  // opcional: smooth scroll para os cliques na nav
-  navLinks.forEach(a => {
-    a.addEventListener('click', (e) => {
-      const href = a.getAttribute('href');
-      if (!href || !href.startsWith('#')) return;
-      e.preventDefault();
+  /**
+   * Verifica qual seção está atualmente na viewport e ativa o link correspondente.
+   */
+  function checkActiveSection() {
+    // Adiciona a altura do header e um pequeno buffer para o cálculo.
+    const scrollPosition = window.scrollY + headerHeight + 50;
+
+    let activeSectionId = null;
+
+    // Itera sobre as seções para encontrar a última que está visível na tela.
+    for (const section of sections) {
+      if (section.offsetTop <= scrollPosition) {
+        activeSectionId = section.id;
+      } else {
+        break; // Otimização: seções são ordenadas, não precisa checar as demais.
+      }
+    }
+
+    setActive(activeSectionId);
+  }
+
+  // 2. Aplica throttle ao evento de scroll para otimizar a performance.
+  window.addEventListener("scroll", throttle(checkActiveSection, 200));
+
+  // Executa a função uma vez no carregamento para definir o estado inicial correto.
+  checkActiveSection();
+
+  // Mantém o smooth scroll para cliques nos links de navegação.
+  navLinks.forEach((a) => {
+    a.addEventListener("click", (e) => {
+      const href = a.getAttribute("href");
+      if (!href || !href.startsWith("#")) return;
+
       const target = document.querySelector(href);
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     });
   });
 });
