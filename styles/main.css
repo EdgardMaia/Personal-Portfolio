@@ -345,11 +345,7 @@ html.dark svg path {
   margin: 0;
 }
 .toggle input {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  position: absolute !important;
-  left: -9999px !important;
+  display: none;
 }
 .toggle input + div {
   border-radius: 50%;
@@ -497,10 +493,10 @@ body {
   /* Toggle desce abaixo do header em telas pequenas */
   .cabecalho-container .toggle {
     position: absolute;
-    top: 1vh;
-    left: 37.5vh;
+    top: 7vh;
+    left: 62vw;
     transform: translateX(-50%);
-    margin-top: 1.5rem;
+    margin: 0;
     z-index: 10;
     /* Centraliza o toggle abaixo do header */
   }
@@ -538,6 +534,15 @@ body {
     margin-right: auto;
   }
 }
+@media (min-width: 1024px) {
+  .cabecalho-container,
+  .conteudo-principal,
+  .rodape-container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 .menu-btn {
   display: none !important;
   visibility: hidden !important;
@@ -547,6 +552,11 @@ body {
 }
 
 @media (min-width: 1024px) {
+  .menu-icon {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
   .menu-icon {
     display: none !important;
   }
@@ -580,11 +590,11 @@ body {
     top: 100%;
     right: 0;
     width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
     z-index: 5;
     background-color: transparent;
     transition: background-color 0.3s ease;
-    border-radius: 0 0 20px 20px;
-    overflow: hidden;
   }
   .navegacao-secao .menu {
     flex-direction: column;
@@ -624,7 +634,44 @@ body {
 }
 @media (max-width: 767px) {
   .toggle {
-    transform: scale(0.7);
+    transform: scale(0.65) !important;
+  }
+  .toggle input + div {
+    width: 30px !important;
+    height: 30px !important;
+    box-shadow: inset 14px -14px 0 0 var(--toggle-color) !important;
+  }
+  .toggle input + div::after {
+    width: 6px !important;
+    height: 6px !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .toggle {
+    transform: scale(0.75) !important;
+  }
+  .toggle input + div {
+    width: 32px !important;
+    height: 32px !important;
+    box-shadow: inset 15px -15px 0 0 var(--toggle-color) !important;
+  }
+  .toggle input + div::after {
+    width: 7px !important;
+    height: 7px !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .toggle {
+    transform: scale(0.85) !important;
+  }
+  .toggle input + div {
+    width: 35px !important;
+    height: 35px !important;
+    box-shadow: inset 15px -15px 0 0 var(--toggle-color) !important;
+  }
+  .toggle input + div::after {
+    width: 8px !important;
+    height: 8px !important;
   }
 }
 @media (min-width: 1024px) {
@@ -640,6 +687,55 @@ body {
       scrollbar-color: var(--thumb-bg-color) transparent;
       scrollbar-width: thin;
     }
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .rodape-container .social-container {
+    gap: 1.5rem;
+  }
+  .rodape-container .social-container .social-link i {
+    font-size: 2.2rem;
+  }
+  .rodape-container .social-container .social-link svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+@media (max-width: 767px) {
+  .rodape-container {
+    padding: 2rem 1rem;
+  }
+  .rodape-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .rodape-container .social-container {
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .rodape-container .social-container .social-link i {
+    font-size: 2rem !important;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+    padding: 0.4rem;
+  }
+  .rodape-container .social-container .social-link svg {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    min-width: 3rem;
+    min-height: 3rem;
+    padding: 0.4rem;
+  }
+  .rodape-container .creditos {
+    margin-top: 2rem;
+  }
+  .rodape-container .creditos p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .rodape-container .creditos a {
+    font-size: 0.9rem;
   }
 }
 @font-face {
