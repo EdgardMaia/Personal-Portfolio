@@ -1,0 +1,53 @@
+@use "../breakpoints" as *;
+
+// Ajustes de tamanho do toggle para diferentes breakpoints
+@include mobile {
+  .toggle {
+    transform: scale(0.65) !important;
+
+    input + div {
+      width: 30px !important;
+      height: 30px !important;
+      box-shadow: inset 14px -14px 0 0 var(--toggle-color) !important;
+
+      &::after {
+        width: 6px !important;
+        height: 6px !important;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .toggle {
+    transform: scale(0.75) !important;
+
+    input + div {
+      width: 32px !important;
+      height: 32px !important;
+      box-shadow: inset 15px -15px 0 0 var(--toggle-color) !important;
+
+      &::after {
+        width: 7px !important;
+        height: 7px !important;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .toggle {
+    transform: scale(0.85) !important;
+
+    input + div {
+      width: 35px !important;
+      height: 35px !important;
+      box-shadow: inset 15px -15px 0 0 var(--toggle-color) !important;
+
+      &::after {
+        width: 8px !important;
+        height: 8px !important;
+      }
+    }
+  }
+}

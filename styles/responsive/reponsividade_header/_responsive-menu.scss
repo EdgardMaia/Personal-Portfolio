@@ -1,0 +1,112 @@
+@use "../breakpoints" as *;
+
+// Oculta o input do menu hambúrguer globalmente
+.menu-btn {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
+
+// Oculta o ícone do menu em desktop
+@include desktop {
+  .menu-icon {
+    display: none !important;
+  }
+}
+
+// Oculta o ícone do menu em tablet
+@include tablet {
+  .menu-icon {
+    display: none !important;
+  }
+}
+
+// Mostrar o ícone do menu em mobile
+@include mobile {
+  // Mostra o ícone do menu
+  .menu-icon {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+    z-index: 10;
+
+    i {
+      font-size: 1.8rem;
+      color: var(--text-color);
+      position: absolute;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .icon-close {
+      opacity: 0;
+      transform: scale(0.7) rotate(-90deg);
+    }
+  }
+
+  // Ajusta o container da navegação
+  .navegacao-secao {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 5;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    
+    .menu {
+      flex-direction: column;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      padding: 0;
+      gap: 0;
+
+      li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid var(--border-color, #f4f4f4);
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        a {
+          padding: 1.2rem 0;
+        }
+      }
+    }
+  }
+
+  // Estado ativo (menu aberto)
+  .menu-btn:checked {
+    ~ .menu-icon {
+      .icon-menu {
+        opacity: 0;
+        transform: scale(0.7) rotate(90deg);
+      }
+      .icon-close {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+      }
+    }
+
+    ~ .navegacao-secao {
+      background-color: rgba(var(--bg-color-rgb, 255, 255, 255), 0.4);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+
+      .menu {
+        max-height: 350px;
+      }
+    }
+  }
+}
