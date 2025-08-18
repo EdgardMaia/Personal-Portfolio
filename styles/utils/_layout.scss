@@ -168,10 +168,10 @@ body {
   /* Toggle desce abaixo do header em telas pequenas */
   .cabecalho-container .toggle {
     position: absolute;
-    top: 1vh;
-    left: 37.5vh;
+    top: 7vh;
+    left: 62vw;
     transform: translateX(-50%);
-    margin-top: 1.5rem;
+    margin: 0;
     z-index: 10;
     /* Centraliza o toggle abaixo do header */
   }
