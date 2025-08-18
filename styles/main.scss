@@ -3,8 +3,6 @@
 @use "./utils/dark_mode";
 @use "./utils/layout";
 @use "./utils/scroll_design";
-@use "./utils/hamburguer";
-@use "./utils/responsive" as *;
 @import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 @font-face {
   font-family: "Pixel Twist";
@@ -31,23 +29,27 @@ body {
   display: flex;
   flex-direction: column;
 
-  h1 {
-    font-family: "Pixel Twist";
-    margin: 0;
-    color: var(--text-color);
-    font-size: 2rem;
+@mixin h-config($font-family, $margin, $color, $font-size) {
+  font-family: $font-family;
+  margin: $margin;
+  color: $color;
+  font-size:$font-size;
+}
+
+  h1, h2 {
+    @include h-config("Pixel Twist", 0, var(--text-color), 2rem);
   }
 
-  h2,
-  span,
-  a,
-  p {
+  h3 {
+    @include h-config("Pixel Twist", 0, var(--text-color), 1.5rem);
+  }
+
+  span, a, p {
     font-family: "Raleway", sans-serif;
     margin: 0;
   }
-  h2,
-  p,
-  a {
+
+  p, a {
     font-size: 1rem;
   }
 }
@@ -64,6 +66,7 @@ header.cabecalho-container {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+    padding: 2rem;
 
     .navegacao-secao {
       margin: 0;
@@ -80,7 +83,7 @@ header.cabecalho-container {
           a {
             display: inline-block;
             text-decoration: none;
-            padding: 0.1rem 0.5rem 0.5rem 0.5rem;
+            padding: 1rem;
             border-radius: 6px;
             transition: transform 0.28s cubic-bezier(0.2, 0.9, 0.3, 1),
               box-shadow 0.28s, color 0.2s;
@@ -157,6 +160,7 @@ main.conteudo-principal {
       margin: 0 auto 5rem auto;
       max-width: 1200px;
       width: 90%;
+      scroll-margin-top: 8rem;
 
       &#introducao {
         .introducao-info {
@@ -178,11 +182,11 @@ main.conteudo-principal {
             z-index: 1;
           }
 
-          h2 {
-            padding: 0.5rem 0 1rem 0;
-            font-size: 20px;
-            font-weight: 700;
+          h2, h3 {
+            padding-bottom: 1rem;
+          }
 
+          h3 {
             span {
               position: relative;
               display: inline-block;
@@ -208,7 +212,6 @@ main.conteudo-principal {
             text-align: left;
             font-size: 15px;
             font-weight: 500;
-            margin: 0;
             z-index: 1;
             line-height: 1.5;
             text-align: justify;
@@ -234,8 +237,8 @@ main.conteudo-principal {
       }
 
       &#habilidades {
-        h1 {
-          padding: 3rem;
+        h2 {
+          padding-bottom: 3rem;
         }
         .habilidades-container {
           display: flex;
@@ -269,6 +272,7 @@ main.conteudo-principal {
 
           .item {
             position: relative;
+            font-weight: 600;
             z-index: 2;
             width: var(--width);
             height: var(--height);
@@ -300,8 +304,8 @@ main.conteudo-principal {
         }
       }
       &#projetos {
-        h1 {
-          margin-bottom: 1.5rem;
+        h2 {
+          padding-bottom: 3rem;
         }
         .serenatto-container {
           display: flex;
@@ -390,6 +394,7 @@ main.conteudo-principal {
 // --- Rodapé da página ---
 footer.rodape-container {
   padding: 1rem;
+  scroll-margin-top: 8rem; /* Adicionado para corrigir a sobreposição da âncora */
 
   h1 {
     margin: 0 0 1rem 0;
