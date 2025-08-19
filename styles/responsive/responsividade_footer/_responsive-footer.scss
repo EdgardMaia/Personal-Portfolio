@@ -4,25 +4,6 @@
 // RESPONSIVIDADE DO FOOTER
 // ==============================================
 
-@include tablet {
-  .rodape-container {
-    .social-container {
-      gap: 1.5rem;
-
-      .social-link {
-        i {
-          font-size: 2.2rem;
-        }
-
-        svg {
-          width: 2.5rem;
-          height: 2.5rem;
-        }
-      }
-    }
-  }
-}
-
 @include mobile {
   .rodape-container {
     padding: 2rem 1rem;
@@ -67,6 +48,102 @@
 
       a {
         font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .rodape-container {
+    .social-container {
+      gap: 1.5rem;
+
+      .social-link {
+        i {
+          font-size: 2.2rem;
+        }
+
+        svg {
+          width: 2.5rem;
+          height: 2.5rem;
+        }
+      }
+    }
+  }
+}
+
+@include desktop {
+  .rodape-container {
+    padding: 3rem 2rem;
+    max-width: 100vw;
+    margin: 1.5rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .social-container {
+      gap: 2rem;
+      justify-content: center;
+      max-width: 600px;
+      margin: 0 auto;
+
+      .social-link {
+        transition: transform 0.3s ease, filter 0.3s ease;
+
+        &:hover {
+          transform: translateY(-3px) scale(1.1);
+          filter: brightness(1.2);
+        }
+
+        // Ícones Remix em desktop
+        i {
+          font-size: 2.5rem;
+          padding: 0.5rem;
+          min-width: 3rem;
+          min-height: 3rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        // SVGs em desktop
+        svg {
+          width: 3rem;
+          height: 3rem;
+          padding: 0.5rem;
+          transition: transform 0.2s ease;
+        }
+
+        &:hover svg {
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    .creditos {
+      margin-top: 1rem;
+      text-align: center;
+
+      p {
+        font-size: 1rem;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      a {
+        font-size: 1rem;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: var(--accent-color);
+        }
       }
     }
   }
