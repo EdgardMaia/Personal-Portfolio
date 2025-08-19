@@ -6,61 +6,190 @@
 
 @include mobile {
   .conteudo-principal {
-    padding: 1rem;
-    margin: 1rem;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
+    overflow-y: auto; // Permite a rolagem
+    overflow-x: hidden;
+    height: auto; // Deixa o conteúdo definir a altura
+    display: block; // Remove o flexbox de centralização do desktop
+    padding: 2rem 0;
+    .principal-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem; // Espaçamento consistente entre as seções
+      width: 100%;
+      padding: 0 1rem; // Espaçamento lateral para não colar nas bordas
+      height: auto;
+      overflow: visible;
+    }
+  }
 
-    // Seção introdução
-    #introducao {
-      margin: 0;
-      padding: 1rem;
+  // Seção introdução
+  #introducao {
+    width: 100%;
+    .introducao-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      // gap: 0;
+      position: relative;
+      isolation: isolate;
 
-      .introducao-info {
+      .texto-introducao {
+        display: contents;
+      }
+
+      h2 {
+        order: 1;
+        font-size: 2rem;
+        line-height: 1.2;
+        white-space: nowrap;
+      }
+
+      h3 {
+        order: 2;
+        font-size: 1.2rem;
         display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        text-align: center;
+        flex-wrap: nowrap;
         justify-content: center;
+        min-width: 20rem;
+        display: inline-block;
 
-        h2 {
-          font-size: 2rem;
-          line-height: 1.2;
-          white-space: nowrap;
-          margin-bottom: 0.5vh;
-          margin-left: 10vw;
-        }
+        span {
+          animation: none;
+          position: relative;
+          display: inline-block;
+          color: transparent;
+          -webkit-text-stroke: 0.7px var(--text-color); 
 
-        h3 {
-          font-size: 1.2rem;
-          margin-bottom: 1.5vh;
-          min-height: auto;
-
-          span {
-            position: static;
-            color: var(--text-color);
-            -webkit-text-stroke: unset;
-            animation: none;
-            white-space: pre-wrap;
-
-            &::before {
-              display: hidden;
-            }
+          &::before {
+            animation: fill-text 4s linear infinite; 
           }
         }
+      }
 
-        p {
-          font-size: 0.95rem;
-          line-height: 1.6;
-          text-align: justify;
-          max-width: 70vw;
+      .foto-perfil-container {
+        order: 3;
+        width: 60%;
+        max-width: 200px;
+        min-width: 150px;
+        margin: 1rem 0;
+
+        .foto-bg {
+          width: 100%;
+          height: auto;
+
+          img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            display: block;
+          }
+        }
+      }
+
+      p {
+        order: 4;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        text-align: justify;
+        max-width: 90vw;
+      }
+    }
+  }
+
+  // Seção habilidades
+  #habilidades {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .habilidades-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .nomes-slider,
+    .logos-slider {
+      width: 100%;
+      --height: 45px;
+      --quantity: 10;
+      mask: linear-gradient(
+        to right,
+        hsl(0 0% 0% / 0),
+        hsl(0 0% 0% / 1) 10%,
+        hsl(0 0% 0% / 1) 90%,
+        hsl(0 0% 0% / 0)
+      );
+      -webkit-mask: linear-gradient(
+        to right,
+        hsl(0 0% 0% / 0),
+        hsl(0 0% 0% / 1) 10%,
+        hsl(0 0% 0% / 1) 90%,
+        hsl(0 0% 0% / 0)
+      );
+
+      .list {
+        min-width: calc(var(--width) * var(--quantity));
+      }
+
+      .item {
+        --width: 110px;
+        font-size: 0.9rem;
+
+        img {
+          max-width: 70%;
+          height: auto;
         }
       }
     }
+  }
 
-    // Seção projetos
-    #projetos {
+  // Seção projetos
+  #projetos {
+    width: 100%;
+    padding: 0;
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .serenatto-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      width: 100%;
+
+      .imagem-projeto {
+        order: 1;
+        width: 100%;
+        max-width: 400px;
+        min-height: 250px;
+      }
+
+      .descricao {
+        order: 2;
+        width: 100%;
+        max-width: 90vw;
+        text-align: justify;
+
+        li {
+          padding-bottom: 0.8rem;
+        }
+      }
     }
   }
 }
