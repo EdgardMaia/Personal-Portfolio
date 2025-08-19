@@ -4,3 +4,63 @@
 // RESPONSIVIDADE DA SEÇÃO MAIN
 // ==============================================
 
+@include mobile {
+  .conteudo-principal {
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+
+    // Seção introdução
+    #introducao {
+      margin: 0;
+      padding: 1rem;
+
+      .introducao-info {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+
+        h2 {
+          font-size: 2rem;
+          line-height: 1.2;
+          white-space: nowrap;
+          margin-bottom: 0.5vh;
+          margin-left: 10vw;
+        }
+
+        h3 {
+          font-size: 1.2rem;
+          margin-bottom: 1.5vh;
+          min-height: auto;
+
+          span {
+            position: static;
+            color: var(--text-color);
+            -webkit-text-stroke: unset;
+            animation: none;
+            white-space: pre-wrap;
+
+            &::before {
+              display: hidden;
+            }
+          }
+        }
+
+        p {
+          font-size: 0.95rem;
+          line-height: 1.6;
+          text-align: justify;
+          max-width: 70vw;
+        }
+      }
+    }
+
+    // Seção projetos
+    #projetos {
+    }
+  }
+}
