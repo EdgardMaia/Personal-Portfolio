@@ -27,11 +27,11 @@
   --thumb-bg-dark: #ffffff;
 
   // --- Variáveis de transição img claro ---
-  --serenatto-img-light: url("../assets/img/serenatto-cafe.png");
+  --serenatto-img-light: url("/img/serenatto-cafe.png");
   --text-serenatto-light: #462e09;
 
   // --- Variáveis de transição img escuro ---
-  --serenatto-img-dark: url("../assets/img/serenatto-cafe-escuro.png");
+  --serenatto-img-dark: url("/img/serenatto-cafe-escuro.png");
   --text-serenatto-dark: #b29463;
 
   // --- Variáveis Semânticas (Padrão Modo Claro) ---
@@ -84,7 +84,14 @@ body {
 
 html.dark {
   // --- Tipografia ---
-  h1, h2, h3, h4, h5, h6, .logo, a {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .logo,
+  a {
     color: var(--text-color);
   }
 
