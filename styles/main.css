@@ -803,50 +803,155 @@ body {
 }
 @media (max-width: 767px) {
   .conteudo-principal {
-    padding: 1rem;
-    margin: 1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: auto;
+    display: block;
+    padding: 2rem 0;
+  }
+  .conteudo-principal .principal-container {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
+    gap: 3rem;
+    width: 100%;
+    padding: 0 1rem;
+    height: auto;
+    overflow: visible;
   }
-  .conteudo-principal #introducao {
-    margin: 0;
-    padding: 1rem;
+  #introducao {
+    width: 100%;
   }
-  .conteudo-principal #introducao .introducao-info {
+  #introducao .introducao-info {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
     text-align: center;
-    justify-content: center;
+    position: relative;
+    isolation: isolate;
   }
-  .conteudo-principal #introducao .introducao-info h2 {
+  #introducao .introducao-info .texto-introducao {
+    display: contents;
+  }
+  #introducao .introducao-info h2 {
+    order: 1;
     font-size: 2rem;
     line-height: 1.2;
     white-space: nowrap;
-    margin-bottom: 0.5vh;
-    margin-left: 10vw;
   }
-  .conteudo-principal #introducao .introducao-info h3 {
+  #introducao .introducao-info h3 {
+    order: 2;
     font-size: 1.2rem;
-    margin-bottom: 1.5vh;
-    min-height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    min-width: 20rem;
+    display: inline-block;
   }
-  .conteudo-principal #introducao .introducao-info h3 span {
-    position: static;
-    color: var(--text-color);
-    -webkit-text-stroke: unset;
+  #introducao .introducao-info h3 span {
     animation: none;
-    white-space: pre-wrap;
+    position: relative;
+    display: inline-block;
+    color: transparent;
+    -webkit-text-stroke: 0.7px var(--text-color);
   }
-  .conteudo-principal #introducao .introducao-info h3 span::before {
-    display: hidden;
+  #introducao .introducao-info h3 span::before {
+    animation: fill-text 4s linear infinite;
   }
-  .conteudo-principal #introducao .introducao-info p {
+  #introducao .introducao-info .foto-perfil-container {
+    order: 3;
+    width: 60%;
+    max-width: 200px;
+    min-width: 150px;
+    margin: 1rem 0;
+  }
+  #introducao .introducao-info .foto-perfil-container .foto-bg {
+    width: 100%;
+    height: auto;
+  }
+  #introducao .introducao-info .foto-perfil-container .foto-bg img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    display: block;
+  }
+  #introducao .introducao-info p {
+    order: 4;
     font-size: 0.95rem;
     line-height: 1.6;
     text-align: justify;
-    max-width: 70vw;
+    max-width: 90vw;
+  }
+  #habilidades {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  #habilidades h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  #habilidades .habilidades-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  #habilidades .nomes-slider,
+  #habilidades .logos-slider {
+    width: 100%;
+    --height: 45px;
+    --quantity: 10;
+    mask: linear-gradient(to right, hsla(0, 0%, 0%, 0), hsl(0, 0%, 0%) 10%, hsl(0, 0%, 0%) 90%, hsla(0, 0%, 0%, 0));
+    -webkit-mask: linear-gradient(to right, hsla(0, 0%, 0%, 0), hsl(0, 0%, 0%) 10%, hsl(0, 0%, 0%) 90%, hsla(0, 0%, 0%, 0));
+  }
+  #habilidades .nomes-slider .list,
+  #habilidades .logos-slider .list {
+    min-width: calc(var(--width) * var(--quantity));
+  }
+  #habilidades .nomes-slider .item,
+  #habilidades .logos-slider .item {
+    --width: 110px;
+    font-size: 0.9rem;
+  }
+  #habilidades .nomes-slider .item img,
+  #habilidades .logos-slider .item img {
+    max-width: 70%;
+    height: auto;
+  }
+  #projetos {
+    width: 100%;
+    padding: 0;
+  }
+  #projetos h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  #projetos .serenatto-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+  }
+  #projetos .serenatto-container .imagem-projeto {
+    order: 1;
+    width: 100%;
+    max-width: 400px;
+    min-height: 250px;
+  }
+  #projetos .serenatto-container .descricao {
+    order: 2;
+    width: 100%;
+    max-width: 90vw;
+    text-align: justify;
+  }
+  #projetos .serenatto-container .descricao li {
+    padding-bottom: 0.8rem;
   }
 }
 @font-face {
