@@ -7,7 +7,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 @font-face {
   font-family: "Pixel Twist";
-  src: url("../assets/fonts/PIXELTWIST.TTF") format("truetype");
+  src: url("/fonts/PIXELTWIST.TTF") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -197,7 +197,6 @@ main.conteudo-principal {
               animation: fill-text 4s linear infinite;
             }
           }
-          h1,
           h2 {
             z-index: 1;
           }
@@ -306,7 +305,7 @@ main.conteudo-principal {
           }
         }
       }
-      
+
       &#projetos {
         h2 {
           padding-bottom: 3rem;

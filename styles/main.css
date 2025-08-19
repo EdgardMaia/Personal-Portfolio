@@ -245,9 +245,9 @@ body {
   --slider-bg-dark: #000000;
   --track-bg-dark: #000000;
   --thumb-bg-dark: #ffffff;
-  --serenatto-img-light: url("../assets/img/serenatto-cafe.png");
+  --serenatto-img-light: url("/img/serenatto-cafe.png");
   --text-serenatto-light: #462e09;
-  --serenatto-img-dark: url("../assets/img/serenatto-cafe-escuro.png");
+  --serenatto-img-dark: url("/img/serenatto-cafe-escuro.png");
   --text-serenatto-dark: #b29463;
   --bg-color: var(--bg-light);
   --text-color: var(--text-light);
@@ -286,7 +286,14 @@ body {
   color: var(--text-color);
 }
 
-html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6, html.dark .logo, html.dark a {
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6,
+html.dark .logo,
+html.dark a {
   color: var(--text-color);
 }
 html.dark svg {
@@ -794,9 +801,57 @@ body {
     color: var(--accent-color);
   }
 }
+@media (max-width: 767px) {
+  .conteudo-principal {
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .conteudo-principal #introducao {
+    margin: 0;
+    padding: 1rem;
+  }
+  .conteudo-principal #introducao .introducao-info {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+  .conteudo-principal #introducao .introducao-info h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    margin-bottom: 0.5vh;
+    margin-left: 10vw;
+  }
+  .conteudo-principal #introducao .introducao-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5vh;
+    min-height: auto;
+  }
+  .conteudo-principal #introducao .introducao-info h3 span {
+    position: static;
+    color: var(--text-color);
+    -webkit-text-stroke: unset;
+    animation: none;
+    white-space: pre-wrap;
+  }
+  .conteudo-principal #introducao .introducao-info h3 span::before {
+    display: hidden;
+  }
+  .conteudo-principal #introducao .introducao-info p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: justify;
+    max-width: 70vw;
+  }
+}
 @font-face {
   font-family: "Pixel Twist";
-  src: url("../assets/fonts/PIXELTWIST.TTF") format("truetype");
+  src: url("/fonts/PIXELTWIST.TTF") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -960,7 +1015,6 @@ main.conteudo-principal .principal-container > div#introducao .introducao-info s
   overflow: hidden;
   animation: fill-text 4s linear infinite;
 }
-main.conteudo-principal .principal-container > div#introducao .introducao-info h1,
 main.conteudo-principal .principal-container > div#introducao .introducao-info h2 {
   z-index: 1;
 }
