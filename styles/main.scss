@@ -140,7 +140,7 @@ header.cabecalho-container {
 main.conteudo-principal {
   display: flex;
   align-items: center;
-  justify-content: center; // Centraliza horizontalmente o conteúdo
+  justify-content: center;
   overflow: hidden;
   z-index: 0;
 
@@ -154,7 +154,7 @@ main.conteudo-principal {
     overflow-x: hidden;
     overscroll-behavior: contain;
     scroll-behavior: smooth;
-    padding: 3rem 0 0 0;
+    padding: 0;
 
     > div {
       padding: 1.5rem;
@@ -178,6 +178,25 @@ main.conteudo-principal {
             text-align: left;
           }
 
+          span {
+            position: relative;
+            display: inline-block;
+            color: transparent;
+            -webkit-text-stroke: 0.7px var(--text-color);
+            animation: display-text 8s linear infinite;
+            animation-delay: calc(-4s * (var(--i) - 1));
+
+            &::before {
+              content: attr(data-text);
+              position: absolute;
+              width: 0;
+              border-right: 2px solid var(--text-color);
+              color: var(--text-color);
+              white-space: nowrap;
+              overflow: hidden;
+              animation: fill-text 4s linear infinite;
+            }
+          }
           h1,
           h2 {
             z-index: 1;
@@ -190,25 +209,6 @@ main.conteudo-principal {
 
           h3 {
             min-height: 3rem;
-            span {
-              position: relative;
-              display: inline-block;
-              color: transparent;
-              -webkit-text-stroke: 0.7px var(--text-color);
-              animation: display-text 8s linear infinite;
-              animation-delay: calc(-4s * (var(--i) - 1));
-
-              &::before {
-                content: attr(data-text);
-                position: absolute;
-                width: 0;
-                border-right: 2px solid var(--text-color);
-                color: var(--text-color);
-                white-space: nowrap;
-                overflow: hidden;
-                animation: fill-text 4s linear infinite;
-              }
-            }
           }
 
           p {
@@ -306,6 +306,7 @@ main.conteudo-principal {
           }
         }
       }
+      
       &#projetos {
         h2 {
           padding-bottom: 3rem;
