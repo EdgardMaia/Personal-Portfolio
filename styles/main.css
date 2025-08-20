@@ -236,6 +236,7 @@ body {
   --slider-bg-light: #ffffff;
   --track-bg-light: #ffffff;
   --thumb-bg-light: #000000;
+  --img-bg-light: #000000;
   --bg-dark: #2d3748;
   --text-dark: #ffffff;
   --session-bg-dark: #2d3748;
@@ -244,7 +245,7 @@ body {
   --toggle-bg-dark: #ffffff;
   --slider-bg-dark: #000000;
   --track-bg-dark: #000000;
-  --thumb-bg-dark: #ffffff;
+  --img-bg-dark: transparent;
   --serenatto-img-light: url("/img/serenatto-cafe.png");
   --text-serenatto-light: #462e09;
   --serenatto-img-dark: url("/img/serenatto-cafe-escuro.png");
@@ -260,6 +261,7 @@ body {
   --thumb-bg-color: var(--thumb-bg-light);
   --serenatto-img: var(--serenatto-img-light);
   --text-serenatto: var(--text-serenatto-light);
+  --img-bg: var(--img-bg-light);
   color-scheme: light;
   --x: 50%;
   --y: 50%;
@@ -278,6 +280,7 @@ html.dark {
   --thumb-bg-color: var(--thumb-bg-dark);
   --serenatto-img: var(--serenatto-img-dark);
   --text-serenatto: var(--text-serenatto-dark);
+  --img-bg: var(--img-bg-dark);
 }
 
 body {
@@ -637,6 +640,7 @@ body {
     transform: scale(0.65) !important;
   }
   .toggle input + div {
+    margin-left: 0.5vw;
     width: 30px !important;
     height: 30px !important;
     box-shadow: inset 14px -14px 0 0 var(--toggle-color) !important;
@@ -835,6 +839,7 @@ body {
   }
   #introducao .introducao-info h2 {
     order: 1;
+    margin-left: 3rem;
     font-size: 2rem;
     line-height: 1.2;
     white-space: nowrap;
@@ -843,20 +848,29 @@ body {
     order: 2;
     font-size: 1.2rem;
     display: flex;
-    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    min-width: 20rem;
-    display: inline-block;
+    gap: 0.5rem;
+    min-height: 3rem;
+    width: 100%;
   }
-  #introducao .introducao-info h3 span {
-    animation: none;
+  #introducao .introducao-info h3 .slide-nome {
     position: relative;
-    display: inline-block;
-    color: transparent;
-    -webkit-text-stroke: 0.7px var(--text-color);
+    height: 1.5rem;
+    width: 15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 44%;
   }
-  #introducao .introducao-info h3 span::before {
-    animation: fill-text 4s linear infinite;
+  #introducao .introducao-info h3 .slide-nome span {
+    position: absolute;
+    left: 70%;
+    transform: translateX(-50%);
+    text-align: center;
+    white-space: nowrap;
+    width: auto;
   }
   #introducao .introducao-info .foto-perfil-container {
     order: 3;
@@ -864,6 +878,7 @@ body {
     max-width: 200px;
     min-width: 150px;
     margin: 1rem 0;
+    margin-left: 18vw;
   }
   #introducao .introducao-info .foto-perfil-container .foto-bg {
     width: 100%;
@@ -947,7 +962,8 @@ body {
     width: 100%;
   }
   #projetos .serenatto-container .imagem-projeto {
-    width: 100%;
+    min-width: 82vw !important;
+    min-height: 22.5vh !important;
   }
   #projetos .serenatto-container .descricao {
     min-width: 100%;
@@ -1121,15 +1137,23 @@ main.conteudo-principal .principal-container > div#introducao .introducao-info .
   max-width: 60%;
   text-align: left;
 }
-main.conteudo-principal .principal-container > div#introducao .introducao-info span {
+main.conteudo-principal .principal-container > div#introducao .introducao-info .slide-nome {
   position: relative;
   display: inline-block;
+  height: 1.75rem;
+  width: 15rem;
+  vertical-align: middle;
+}
+main.conteudo-principal .principal-container > div#introducao .introducao-info .slide-nome span {
+  position: absolute;
+  left: 0;
+  top: 0;
   color: transparent;
   -webkit-text-stroke: 0.7px var(--text-color);
   animation: display-text 8s linear infinite;
   animation-delay: calc(-4s * (var(--i) - 1));
 }
-main.conteudo-principal .principal-container > div#introducao .introducao-info span::before {
+main.conteudo-principal .principal-container > div#introducao .introducao-info .slide-nome span::before {
   content: attr(data-text);
   position: absolute;
   width: 0;
@@ -1148,6 +1172,9 @@ main.conteudo-principal .principal-container > div#introducao .introducao-info h
 }
 main.conteudo-principal .principal-container > div#introducao .introducao-info h3 {
   min-height: 3rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 main.conteudo-principal .principal-container > div#introducao .introducao-info p {
   text-align: left;
@@ -1166,12 +1193,16 @@ main.conteudo-principal .principal-container > div#introducao .introducao-info .
   justify-content: center;
   align-items: center;
 }
+main.conteudo-principal .principal-container > div#introducao .introducao-info .foto-perfil-container .foto-bg {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+}
 main.conteudo-principal .principal-container > div#introducao .introducao-info .foto-perfil-container img {
   width: 100%;
-  height: auto;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 50%;
 }
 main.conteudo-principal .principal-container > div#habilidades h2 {
   padding-bottom: 3rem;

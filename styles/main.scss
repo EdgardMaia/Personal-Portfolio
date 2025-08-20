@@ -30,6 +30,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
   display: flex;
   flex-direction: column;
+  
 
   @mixin h-config($font-family, $margin, $color, $font-size) {
     font-family: $font-family;
@@ -178,25 +179,35 @@ main.conteudo-principal {
             text-align: left;
           }
 
-          span {
+          .slide-nome {
             position: relative;
             display: inline-block;
-            color: transparent;
-            -webkit-text-stroke: 0.7px var(--text-color);
-            animation: display-text 8s linear infinite;
-            animation-delay: calc(-4s * (var(--i) - 1));
+            height: 1.75rem;
+            width: 15rem;
+            vertical-align: middle;
 
-            &::before {
-              content: attr(data-text);
+            span {
               position: absolute;
-              width: 0;
-              border-right: 2px solid var(--text-color);
-              color: var(--text-color);
-              white-space: nowrap;
-              overflow: hidden;
-              animation: fill-text 4s linear infinite;
+              left: 0;
+              top: 0;
+              color: transparent;
+              -webkit-text-stroke: 0.7px var(--text-color);
+              animation: display-text 8s linear infinite;
+              animation-delay: calc(-4s * (var(--i) - 1));
+
+              &::before {
+                content: attr(data-text);
+                position: absolute;
+                width: 0;
+                border-right: 2px solid var(--text-color);
+                color: var(--text-color);
+                white-space: nowrap;
+                overflow: hidden;
+                animation: fill-text 4s linear infinite;
+              }
             }
           }
+
           h2 {
             z-index: 1;
           }
@@ -208,6 +219,9 @@ main.conteudo-principal {
 
           h3 {
             min-height: 3rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
           }
 
           p {
@@ -228,11 +242,16 @@ main.conteudo-principal {
             justify-content: center;
             align-items: center;
 
+            .foto-bg {
+              width: 100%;
+              aspect-ratio: 1/1;
+              border-radius: 50%;
+              overflow: hidden;
+            }
+
             img {
               width: 100%;
-              height: auto;
               object-fit: cover;
-              border-radius: 50%;
             }
           }
         }
