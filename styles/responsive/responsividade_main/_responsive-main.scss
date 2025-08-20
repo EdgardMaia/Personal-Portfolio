@@ -60,10 +60,10 @@
           position: relative;
           display: inline-block;
           color: transparent;
-          -webkit-text-stroke: 0.7px var(--text-color); 
+          -webkit-text-stroke: 0.7px var(--text-color);
 
           &::before {
-            animation: fill-text 4s linear infinite; 
+            animation: fill-text 4s linear infinite;
           }
         }
       }
@@ -124,20 +124,6 @@
       width: 100%;
       --height: 45px;
       --quantity: 10;
-      mask: linear-gradient(
-        to right,
-        hsl(0 0% 0% / 0),
-        hsl(0 0% 0% / 1) 10%,
-        hsl(0 0% 0% / 1) 90%,
-        hsl(0 0% 0% / 0)
-      );
-      -webkit-mask: linear-gradient(
-        to right,
-        hsl(0 0% 0% / 0),
-        hsl(0 0% 0% / 1) 10%,
-        hsl(0 0% 0% / 1) 90%,
-        hsl(0 0% 0% / 0)
-      );
 
       .list {
         min-width: calc(var(--width) * var(--quantity));
@@ -157,8 +143,18 @@
 
   // Seção projetos
   #projetos {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 50vw;
+    min-height: 100vh;
     padding: 0;
+
+    .imagem-projeto,
+    .descricao {
+      max-width: none; // Remove limitação do desktop
+      flex: none; // Remove flex do desktop
+    }
 
     h2 {
       font-size: 1.8rem;
@@ -169,25 +165,41 @@
     .serenatto-container {
       display: flex;
       flex-direction: column;
+      flex-wrap: nowrap;
       align-items: center;
       gap: 1.5rem;
       width: 100%;
 
       .imagem-projeto {
-        order: 1;
         width: 100%;
-        max-width: 400px;
-        min-height: 250px;
       }
 
       .descricao {
-        order: 2;
-        width: 100%;
-        max-width: 90vw;
+        min-width: 100%;
         text-align: justify;
+
+        ul {
+          list-style: disc;
+          padding-left: 1.5rem;
+          margin: 0;
+        }
 
         li {
           padding-bottom: 0.8rem;
+
+          p {
+            max-width: 100%;
+            width: 100%;
+            line-height: 1.5;
+          }
+        }
+
+        strong {
+          font-weight: 700;
+        }
+
+        a {
+          color: var(--text-serenatto);
         }
       }
     }
