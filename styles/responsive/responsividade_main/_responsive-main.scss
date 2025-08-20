@@ -69,7 +69,7 @@
 
           span {
             position: absolute;
-            left: 70%; 
+            left: 70%;
             transform: translateX(-50%);
             text-align: center;
             white-space: nowrap;
@@ -105,6 +105,14 @@
         line-height: 1.6;
         text-align: justify;
         max-width: 90vw;
+      }
+
+      #link-curriculo {
+        order: 5;
+        margin-top: 1.5rem;
+        margin-left: 21vw;
+        width: 100%;
+        text-align: center;
       }
     }
   }
@@ -218,95 +226,20 @@
   }
 }
 
-// @include tablet {
-//   .conteudo-principal {
-//     .principal-container {
-//       gap: 4rem;
-//       padding: 0 2rem;
-//     }
-//   }
+@include tablet {
+  #introducao .introducao-info {
+    #link-curriculo {
+      text-align: left; // Alinha à esquerda em tablets
+      margin-left: 0;
+    }
+  }
+}
 
-//   // Seção introdução
-//   #introducao {
-//     .introducao-info {
-//       flex-direction: row;
-//       justify-content: space-between;
-//       text-align: left;
-//       align-items: flex-start;
-
-//       .texto-introducao {
-//         order: 1;
-//         flex: 1;
-//         max-width: 60%;
-//       }
-
-//       h2 {
-//         font-size: 2.5rem;
-//         margin-left: 0;
-//       }
-
-//       h3 {
-//         font-size: 1.5rem;
-//         align-items: flex-start;
-//         .slide-nome {
-//           left: 0;
-//           justify-content: flex-start;
-//         }
-//       }
-
-//       .foto-perfil-container {
-//         order: 2;
-//         width: 35%;
-//         max-width: 300px;
-//         margin: 0;
-//       }
-
-//       p {
-//         max-width: 100%;
-//       }
-//     }
-//   }
-
-//   // Seção projetos
-//   #projetos {
-//     .serenatto-container {
-//       flex-direction: row;
-//       align-items: center;
-//       gap: 2rem;
-
-//       .imagem-projeto {
-//         min-width: 40vw !important;
-//         min-height: 30vh !important;
-//       }
-
-//       .descricao {
-//         min-width: auto;
-//         max-width: 55%;
-//       }
-//     }
-//   }
-// }
-
-// @include desktop {
-//   // Seção introdução
-//   #introducao {
-//     .introducao-info {
-//       h2 {
-//         font-size: 3rem;
-//       }
-//       h3 {
-//         font-size: 1.8rem;
-//       }
-//     }
-//   }
-
-//   // Seção projetos
-//   #projetos {
-//     .serenatto-container {
-//       .imagem-projeto {
-//         min-width: 28.9vw !important;
-//         min-height: 29.5vh !important;
-//       }
-//     }
-//   }
-// }
+@include desktop {
+  #introducao .introducao-info {
+    #link-curriculo {
+      text-align: left; // Alinha à esquerda em desktops
+      margin-left: 0;
+    }
+  }
+}
