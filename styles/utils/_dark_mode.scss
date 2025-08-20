@@ -14,7 +14,9 @@
   --slider-bg-light: #ffffff;
   --track-bg-light: #ffffff;
   --thumb-bg-light: #000000;
-  
+  --text-curriculo-light: #ffffff;
+  --bg-curriculo-light: #000000;
+
   // Paleta - Modo Escuro
   --bg-dark: #2d3748;
   --text-dark: #ffffff;
@@ -25,6 +27,8 @@
   --slider-bg-dark: #000000;
   --track-bg-dark: #000000;
   --img-bg-dark: transparent;
+  --text-curriculo-dark: #000000;
+  --bg-curriculo-dark: #ffffff;
 
   // --- Variáveis de transição img claro ---
   --serenatto-img-light: url("/img/serenatto-cafe.png");
@@ -46,6 +50,8 @@
   --thumb-bg-color: var(--thumb-bg-light);
   --serenatto-img: var(--serenatto-img-light);
   --text-serenatto: var(--text-serenatto-light);
+  --text-curriculo: var(--text-curriculo-light);
+  --bg-curriculo: var(--bg-curriculo-light);
 
   // Configurações globais
   color-scheme: light;
@@ -69,6 +75,8 @@ html.dark {
   --thumb-bg-color: var(--thumb-bg-dark);
   --serenatto-img: var(--serenatto-img-dark);
   --text-serenatto: var(--text-serenatto-dark);
+  --text-curriculo: var(--text-curriculo-dark);
+  --bg-curriculo: var(--bg-curriculo-dark);
 }
 
 // --- Estilos Globais Baseados no Tema ---
