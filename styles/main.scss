@@ -30,7 +30,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
   display: flex;
   flex-direction: column;
-  
+
 
   @mixin h-config($font-family, $margin, $color, $font-size) {
     font-family: $font-family;
@@ -232,6 +232,34 @@ main.conteudo-principal {
             line-height: 1.5;
             text-align: justify;
             padding: 0 0 0.5rem 0;
+          }
+          
+          #link-curriculo {
+            margin-top: 1.5rem;
+            text-align: left;
+          }
+          #botao-curriculo {
+            display: inline-block;
+            padding: .75rem 1.5rem;
+            border-radius: 20px;
+            text-decoration: none;
+            background-color: var(--bg-curriculo);
+            color: var(--text-curriculo);
+            transition: transform 0.3s ease, box-shadow 0.3s ease,
+            background-color 0.3s ease,
+            color 0.3s ease;
+            strong {
+              font-family: "Raleway", sans-serif;
+              font-weight: 700;
+            }
+            &:hover {
+              transform: translateY(-5px);
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+            &:active {
+              transform: translateY(2px);
+              box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+            }
           }
 
           .foto-perfil-container {
