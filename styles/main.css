@@ -905,8 +905,6 @@ body {
     width: 100%;
     --height: 45px;
     --quantity: 10;
-    mask: linear-gradient(to right, hsla(0, 0%, 0%, 0), hsl(0, 0%, 0%) 10%, hsl(0, 0%, 0%) 90%, hsla(0, 0%, 0%, 0));
-    -webkit-mask: linear-gradient(to right, hsla(0, 0%, 0%, 0), hsl(0, 0%, 0%) 10%, hsl(0, 0%, 0%) 90%, hsla(0, 0%, 0%, 0));
   }
   #habilidades .nomes-slider .list,
   #habilidades .logos-slider .list {
@@ -923,8 +921,17 @@ body {
     height: auto;
   }
   #projetos {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 50vw;
+    min-height: 100vh;
     padding: 0;
+  }
+  #projetos .imagem-projeto,
+  #projetos .descricao {
+    max-width: none;
+    flex: none;
   }
   #projetos h2 {
     font-size: 1.8rem;
@@ -934,24 +941,36 @@ body {
   #projetos .serenatto-container {
     display: flex;
     flex-direction: column;
+    flex-wrap: nowrap;
     align-items: center;
     gap: 1.5rem;
     width: 100%;
   }
   #projetos .serenatto-container .imagem-projeto {
-    order: 1;
     width: 100%;
-    max-width: 400px;
-    min-height: 250px;
   }
   #projetos .serenatto-container .descricao {
-    order: 2;
-    width: 100%;
-    max-width: 90vw;
+    min-width: 100%;
     text-align: justify;
+  }
+  #projetos .serenatto-container .descricao ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin: 0;
   }
   #projetos .serenatto-container .descricao li {
     padding-bottom: 0.8rem;
+  }
+  #projetos .serenatto-container .descricao li p {
+    max-width: 100%;
+    width: 100%;
+    line-height: 1.5;
+  }
+  #projetos .serenatto-container .descricao strong {
+    font-weight: 700;
+  }
+  #projetos .serenatto-container .descricao a {
+    color: var(--text-serenatto);
   }
 }
 @font-face {
@@ -1222,10 +1241,24 @@ main.conteudo-principal .principal-container > div#projetos .serenatto-container
   gap: 2rem;
   flex-wrap: wrap;
 }
+main.conteudo-principal .principal-container > div#projetos .serenatto-container .imagem-projeto {
+  min-width: 28.9vw;
+  border-radius: 10px;
+  border: solid var(--text-color) 3px;
+  transition: background-image 0.3s ease;
+  background-image: var(--serenatto-img);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 29.5vh;
+}
 main.conteudo-principal .principal-container > div#projetos .serenatto-container .descricao {
+  max-width: 55%;
   list-style: disc;
-  flex: 1;
-  max-width: 100%;
+}
+main.conteudo-principal .principal-container > div#projetos .serenatto-container .descricao ul {
+  list-style: disc;
+  padding-left: 1.5rem;
 }
 main.conteudo-principal .principal-container > div#projetos .serenatto-container .descricao strong {
   font-weight: 700;
@@ -1238,19 +1271,6 @@ main.conteudo-principal .principal-container > div#projetos .serenatto-container
 }
 main.conteudo-principal .principal-container > div#projetos .serenatto-container .descricao a {
   color: var(--text-serenatto);
-}
-main.conteudo-principal .principal-container > div#projetos .serenatto-container .imagem-projeto {
-  flex: 1;
-  max-width: 40%;
-  height: auto;
-  border-radius: 10px;
-  border: solid var(--text-color) 3px;
-  transition: background-image 0.3s ease;
-  background-image: var(--serenatto-img);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 300px;
 }
 @keyframes display-text {
   25%, 100% {

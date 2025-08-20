@@ -317,10 +317,26 @@ main.conteudo-principal {
           gap: 2rem;
           flex-wrap: wrap;
 
+          .imagem-projeto {
+            min-width: 28.9vw;
+            border-radius: 10px;
+            border: solid var(--text-color) 3px;
+            transition: background-image 0.3s ease;
+            background-image: var(--serenatto-img);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 29.5vh;
+          }
+
           .descricao {
+            max-width: 55%;
             list-style: disc;
-            flex: 1;
-            max-width: 100%;
+
+            ul {
+              list-style: disc;
+              padding-left: 1.5rem;
+            }
 
             strong {
               font-weight: 700;
@@ -329,26 +345,14 @@ main.conteudo-principal {
             li {
               padding: 0 0 1rem 0;
             }
+
             p {
               text-align: justify;
             }
+
             a {
               color: var(--text-serenatto);
             }
-          }
-
-          .imagem-projeto {
-            flex: 1;
-            max-width: 40%;
-            height: auto;
-            border-radius: 10px;
-            border: solid var(--text-color) 3px;
-            transition: background-image 0.3s ease;
-            background-image: var(--serenatto-img);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            min-height: 300px;
           }
         }
       }
