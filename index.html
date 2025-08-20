@@ -38,6 +38,13 @@
     <title>Edgard Maia - Portfólio Pessoal</title>
   </head>
   <body>
+    <!-- Acessibilidade Libras -->
+     <div vw class = "enabled">
+      <div vw-access-button class= "active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
     <!-- Cabeçalho Navegação -->
     <header class="cabecalho-container">
       <!-- Logo e itens de navegação -->
@@ -86,18 +93,16 @@
         <div id="introducao">
           <div class="introducao-info">
             <div class="texto-introducao">
-              <h2>Edgard Maia</h2>
-              <h3>
+              <h2 id="titulo-nome">Edgard Maia</h2>
+              <h3 id="titulo-foco">
                 Focado em
-                <span style="--i: 1" data-text='print&#40;"Programação"&#41;'
-                  >print&#40;&quot;Programação&quot;&#41;</span
-                >
-                <span style="--i: 2" data-text="Segurança &#9888;"
-                  >Segurança &#9888;</span
-                >
+                <div class="slide-nome">
+                  <span style="--i: 1" data-text="&#123;Python&#125;">&#123;Python&#125;</span>
+                  <span style="--i: 2" data-text="Segurança &#9888;">Segurança &#9888;</span>
+                </div>
               </h3>
 
-              <p>
+              <p id="paragrafo-introducao-1">
                 Aspirante a profissional de tecnologia, almejo meu primeiro
                 emprego ou estágio para mergulhar nas diversas vertentes da
                 área. Comprometido em aprender, crescer e contribuir
@@ -106,7 +111,7 @@
                 Tenho interesse em áreas como redes e infraestrutura.
               </p>
 
-              <p>
+              <p id="paragrafo-introducao-2">
                 Gosto de experimentar diferentes tecnologias e ferramentas — de
                 ambientes Linux a ferramentas de pentests — sempre com foco em
                 aprender, praticar e aprimorar minhas habilidades na área de
@@ -180,12 +185,12 @@
         </div>
         <!-- Seção de Projetos -->
         <div id="projetos">
-          <h2>Projetos</h2>
+          <h2 id="titulo-projetos">Projetos</h2>
           <div class="serenatto-container">
             <div class="imagem-projeto"></div>
             <div class="descricao">
               <ul>
-              <li>
+              <li id="projeto-1-descricao-1">
                 <p>
                   Projeto alura
                   <strong
@@ -193,20 +198,20 @@
                   >.
                 </p>
               </li>
-              <li>
+              <li id="projeto-1-descricao-2">
                 <p>
                   O Serenatto é uma landing page para um café, projetada para
                   apresentar produtos de forma atraente e interativa,
                   proporcionando uma experiência de uso agradável.
                 </p>
               </li>
-              <li>
+              <li id="projeto-1-descricao-3">
                 <p>
                   Principais skills adquiridas:
                   <strong>SASS, Vite, CSS</strong>.
                 </p>
               </li>
-              <li>
+              <li id="projeto-1-descricao-4">
                 <p>
                   Repositório do projeto no GitHub:
                   <strong
@@ -354,5 +359,7 @@
     <!-- Scripts -->
     <script type="module" src="./js/dark_mode.js" defer></script>
     <script type="module" src="./js/scroll-nav.js" defer></script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script> new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
   </body>
 </html>
