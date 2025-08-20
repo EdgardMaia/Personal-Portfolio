@@ -261,7 +261,6 @@ body {
   --thumb-bg-color: var(--thumb-bg-light);
   --serenatto-img: var(--serenatto-img-light);
   --text-serenatto: var(--text-serenatto-light);
-  --img-bg: var(--img-bg-light);
   color-scheme: light;
   --x: 50%;
   --y: 50%;
@@ -280,7 +279,6 @@ html.dark {
   --thumb-bg-color: var(--thumb-bg-dark);
   --serenatto-img: var(--serenatto-img-dark);
   --text-serenatto: var(--text-serenatto-dark);
-  --img-bg: var(--img-bg-dark);
 }
 
 body {
