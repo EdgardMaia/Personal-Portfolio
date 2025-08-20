@@ -39,11 +39,11 @@
   </head>
   <body>
     <!-- Acessibilidade Libras -->
-     <div vw class = "enabled">
-      <div vw-access-button class= "active"></div>
-        <div vw-plugin-wrapper>
-            <div class="vw-plugin-top-wrapper"></div>
-        </div>
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
     </div>
     <!-- Cabeçalho Navegação -->
     <header class="cabecalho-container">
@@ -97,8 +97,12 @@
               <h3 id="titulo-foco">
                 Focado em
                 <div class="slide-nome">
-                  <span style="--i: 1" data-text="&#123;Python&#125;">&#123;Python&#125;</span>
-                  <span style="--i: 2" data-text="Segurança &#9888;">Segurança &#9888;</span>
+                  <span style="--i: 1" data-text="&#123;Python&#125;"
+                    >&#123;Python&#125;</span
+                  >
+                  <span style="--i: 2" data-text="Segurança &#9888;"
+                    >Segurança &#9888;</span
+                  >
                 </div>
               </h3>
 
@@ -117,6 +121,16 @@
                 aprender, praticar e aprimorar minhas habilidades na área de
                 cibersegurança.
               </p>
+
+              <div id="link-curriculo">
+                <a
+                  href="Curriculo.pdf"
+                  download="Edgard_Maia_Curriculo.pdf"
+                  id="botao-curriculo"
+                >
+                  <strong>Currículo</strong>
+                </a>
+              </div>
             </div>
 
             <div class="foto-perfil-container">
@@ -190,41 +204,41 @@
             <div class="imagem-projeto"></div>
             <div class="descricao">
               <ul>
-              <li id="projeto-1-descricao-1">
-                <p>
-                  Projeto alura
-                  <strong
-                    >SASS com Vite: otimizando e modularizando seu CSS</strong
-                  >.
-                </p>
-              </li>
-              <li id="projeto-1-descricao-2">
-                <p>
-                  O Serenatto é uma landing page para um café, projetada para
-                  apresentar produtos de forma atraente e interativa,
-                  proporcionando uma experiência de uso agradável.
-                </p>
-              </li>
-              <li id="projeto-1-descricao-3">
-                <p>
-                  Principais skills adquiridas:
-                  <strong>SASS, Vite, CSS</strong>.
-                </p>
-              </li>
-              <li id="projeto-1-descricao-4">
-                <p>
-                  Repositório do projeto no GitHub:
-                  <strong
-                    ><a
-                      href="https://github.com/EdgardMaia/Serenatto-Cafe"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                      >Serenatto Café</a
-                    ></strong
-                  >.
-                </p>
-              </li>
-            </ul>
+                <li id="projeto-1-descricao-1">
+                  <p>
+                    Projeto alura
+                    <strong
+                      >SASS com Vite: otimizando e modularizando seu CSS</strong
+                    >.
+                  </p>
+                </li>
+                <li id="projeto-1-descricao-2">
+                  <p>
+                    O Serenatto é uma landing page para um café, projetada para
+                    apresentar produtos de forma atraente e interativa,
+                    proporcionando uma experiência de uso agradável.
+                  </p>
+                </li>
+                <li id="projeto-1-descricao-3">
+                  <p>
+                    Principais skills adquiridas:
+                    <strong>SASS, Vite, CSS</strong>.
+                  </p>
+                </li>
+                <li id="projeto-1-descricao-4">
+                  <p>
+                    Repositório do projeto no GitHub:
+                    <strong
+                      ><a
+                        href="https://github.com/EdgardMaia/Serenatto-Cafe"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        >Serenatto Café</a
+                      ></strong
+                    >.
+                  </p>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -360,6 +374,8 @@
     <script type="module" src="./js/dark_mode.js" defer></script>
     <script type="module" src="./js/scroll-nav.js" defer></script>
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script> new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+    <script>
+      new window.VLibras.Widget("https://vlibras.gov.br/app");
+    </script>
   </body>
 </html>

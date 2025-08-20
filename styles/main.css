@@ -236,6 +236,8 @@ body {
   --slider-bg-light: #ffffff;
   --track-bg-light: #ffffff;
   --thumb-bg-light: #000000;
+  --text-curriculo-light: #ffffff;
+  --bg-curriculo-light: #000000;
   --bg-dark: #2d3748;
   --text-dark: #ffffff;
   --session-bg-dark: #2d3748;
@@ -245,6 +247,8 @@ body {
   --slider-bg-dark: #000000;
   --track-bg-dark: #000000;
   --img-bg-dark: transparent;
+  --text-curriculo-dark: #000000;
+  --bg-curriculo-dark: #ffffff;
   --serenatto-img-light: url("/img/serenatto-cafe.png");
   --text-serenatto-light: #462e09;
   --serenatto-img-dark: url("/img/serenatto-cafe-escuro.png");
@@ -260,6 +264,8 @@ body {
   --thumb-bg-color: var(--thumb-bg-light);
   --serenatto-img: var(--serenatto-img-light);
   --text-serenatto: var(--text-serenatto-light);
+  --text-curriculo: var(--text-curriculo-light);
+  --bg-curriculo: var(--bg-curriculo-light);
   color-scheme: light;
   --x: 50%;
   --y: 50%;
@@ -278,6 +284,8 @@ html.dark {
   --thumb-bg-color: var(--thumb-bg-dark);
   --serenatto-img: var(--serenatto-img-dark);
   --text-serenatto: var(--text-serenatto-dark);
+  --text-curriculo: var(--text-curriculo-dark);
+  --bg-curriculo: var(--bg-curriculo-dark);
 }
 
 body {
@@ -661,7 +669,7 @@ body {
     height: 7px !important;
   }
 }
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 1024px) {
   .toggle {
     transform: scale(0.85) !important;
   }
@@ -894,6 +902,13 @@ body {
     text-align: justify;
     max-width: 90vw;
   }
+  #introducao .introducao-info #link-curriculo {
+    order: 5;
+    margin-top: 1.5rem;
+    margin-left: 21vw;
+    width: 100%;
+    text-align: center;
+  }
   #habilidades {
     width: 100%;
     display: flex;
@@ -984,6 +999,18 @@ body {
   }
   #projetos .serenatto-container .descricao a {
     color: var(--text-serenatto);
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  #introducao .introducao-info #link-curriculo {
+    text-align: left;
+    margin-left: 0;
+  }
+}
+@media (min-width: 1024px) {
+  #introducao .introducao-info #link-curriculo {
+    text-align: left;
+    margin-left: 0;
   }
 }
 @font-face {
@@ -1181,6 +1208,31 @@ main.conteudo-principal .principal-container > div#introducao .introducao-info p
   line-height: 1.5;
   text-align: justify;
   padding: 0 0 0.5rem 0;
+}
+main.conteudo-principal .principal-container > div#introducao .introducao-info #link-curriculo {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+main.conteudo-principal .principal-container > div#introducao .introducao-info #botao-curriculo {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  text-decoration: none;
+  background-color: var(--bg-curriculo);
+  color: var(--text-curriculo);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+main.conteudo-principal .principal-container > div#introducao .introducao-info #botao-curriculo strong {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+}
+main.conteudo-principal .principal-container > div#introducao .introducao-info #botao-curriculo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+main.conteudo-principal .principal-container > div#introducao .introducao-info #botao-curriculo:active {
+  transform: translateY(2px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 main.conteudo-principal .principal-container > div#introducao .introducao-info .foto-perfil-container {
   position: relative;
