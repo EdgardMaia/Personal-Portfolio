@@ -4,12 +4,12 @@
 @use "./utils/layout";
 @use "./utils/scroll_design";
 @use "./responsive/index" as *;
-@import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 @font-face {
   font-family: "Pixel Twist";
   src: url("/fonts/PIXELTWIST.TTF") format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 /* ------------------------------------------ */
 
@@ -30,7 +30,6 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
   display: flex;
   flex-direction: column;
-
 
   @mixin h-config($font-family, $margin, $color, $font-size) {
     font-family: $font-family;
@@ -233,21 +232,20 @@ main.conteudo-principal {
             text-align: justify;
             padding: 0 0 0.5rem 0;
           }
-          
+
           #link-curriculo {
             margin-top: 1.5rem;
             text-align: left;
           }
           #botao-curriculo {
             display: inline-block;
-            padding: .75rem 1.5rem;
+            padding: 0.75rem 1.5rem;
             border-radius: 20px;
             text-decoration: none;
             background-color: var(--bg-curriculo);
             color: var(--text-curriculo);
             transition: transform 0.3s ease, box-shadow 0.3s ease,
-            background-color 0.3s ease,
-            color 0.3s ease;
+              background-color 0.3s ease, color 0.3s ease;
             strong {
               font-family: "Raleway", sans-serif;
               font-weight: 700;
