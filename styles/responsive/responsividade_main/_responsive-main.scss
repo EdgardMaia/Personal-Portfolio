@@ -225,21 +225,3 @@
     }
   }
 }
-
-@include tablet {
-  #introducao .introducao-info {
-    #link-curriculo {
-      text-align: left; // Alinha à esquerda em tablets
-      margin-left: 0;
-    }
-  }
-}
-
-@include desktop {
-  #introducao .introducao-info {
-    #link-curriculo {
-      text-align: left; // Alinha à esquerda em desktops
-      margin-left: 0;
-    }
-  }
-}
