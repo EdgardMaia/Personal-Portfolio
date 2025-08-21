@@ -1000,6 +1000,25 @@ body {
     color: var(--text-serenatto);
   }
 }
+@media (min-width: 1024px) {
+  #projetos .serenatto-container {
+    align-items: center;
+    gap: 2rem;
+  }
+  #projetos .serenatto-container .imagem-projeto {
+    flex: 0 1 45%; /* flex-grow, flex-shrink, flex-basis */
+    min-height: unset; /* Remove a altura mínima baseada em vh */
+    aspect-ratio: 16/9; /* Proporção de 16:9 para consistência */
+    height: auto; /* Altura automática baseada na proporção */
+    max-width: 550px; /* Largura máxima para telas grandes */
+    background-size: cover; /* Faz a imagem preencher o contêiner */
+    background-position: center; /* Centraliza a imagem no contêiner */
+  }
+  #projetos .serenatto-container .descricao {
+    flex: 1 1 50%;
+    max-width: 650px;
+  }
+}
 @font-face {
   font-family: "Pixel Twist";
   src: url("/fonts/PIXELTWIST.TTF") format("truetype");
@@ -1025,7 +1044,8 @@ body {
   display: flex;
   flex-direction: column;
 }
-body h1, body h2 {
+body h1,
+body h2 {
   font-family: "Pixel Twist";
   margin: 0;
   color: var(--text-color);
@@ -1037,11 +1057,15 @@ body h3 {
   color: var(--text-color);
   font-size: 1.5rem;
 }
-body span, body a, body p, body label {
+body span,
+body a,
+body p,
+body label {
   font-family: "Raleway", sans-serif;
   margin: 0;
 }
-body p, body a {
+body p,
+body a {
   font-size: 1rem;
 }
 
@@ -1340,7 +1364,7 @@ main.conteudo-principal .principal-container > div#projetos .serenatto-container
   border: solid var(--text-color) 3px;
   transition: background-image 0.3s ease;
   background-image: var(--serenatto-img);
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   min-height: 28.5vh;
