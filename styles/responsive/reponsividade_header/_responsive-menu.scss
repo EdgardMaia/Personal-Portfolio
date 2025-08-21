@@ -25,17 +25,34 @@
 
 // Mostrar o ícone do menu em mobile
 @include mobile {
+  .cabecalho-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; // Necessário para o posicionamento do menu
+  }
+
+  .logo {
+    z-index: 11; // Garante que o logo fique acima do menu
+  }
+
+  .header-icones {
+    display: flex;
+    align-items: center;
+    gap: 1rem; // Espaçamento entre os ícones
+    z-index: 11;
+  }
+
   // Mostra o ícone do menu
   .menu-icon {
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    float: right;
-    padding: 28px 20px;
+    padding: 2rem; // Padding para facilitar o toque
     position: relative;
     user-select: none;
-    z-index: 10;
+    order: 2; // Coloca o ícone do menu depois do toggle
 
     i {
       font-size: 1.8rem;
@@ -54,14 +71,15 @@
   .navegacao-secao {
     position: absolute;
     top: 100%;
-    right: 0;
+    left: 0; // Alinha o menu à esquerda
+    right: 0; // Alinha o menu à direita
     width: 100%;
-    border-radius: 20px;
+    border-radius: 0 0 20px 20px; // Bordas arredondadas apenas na parte inferior
     overflow: hidden;
-    z-index: 5;
+    z-index: 10; // Garante que o menu fique acima do conteúdo
     background-color: transparent;
     transition: background-color 0.3s ease;
-    
+
     .menu {
       flex-direction: column;
       max-height: 0;

@@ -11,12 +11,26 @@
 }
 
 @include mobile {
-  .cabecalho-container,
+  .header-container {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
   .conteudo-principal,
   .rodape-container {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+    
+    #introdução {
+      .introducao-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+      }
+    }
   }
 }
 

@@ -5,7 +5,6 @@
 // ==============================================
 
 @include mobile {
-  
   .conteudo-principal {
     overflow-y: auto; // Permite a rolagem
     overflow-x: hidden;
@@ -31,6 +30,7 @@
     .introducao-info {
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
       text-align: center;
       position: relative;
@@ -228,7 +228,6 @@
 }
 
 @include tablet {
-
   .conteudo-principal {
     padding: 3rem 2rem;
 
@@ -283,7 +282,6 @@
 }
 
 @include desktop {
-
   #introducao {
     .introducao-info {
       flex-direction: row;
