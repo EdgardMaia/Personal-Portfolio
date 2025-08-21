@@ -1000,18 +1000,6 @@ body {
     color: var(--text-serenatto);
   }
 }
-@media (min-width: 768px) and (max-width: 1023px) {
-  #introducao .introducao-info #link-curriculo {
-    text-align: left;
-    margin-left: 0;
-  }
-}
-@media (min-width: 1024px) {
-  #introducao .introducao-info #link-curriculo {
-    text-align: left;
-    margin-left: 0;
-  }
-}
 @font-face {
   font-family: "Pixel Twist";
   src: url("/fonts/PIXELTWIST.TTF") format("truetype");
@@ -1317,12 +1305,13 @@ main.conteudo-principal .principal-container > div#projetos h2 {
 main.conteudo-principal .principal-container > div#projetos .serenatto-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   gap: 2rem;
   flex-wrap: wrap;
 }
 main.conteudo-principal .principal-container > div#projetos .serenatto-container .imagem-projeto {
-  min-width: 28.9vw;
+  flex: 0 0 auto;
+  min-width: 29vw;
   border-radius: 10px;
   border: solid var(--text-color) 3px;
   transition: background-image 0.3s ease;
@@ -1330,24 +1319,27 @@ main.conteudo-principal .principal-container > div#projetos .serenatto-container
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 29.5vh;
+  min-height: 28.5vh;
 }
 main.conteudo-principal .principal-container > div#projetos .serenatto-container .descricao {
+  flex: 1;
   max-width: 55%;
-  list-style: disc;
 }
 main.conteudo-principal .principal-container > div#projetos .serenatto-container .descricao ul {
   list-style: disc;
   padding-left: 1.5rem;
-}
-main.conteudo-principal .principal-container > div#projetos .serenatto-container .descricao strong {
-  font-weight: 700;
+  margin: 0;
 }
 main.conteudo-principal .principal-container > div#projetos .serenatto-container .descricao li {
   padding: 0 0 1rem 0;
 }
-main.conteudo-principal .principal-container > div#projetos .serenatto-container .descricao p {
+main.conteudo-principal .principal-container > div#projetos .serenatto-container .descricao li p {
+  margin: 0;
   text-align: justify;
+  line-height: 1.5;
+}
+main.conteudo-principal .principal-container > div#projetos .serenatto-container .descricao strong {
+  font-weight: 700;
 }
 main.conteudo-principal .principal-container > div#projetos .serenatto-container .descricao a {
   color: var(--text-serenatto);
