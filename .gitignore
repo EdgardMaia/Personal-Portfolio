@@ -46,3 +46,4 @@ Thumbs.db
 # -----------------------
 drafts/
 node_modules/
+vite.config.js
