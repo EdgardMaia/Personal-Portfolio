@@ -225,3 +225,27 @@
     }
   }
 }
+
+@include desktop {
+  #projetos {
+    .serenatto-container {
+      align-items: center;
+      gap: 2rem;
+
+      .imagem-projeto {
+        flex: 0 1 45%; /* flex-grow, flex-shrink, flex-basis */
+        min-height: unset; /* Remove a altura mínima baseada em vh */
+        aspect-ratio: 16 / 9; /* Proporção de 16:9 para consistência */
+        height: auto; /* Altura automática baseada na proporção */
+        max-width: 550px; /* Largura máxima para telas grandes */
+        background-size: cover; /* Faz a imagem preencher o contêiner */
+        background-position: center; /* Centraliza a imagem no contêiner */
+      }
+
+      .descricao {
+        flex: 1 1 50%;
+        max-width: 650px;
+      }
+    }
+  }
+}
