@@ -5,6 +5,7 @@
 // ==============================================
 
 @include mobile {
+  
   .conteudo-principal {
     overflow-y: auto; // Permite a rolagem
     overflow-x: hidden;
@@ -226,7 +227,110 @@
   }
 }
 
+@include tablet {
+
+  .conteudo-principal {
+    padding: 3rem 2rem;
+
+    .principal-container {
+      gap: 4rem;
+    }
+  }
+
+  #introducao {
+    .introducao-info {
+      h2 {
+        font-size: 2.5rem;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      .foto-perfil-container {
+        max-width: 250px;
+      }
+
+      p {
+        font-size: 1rem;
+        max-width: 80vw;
+      }
+    }
+  }
+
+  #habilidades {
+    h2 {
+      font-size: 2rem;
+    }
+  }
+
+  #projetos {
+    h2 {
+      font-size: 2rem;
+    }
+
+    .serenatto-container {
+      .imagem-projeto {
+        min-width: 70vw;
+        max-width: 600px;
+      }
+
+      .descricao {
+        max-width: 90%;
+      }
+    }
+  }
+}
+
 @include desktop {
+
+  #introducao {
+    .introducao-info {
+      flex-direction: row;
+      text-align: left;
+      align-items: center;
+      gap: 2rem;
+
+      .texto-introducao {
+        order: 1;
+        flex: 1;
+      }
+
+      h2 {
+        font-size: 3rem;
+        margin-left: 0;
+      }
+
+      h3 {
+        font-size: 1.8rem;
+        align-items: flex-start;
+      }
+
+      .foto-perfil-container {
+        order: 2;
+        width: 300px;
+        max-width: 300px;
+        margin-left: 0;
+      }
+
+      p {
+        font-size: 1.1rem;
+        max-width: 60ch;
+      }
+
+      #link-curriculo {
+        margin-left: 0;
+        text-align: left;
+      }
+    }
+  }
+
+  #habilidades {
+    h2 {
+      font-size: 2.5rem;
+    }
+  }
+
   #projetos {
     .serenatto-container {
       align-items: center;

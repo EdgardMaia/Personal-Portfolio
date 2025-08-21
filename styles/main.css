@@ -1000,7 +1000,76 @@ body {
     color: var(--text-serenatto);
   }
 }
+@media (min-width: 768px) and (max-width: 1023px) {
+  .conteudo-principal {
+    padding: 3rem 2rem;
+  }
+  .conteudo-principal .principal-container {
+    gap: 4rem;
+  }
+  #introducao .introducao-info h2 {
+    font-size: 2.5rem;
+  }
+  #introducao .introducao-info h3 {
+    font-size: 1.5rem;
+  }
+  #introducao .introducao-info .foto-perfil-container {
+    max-width: 250px;
+  }
+  #introducao .introducao-info p {
+    font-size: 1rem;
+    max-width: 80vw;
+  }
+  #habilidades h2 {
+    font-size: 2rem;
+  }
+  #projetos h2 {
+    font-size: 2rem;
+  }
+  #projetos .serenatto-container .imagem-projeto {
+    min-width: 70vw;
+    max-width: 600px;
+  }
+  #projetos .serenatto-container .descricao {
+    max-width: 90%;
+  }
+}
 @media (min-width: 1024px) {
+  #introducao .introducao-info {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    gap: 2rem;
+  }
+  #introducao .introducao-info .texto-introducao {
+    order: 1;
+    flex: 1;
+  }
+  #introducao .introducao-info h2 {
+    font-size: 3rem;
+    margin-left: 0;
+  }
+  #introducao .introducao-info h3 {
+    font-size: 1.8rem;
+    align-items: flex-start;
+  }
+  #introducao .introducao-info .foto-perfil-container {
+    order: 2;
+    width: 300px;
+    max-width: 300px;
+    margin-left: 0;
+  }
+  #introducao .introducao-info p {
+    font-size: 1.1rem;
+    max-width: 60ch;
+  }
+  #introducao .introducao-info #link-curriculo {
+    margin-left: 0;
+    text-align: left;
+  }
+  #habilidades h2 {
+    font-size: 2.5rem;
+  }
   #projetos .serenatto-container {
     align-items: center;
     gap: 2rem;
