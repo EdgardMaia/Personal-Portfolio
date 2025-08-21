@@ -38,8 +38,7 @@ body {
     font-size: $font-size;
   }
 
-  h1,
-  h2 {
+  h1, h2 {
     @include h-config("Pixel Twist", 0, var(--text-color), 2rem);
   }
 
@@ -47,15 +46,12 @@ body {
     @include h-config("Pixel Twist", 0, var(--text-color), 1.5rem);
   }
 
-  span,
-  a,
-  p {
+  span, a, p, label {
     font-family: "Raleway", sans-serif;
     margin: 0;
   }
 
-  p,
-  a {
+  p, a {
     font-size: 1rem;
   }
 }
@@ -292,7 +288,7 @@ main.conteudo-principal {
           flex-direction: column;
           padding: 0; // Espaçamento entre os carrosséis
         }
-
+        
         .nomes-slider,
         .logos-slider {
           position: relative;
@@ -318,6 +314,7 @@ main.conteudo-principal {
           }
 
           .item {
+            display: flex;
             position: relative;
             font-weight: 600;
             z-index: 2;
@@ -347,6 +344,34 @@ main.conteudo-principal {
 
           &[reverse="true"] .item {
             animation: reversePlay 10s linear infinite;
+          }
+        }
+
+        .logos-slider {
+          min-height: 12vh;
+          .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            margin-top: 1rem;
+            margin-bottom: 5rem;
+            label {
+              font-weight: 600;
+              text-align: center;
+              font-size: 0.9rem;
+              opacity: 0;
+              transform: translateY(-20px);
+              transition: all 0.3s ease;
+            }
+            &:hover {
+              transform: scale(1.1);
+              label {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
           }
         }
       }

@@ -1025,8 +1025,7 @@ body {
   display: flex;
   flex-direction: column;
 }
-body h1,
-body h2 {
+body h1, body h2 {
   font-family: "Pixel Twist";
   margin: 0;
   color: var(--text-color);
@@ -1038,14 +1037,11 @@ body h3 {
   color: var(--text-color);
   font-size: 1.5rem;
 }
-body span,
-body a,
-body p {
+body span, body a, body p, body label {
   font-family: "Raleway", sans-serif;
   margin: 0;
 }
-body p,
-body a {
+body p, body a {
   font-size: 1rem;
 }
 
@@ -1271,6 +1267,7 @@ main.conteudo-principal .principal-container > div#habilidades .logos-slider .li
 }
 main.conteudo-principal .principal-container > div#habilidades .nomes-slider .item,
 main.conteudo-principal .principal-container > div#habilidades .logos-slider .item {
+  display: flex;
   position: relative;
   font-weight: 600;
   z-index: 2;
@@ -1298,6 +1295,33 @@ main.conteudo-principal .principal-container > div#habilidades .logos-slider .it
 main.conteudo-principal .principal-container > div#habilidades .nomes-slider[reverse=true] .item,
 main.conteudo-principal .principal-container > div#habilidades .logos-slider[reverse=true] .item {
   animation: reversePlay 10s linear infinite;
+}
+main.conteudo-principal .principal-container > div#habilidades .logos-slider {
+  min-height: 12vh;
+}
+main.conteudo-principal .principal-container > div#habilidades .logos-slider .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+}
+main.conteudo-principal .principal-container > div#habilidades .logos-slider .item label {
+  font-weight: 600;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+}
+main.conteudo-principal .principal-container > div#habilidades .logos-slider .item:hover {
+  transform: scale(1.1);
+}
+main.conteudo-principal .principal-container > div#habilidades .logos-slider .item:hover label {
+  opacity: 1;
+  transform: translateY(0);
 }
 main.conteudo-principal .principal-container > div#projetos h2 {
   padding-bottom: 3rem;
